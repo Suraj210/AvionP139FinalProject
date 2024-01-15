@@ -1,0 +1,97 @@
+#blogDetail {
+  padding: 4rem 0;
+}
+#blogDetail .blogDetail-data .blogDeatil-data--content {
+  margin-bottom: 2rem;
+}
+#blogDetail .blogDetail-data .blogDeatil-data--content h2 {
+  color: #2a254b;
+  font-size: 3.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 2rem;
+}
+#blogDetail .blogDetail-data .blogDeatil-data--content h4 {
+  color: #2a254b;
+  font-size: 1.25rem;
+  padding: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  background-color: #ebe8f4;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+#blogDetail .blogDetail-data .blogDeatil-data--content p {
+  margin-top: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+#blogDetail .blogDetail-data .blogDeatil-data--content .blog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  row-gap: 1rem;
+}
+#blogDetail .blogDetail-data .blogDeatil-data--content .blog-tags li {
+  border: 1px solid #2a254b;
+  padding: 4px;
+  text-align: center;
+}
+#blogDetail .blogDetail-data .blogDeatil-data--img {
+  width: 100%;
+  height: 400px;
+}
+#blogDetail .blogDetail-data .blogDeatil-data--img img {
+  width: 100%;
+  height: 100%;
+}
+#blogDetail .blogDetail-content {
+  padding-top: 5rem 5rem 0 !important;
+}
+#blogDetail .blogDetail-content p {
+  text-align: justify;
+  color: #2a254b;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  #blogDetail {
+    padding-top: 2rem;
+  }
+  #blogDetail .blogDetail-data .blogDeatil-data--content h2 {
+    font-size: 2.25rem;
+  }
+  #blogDetail .blogDetail-data .blogDeatil-data--content h4 {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  #blogDetail .blogDetail-content {
+    padding: 2rem 0 0 0 !important;
+  }
+  #blogDetail .blogDetail-content p {
+    font-size: 1rem !important;
+  }
+}
+@media only screen and (max-width: 576px) {
+  #blogDetail {
+    padding-top: 1rem;
+  }
+  #blogDetail .blogDetail-data .blogDeatil-data--content h2 {
+    font-size: 2.25rem;
+  }
+  #blogDetail .blogDetail-data .blogDeatil-data--content h4 {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  #blogDetail .blogDetail-content {
+    padding: 2rem 0 0 0 !important;
+  }
+  #blogDetail .blogDetail-content p {
+    font-size: 1rem !important;
+  }
+}/*# sourceMappingURL=blogDetail.css.map */

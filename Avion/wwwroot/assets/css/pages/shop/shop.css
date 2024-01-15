@@ -1,0 +1,77 @@
+main #shop .shopHeader {
+  background-color: red;
+  padding: 3rem 0;
+  background: url("../../../images/hero.jpeg"), lightgray 50%/cover no-repeat;
+}
+main #shop .shopHeader h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 3.15rem */
+}
+main #shop .shopFilters {
+  padding: 3rem 0;
+  position:sticky;
+  top:0;
+}
+main #shop .shopFilters h5 {
+  color: #2a254b;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 1.4rem */
+  padding-bottom: 1.75rem;
+}
+main #shop .shopFilters ul {
+  padding-bottom: 2rem;
+}
+main #shop .shopFilters ul li {
+  color: #2a254b;
+  padding-bottom: 0.75rem;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.5rem */
+}
+main #shop .shopFilters ul li input {
+  margin-right: 0.75rem;
+}
+main #shop .shopFilters a.filter {
+  background-color: #2a254b;
+  color: #fff;
+  padding: 0.5rem;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+main #shop .shopFilters .card {
+  width: 100%;
+  padding: 0 !important;
+  box-shadow: none;
+  border: none;
+}
+main #shop .shopFilters .card .range-slider {
+  width: 100%;
+}
+main #shop .shopFilters .card .range-slider .range-fill {
+  background-color: #2a254b !important;
+}
+main #shop #products {
+  padding: 3rem 0 !important;
+}
+main #shop #products .form-select {
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  display: inline;
+}
+main #shop .pagination {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+main #shop .pagination li a {
+  color: #2a254b !important;
+}/*# sourceMappingURL=shop.css.map */

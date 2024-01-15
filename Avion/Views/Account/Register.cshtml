@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+}
+
+@section css {
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/assets/css/pages/register/register.css" />
+}
+
+<!-- Main Part -->
+<main>
+    <section id="login">
+        <div class="container">
+            <form class="login-form">
+                <h1>Register</h1>
+                <div class="input-group">
+                    <input type="text" placeholder="Fullname" required />
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Username" required />
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required />
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Confirm password" required />
+                </div>
+                <div class="input-group">
+                    <input type="checkbox" style="width: 13px" required />
+                    <span style="margin-left: 5px">Accept Terms and Conditions</span>
+                </div>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </section>
+</main>
+

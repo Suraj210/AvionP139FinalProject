@@ -1,0 +1,31 @@
+main #privacy {
+  padding: 4rem 0;
+}
+main #privacy h1 {
+  color: #2a254b;
+  text-align: center;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 3.15rem */
+}
+main #privacy .privacyContainer {
+  background-color: #ebe8f4;
+  padding: 2rem;
+}
+main #privacy .privacyContainer ul {
+  padding: 3rem 0;
+  margin: 0 5rem;
+}
+main #privacy .privacyContainer ul li {
+  margin-bottom: 2rem;
+}
+main #privacy .privacyContainer ul li h6 {
+  margin-bottom: 1rem;
+}
+main #privacy .privacyContainer ul li p {
+  text-align: justify;
+}
+main #privacy .privacyContainer ul li a {
+  color: teal;
+}/*# sourceMappingURL=privacy.css.map */

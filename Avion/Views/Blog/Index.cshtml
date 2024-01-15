@@ -1,0 +1,207 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section css{
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/assets/css/blog.css" />
+    <link rel="stylesheet" href="~/assets/css/pages/blog/blog.css" />
+}
+
+<!-- Main Part -->
+
+<main>
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <h1>Our Blog</h1>
+
+            <hr />
+            <div class="blogHeader">
+                <h2>Consider Reading</h2>
+                <p>Learn from us! Cause you know, why not?</p>
+            </div>
+            <div class="row">
+                <div class="blogContainer row col-md-9">
+                    <div class="col-md-6">
+                        <div class="blog">
+                            <a asp-controller="Blog" asp-action="Detail">
+                                <div href="#" class="blogImg">
+                                    <img src="~/assets/images/ad2.webp" alt="" />
+                                </div>
+                            </a>
+                            <div class="blogContent">
+                                <span class="blogCategory">Education</span>
+                                <span class="blogDate">08.08.2023</span>
+                                <a href="">
+                                    <h3>What Will Website Be Like In 100 Years?</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog">
+                            <a href="./blogDetail.html">
+                                <div class="blogImg">
+                                    <img src="~/assets/images/blog-1.jpeg" alt="" />
+                                </div>
+                            </a>
+                            <div class="blogContent">
+                                <span class="blogCategory">Education</span>
+                                <span class="blogDate">08.08.2023</span>
+                                <a href="">
+                                    <h3>What Will Website Be Like In 100 Years?</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog">
+                            <a href="./blogDetail.html">
+                                <div href="#" class="blogImg">
+                                    <img src="~/assets/images/blog-1.jpeg" alt="" />
+                                </div>
+                            </a>
+                            <div class="blogContent">
+                                <span class="blogCategory">Education</span>
+                                <span class="blogDate">08.08.2023</span>
+                                <a href="">
+                                    <h3>What Will Website Be Like In 100 Years?</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog">
+                            <a href="./blogDetail.html">
+                                <div href="#" class="blogImg">
+                                    <img src="~/assets/images/blog-1.jpeg" alt="" />
+                                </div>
+                            </a>
+                            <div class="blogContent">
+                                <span class="blogCategory">Education</span>
+                                <span class="blogDate">08.08.2023</span>
+                                <a href="">
+                                    <h3>What Will Website Be Like In 100 Years?</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog">
+                            <a href="./blogDetail.html">
+                                <div href="#" class="blogImg">
+                                    <img src="~/assets/images/blog-1.jpeg" alt="" />
+                                </div>
+                            </a>
+                            <div class="blogContent">
+                                <span class="blogCategory">Education</span>
+                                <span class="blogDate">08.08.2023</span>
+                                <a href="">
+                                    <h3>What Will Website Be Like In 100 Years?</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog">
+                            <a href="./blogDetail.html">
+                                <div href="#" class="blogImg">
+                                    <img src="~/assets/images/blog-1.jpeg" alt="" />
+                                </div>
+                            </a>
+                            <div class="blogContent">
+                                <span class="blogCategory">Education</span>
+                                <span class="blogDate">08.08.2023</span>
+                                <a href="">
+                                    <h3>What Will Website Be Like In 100 Years?</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="readMore">
+                        <a href="./blog.html"> Load More </a>
+                    </div>
+                </div>
+                <div class="recentBlogs col-md-3">
+                    <h3>Popular posts</h3>
+                    <hr />
+                    <div class="blog">
+                        <a href="">
+                            <div href="#" class="blogImg">
+                                <img src="~/assets/images/ad2.webp" alt="" />
+                            </div>
+                        </a>
+                        <div class="blogContent">
+                            <span class="blogCategory">Education</span>
+                            <span class="blogDate">08.08.2023</span>
+                            <a href="">
+                                <p>What Will Website Be Like In 100 Years?</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <a href="">
+                            <div href="#" class="blogImg">
+                                <img src="~/assets/images/ad2.webp" alt="" />
+                            </div>
+                        </a>
+                        <div class="blogContent">
+                            <span class="blogCategory">Education</span>
+                            <span class="blogDate">08.08.2023</span>
+                            <a href="">
+                                <p>What Will Website Be Like In 100 Years?</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <a href="">
+                            <div href="#" class="blogImg">
+                                <img src="~/assets/images/ad2.webp" alt="" />
+                            </div>
+                        </a>
+                        <div class="blogContent">
+                            <span class="blogCategory">Education</span>
+                            <span class="blogDate">08.08.2023</span>
+                            <a href="">
+                                <p>What Will Website Be Like In 100 Years?</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <h3>Category</h3>
+                    <hr />
+                    <ul class="blog-category">
+                        <li>
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <a href="">Education</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <a href="">Inspiration</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <a href="">Design</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <a href="">Nature</a>
+                        </li>
+                    </ul>
+                    <h3>Tags</h3>
+                    <hr />
+                    <ul class="blog-tags">
+                        <li><a href="">table</a></li>
+                        <li><a href="">lamp</a></li>
+                        <li><a href="">chandler</a></li>
+                        <li><a href="">chair</a></li>
+                        <li><a href="">comfortable</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+

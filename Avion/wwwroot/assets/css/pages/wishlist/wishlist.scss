@@ -1,0 +1,36 @@
+main {
+  #wishlist {
+    padding: 3rem 0;
+    button,
+    .checkoutBtn {
+      background-color: #2a254b !important;
+      border: none;
+      &:hover {
+        background-color: #4e4d93 !important;
+      }
+    }
+    h1 {
+      color: #2a254b;
+      font-size: 2.25rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 3.15rem */
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 1rem !important;
+    }
+
+    .form-outline {
+      display: flex;
+      align-items: center;
+      input {
+        text-align: center;
+      }
+      label {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,445 @@
+// Helper Classes
+
+.readMore {
+  padding: 1rem 2rem;
+  background-color: #f9f9f9;
+  color: #2a254b;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: fit-content;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+main {
+  // Hero Section
+  #hero {
+    .heroImg {
+      position: relative;
+      height: 47rem;
+      width: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .heroContent {
+      z-index: 2;
+      padding: 3rem 3.8125rem 2.875rem 3.5rem;
+      background-color: #fff;
+      position: absolute;
+      top: 8.12rem;
+      right: 5rem;
+      h2 {
+        width: 32.0625rem;
+        color: #22202e;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 2.8rem */
+      }
+      p {
+        color: #5b5676;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 1.6875rem */
+        padding: 1.25rem 0 9.81rem;
+      }
+    }
+  }
+
+  // Ad Section
+
+  #ad {
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 2.8rem */
+      margin-bottom: 3rem;
+    }
+    .ads {
+      .ad {
+        img {
+          width: 100%;
+          height: 20rem;
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+
+  // Brand Section
+
+  #brand {
+    padding: 4rem 0;
+    .brandImg {
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  // Idea Section
+
+  #idea {
+    padding: 3.75rem 0;
+    .idea-content {
+      background-color: #2a254b;
+      padding: 4rem;
+      height: 29rem;
+      margin-bottom: 1.5rem;
+      h2 {
+        color: #fff;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      p {
+        color: #fff;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding-bottom: 10rem;
+      }
+
+      a {
+        padding: 1rem 2rem;
+        background: rgba(249, 249, 249, 0.15);
+        color: white;
+      }
+    }
+    img {
+      width: 100%;
+      height: 29rem;
+    }
+  }
+
+  // Testimonial Section
+  #testimonial {
+    padding: 4rem 0;
+    #carouselExample {
+      background-color: #f9f9f9;
+      padding: 5rem;
+      .testimonialContainer {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .testimonialPerson {
+          width: 15%;
+          img {
+            border-radius: 50%;
+            width: 100%;
+            height: 181px;
+          }
+          p {
+            margin: 1.5rem 0;
+            text-align: center;
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 1.6875rem */
+          }
+        }
+        .testimonialContent {
+          margin-top: 3.5rem;
+          text-align: center;
+          font-size: 1.125rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 1.6875rem */
+        }
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: #2a254b;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  // Subscribe Section
+
+  #subscribe {
+    padding: 6rem;
+
+    h2 {
+      color: #fff;
+      text-align: center;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 44.8px */
+    }
+    p {
+      width: 470px;
+      margin: 0.75rem auto 1.88rem;
+      color: #fff;
+      text-align: center;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 27px */
+    }
+
+    .subscribeOptions {
+      display: flex;
+      width: 470px;
+      margin: 1.88rem auto;
+      align-items: center;
+      justify-content: space-evenly;
+      .option {
+        i {
+          color: #fff;
+        }
+        span {
+          color: #fff;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 1.5rem */
+        }
+      }
+    }
+
+    .subscribeMail {
+      margin: 75px 0 0;
+      text-align: center;
+      input {
+        padding: 0.95rem 12.8125rem 0.95rem 2rem;
+        outline: none;
+        border: none;
+        &::placeholder {
+          color: #c0c0c0;
+        }
+      }
+
+      button {
+        outline: none;
+        border: none;
+        padding: 1rem 2rem;
+        margin-left: -5px;
+        background-color: #2a254b;
+        color: #fff;
+      }
+    }
+  }
+}
+
+// Tablet Size
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  // Main Part
+
+  main {
+    // Hero Section
+    #hero {
+      .heroImg {
+        height: 25rem;
+      }
+      .heroContent {
+        position: initial;
+        padding: 3rem 1.5rem 2.875rem;
+        p {
+          padding-bottom: 4rem !important;
+        }
+        a {
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+
+    // Ad Section
+
+    #ad {
+      h2 {
+        text-align: center;
+
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 2.8rem */
+      }
+      .ads {
+        .ad {
+          img {
+            height: initial;
+          }
+        }
+      }
+    }
+
+    // Testimonial Section
+    #testimonial {
+      .testimonialContainer {
+        .testimonialPerson {
+          width: 50% !important;
+        }
+        .testimonialContent {
+          font-size: 0.875rem !important;
+        }
+      }
+    }
+
+    // Subscribe Section
+
+    #subscribe {
+      padding: 0 !important;
+      h2 {
+        width: 20rem;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 2.1rem */
+        text-align: left;
+        padding-top: 2.5rem;
+      }
+      p {
+        width: 20rem;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 1.3125rem */
+        text-align: left;
+        margin-left: 0 !important;
+        padding-bottom: 1.25rem;
+      }
+      .subscribeOptions {
+        display: initial;
+      }
+      .subscribeMail {
+        width: 100%;
+        text-align: left;
+        padding-bottom: 3.5rem;
+        input {
+          padding-right: 2rem !important;
+        }
+      }
+    }
+  }
+}
+
+// Phone Size
+@media only screen and (max-width: 576px) {
+  // Main Part
+
+  main {
+    // Hero Section
+    #hero {
+      .heroImg {
+        height: 19rem;
+      }
+      .heroContent {
+        position: initial;
+        padding: 3rem 0.5rem 2.875rem;
+
+        h2 {
+          width: 19rem;
+          font-size: 1.5rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+        p {
+          padding-bottom: 2rem !important;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+        a {
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+
+    // Ad Section
+
+    #ad {
+      .ads {
+        .ad {
+          img {
+            height: initial;
+          }
+        }
+      }
+    }
+
+    #brand {
+      .slick-next {
+        display: none !important;
+      }
+      .slick-prev {
+        display: none !important;
+      }
+    }
+
+    // Idea Section
+
+    #idea {
+      .idea-content {
+        p {
+          padding-bottom: 8rem !important;
+        }
+      }
+    }
+
+    // Testimonial Section
+    #testimonial {
+      .testimonialContainer {
+        .testimonialPerson {
+          width: 75% !important;
+        }
+        .testimonialContent {
+          font-size: 0.875rem !important;
+        }
+      }
+    }
+
+    // Subscribe Section
+    #subscribe {
+      padding: 0 !important;
+      h2 {
+        width: 20rem;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 2.1rem */
+        text-align: left;
+        padding-top: 2.5rem;
+      }
+      p {
+        width: 20rem;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 1.3125rem */
+        text-align: left;
+        margin-left: 0 !important;
+        padding-bottom: 1.25rem;
+      }
+      .subscribeOptions {
+        display: initial;
+      }
+      .subscribeMail {
+        width: 100%;
+        text-align: left;
+        padding-bottom: 3.5rem;
+        input {
+          padding-right: 2rem !important;
+        }
+      }
+    }
+  }
+}

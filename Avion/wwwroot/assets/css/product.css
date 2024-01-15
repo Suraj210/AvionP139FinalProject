@@ -1,0 +1,246 @@
+@charset "UTF-8";
+.added {
+  color: red !important;
+}
+
+main #products {
+  padding: 8rem 0;
+}
+main #products .productsHeader {
+  padding-bottom: 3rem;
+}
+main #products .productsHeader h2 {
+  text-align: center;
+  color: #22202e;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 2.8rem */
+}
+main #products .product-container .slick-prev::before {
+  content: "←";
+  color: #2a254b;
+  font-size: 30px;
+}
+main #products .product-container .slick-next:before {
+  content: "→";
+  color: #2a254b;
+  font-size: 30px;
+}
+main #products .product-container .product {
+  cursor: pointer;
+}
+main #products .product-container .product .wrapper {
+  width: 300px;
+  height: 500px;
+  background: white;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0;
+  transform: scale(0.95);
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+main #products .product-container .product .wrapper:hover {
+  transform: scale(1);
+  box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+}
+main #products .product-container .product .wrapper .containerCard {
+  width: 100%;
+  height: 100%;
+}
+main #products .product-container .product .wrapper .containerCard .wishlist {
+  position: absolute;
+  font-size: 35px;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  color: #fff;
+  z-index: 3;
+}
+main #products .product-container .product .wrapper .containerCard .top {
+  height: 80%;
+  width: 100%;
+  position: relative;
+}
+main #products .product-container .product .wrapper .containerCard .bottom {
+  width: 210%;
+  height: 20%;
+  transition: transform 0.5s;
+}
+main #products .product-container .product .wrapper .containerCard .bottom.clicked {
+  transform: translateX(-50%);
+}
+main #products .product-container .product .wrapper .containerCard .bottom h1 {
+  margin: 0;
+  padding: 0;
+}
+main #products .product-container .product .wrapper .containerCard .bottom p {
+  margin: 0;
+  padding: 0;
+}
+main #products .product-container .product .wrapper .containerCard .bottom .left {
+  height: 100%;
+  width: 50%;
+  background: #f4f4f4;
+  position: relative;
+  float: left;
+}
+main #products .product-container .product .wrapper .containerCard .bottom .left .details {
+  padding: 20px;
+  float: left;
+  width: calc(70% - 40px);
+}
+main #products .product-container .product .wrapper .containerCard .bottom .left .buy {
+  float: right;
+  width: calc(30% - 2px);
+  height: 100%;
+  background: #f1f1f1;
+  transition: background 0.5s;
+  border-left: solid thin rgba(0, 0, 0, 0.1);
+}
+main #products .product-container .product .wrapper .containerCard .bottom .left .buy i {
+  font-size: 30px;
+  padding: 30px;
+  color: #254053;
+  transition: transform 0.5s;
+}
+main #products .product-container .product .wrapper .containerCard .bottom .left .buy:hover {
+  background: #a6cdde;
+}
+main #products .product-container .product .wrapper .containerCard .bottom .left .buy:hover i {
+  transform: translateY(5px);
+  color: #00394b;
+}
+main #products .product-container .product .wrapper .containerCard .bottom .right {
+  width: 50%;
+  background: #2a254b;
+  color: white;
+  float: right;
+  height: 200%;
+  overflow: hidden;
+}
+main #products .product-container .product .wrapper .containerCard .bottom .right .details {
+  padding: 8px;
+  float: right;
+  width: calc(70% - 40px);
+}
+main #products .product-container .product .wrapper .containerCard .bottom .right .done {
+  width: calc(30% - 2px);
+  float: left;
+  transition: transform 0.5s;
+  border-right: solid thin rgba(255, 255, 255, 0.3);
+  height: 50%;
+}
+main #products .product-container .product .wrapper .containerCard .bottom .right .done i {
+  font-size: 30px;
+  padding: 30px;
+  color: white;
+}
+main #products .product-container .product .wrapper .containerCard .bottom .right .remove {
+  width: calc(30% - 1px);
+  clear: both;
+  border-right: solid thin rgba(255, 255, 255, 0.3);
+  height: 50%;
+  background: #bc3b59;
+  transition: transform 0.5s, background 0.5s;
+}
+main #products .product-container .product .wrapper .containerCard .bottom .right .remove:hover {
+  background: #9b2847;
+}
+main #products .product-container .product .wrapper .containerCard .bottom .right .remove:hover i {
+  transform: translateY(5px);
+}
+main #products .product-container .product .wrapper .containerCard .bottom .right .remove i {
+  transition: transform 0.5s;
+  font-size: 30px;
+  padding: 30px;
+  color: white;
+}
+main #products .product-container .product .wrapper .containerCard .bottom .right:hover .remove,
+main #products .product-container .product .wrapper .containerCard .bottom .right:hover .done {
+  transform: translateY(-100%);
+}
+main #products .product-container .product .wrapper .inside {
+  z-index: 9;
+  background: #2a254b;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  border-radius: 0px 0px 200px 200px;
+  transition: all 0.5s, border-radius 2s, top 1s;
+  overflow: hidden;
+}
+main #products .product-container .product .wrapper .inside .icon {
+  position: absolute;
+  right: 85px;
+  top: 85px;
+  color: white;
+  opacity: 1;
+}
+main #products .product-container .product .wrapper .inside .icon i {
+  font-size: 25px;
+}
+main #products .product-container .product .wrapper .inside:hover {
+  width: 100%;
+  right: 0;
+  top: 0;
+  border-radius: 0;
+  height: 80%;
+}
+main #products .product-container .product .wrapper .inside:hover .icon {
+  opacity: 0;
+  right: 15px;
+  top: 15px;
+}
+main #products .product-container .product .wrapper .inside:hover .contents {
+  opacity: 1;
+  transform: scale(1);
+  transform: translateY(0);
+}
+main #products .product-container .product .wrapper .inside .contents {
+  padding: 5%;
+  opacity: 0;
+  transform: scale(0.5);
+  transform: translateY(-200%);
+  transition: opacity 0.2s, transform 0.8s;
+}
+main #products .product-container .product .wrapper .inside .contents table {
+  text-align: left;
+  width: 100%;
+}
+main #products .product-container .product .wrapper .inside .contents h1,
+main #products .product-container .product .wrapper .inside .contents p,
+main #products .product-container .product .wrapper .inside .contents table {
+  color: white;
+}
+main #products .product-container .product .wrapper .inside .contents p {
+  font-size: 13px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  #products .product-container .slick-next:before {
+    display: none;
+  }
+  #products .product-container .slick-prev:before {
+    display: none;
+  }
+  #products .product-container .product .wrapper {
+    width: 270px !important;
+    height: 450px !important;
+  }
+}
+@media only screen and (max-width: 576px) {
+  #products .product-container .slick-next {
+    display: none !important;
+  }
+  #products .product-container .slick-prev {
+    display: none !important;
+  }
+  #products .product-container .product .wrapper {
+    width: 100% !important;
+  }
+}/*# sourceMappingURL=product.css.map */

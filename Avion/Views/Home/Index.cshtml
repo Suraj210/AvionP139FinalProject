@@ -1,0 +1,766 @@
+﻿
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section css{
+
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="~/assets/slick/slick.css" />
+    <link rel="stylesheet"
+          type="text/css"
+          href="~/assets/slick/slick-theme.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/assets/css/features.css" />
+    <link rel="stylesheet" href="~/assets/css/product.css" />
+    <link rel="stylesheet" href="~/assets/css/blog.css" />
+    <link rel="stylesheet" href="~/assets/css/pages/home/home.css" />
+}
+
+    <!-- Main Part -->
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero">
+        <div class="container">
+          <div class="heroContent">
+            <h2>Luxury homeware for people who love timeless design quality</h2>
+            <p>
+              With our new collection, view over 400 bespoke pieces from
+              homeware through to furniture today
+            </p>
+            <div class="readMore">
+              <a href="">View Collection</a>
+            </div>
+          </div>
+        </div>
+        <div class="heroImg">
+          <img src="~/assets/images/hero.jpeg" alt="" />
+        </div>
+      </section>
+
+      <!-- Products -->
+      <section id="products">
+        <div class="container">
+          <div class="productsHeader">
+            <h2>Featured Products</h2>
+          </div>
+          <div class="product-container">
+            <div class="product">
+              <div class="wrapper">
+                <div class="containerCard">
+                  <i class="fa-solid fa-heart wishlist"></i>
+                            <a asp-controller="Shop" asp-action="ProductDetail">
+                    <div
+                      style="
+                        background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                          no-repeat center center;
+                        -webkit-background-size: 100%;
+                        -moz-background-size: 100%;
+                        -o-background-size: 100%;
+                        background-size: 100%;
+                      "
+                      class="top"
+                    ></div>
+                  </a>
+                  <div class="bottom">
+                    <div class="left">
+                      <div class="details">
+                        <h1>Chair</h1>
+                        <p>£250</p>
+                      </div>
+                      <div class="buy">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </div>
+                    </div>
+                    <div class="right">
+                      <div class="done">
+                        <i class="fa-solid fa-check"></i>
+                      </div>
+                      <div class="details">
+                        <h1>Chair</h1>
+                        <p>Added to your cart</p>
+                      </div>
+                      <div class="remove">
+                        <i class="fa-solid fa-x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="inside">
+                  <div class="icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </div>
+                  <div class="contents">
+                    <table>
+                      <tr>
+                        <th>Width</th>
+                        <th>Height</th>
+                      </tr>
+                      <tr>
+                        <td>3000mm</td>
+                        <td>4000mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="wrapper">
+                <div class="containerCard">
+                  <i class="fa-solid fa-heart wishlist"></i>
+                  <a href="./productDetail.html">
+                    <div
+                      style="
+                        background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                          no-repeat center center;
+                        -webkit-background-size: 100%;
+                        -moz-background-size: 100%;
+                        -o-background-size: 100%;
+                        background-size: 100%;
+                      "
+                      class="top"
+                    ></div>
+                  </a>
+                  <div class="bottom">
+                    <div class="left">
+                      <div class="details">
+                        <h1>Chair</h1>
+                        <p>£250</p>
+                      </div>
+                      <div class="buy">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </div>
+                    </div>
+                    <div class="right">
+                      <div class="done">
+                        <i class="fa-solid fa-check"></i>
+                      </div>
+                      <div class="details">
+                        <h1>Chair</h1>
+                        <p>Added to your cart</p>
+                      </div>
+                      <div class="remove">
+                        <i class="fa-solid fa-x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="inside">
+                  <div class="icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </div>
+                  <div class="contents">
+                    <table>
+                      <tr>
+                        <th>Width</th>
+                        <th>Height</th>
+                      </tr>
+                      <tr>
+                        <td>3000mm</td>
+                        <td>4000mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="wrapper">
+                <div class="containerCard">
+                  <i class="fa-solid fa-heart wishlist"></i>
+                  <a href="./productDetail.html">
+                    <div
+                      style="
+                        background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                          no-repeat center center;
+                        -webkit-background-size: 100%;
+                        -moz-background-size: 100%;
+                        -o-background-size: 100%;
+                        background-size: 100%;
+                      "
+                      class="top"
+                    ></div>
+                  </a>
+                  <div class="bottom">
+                    <div class="left">
+                      <div class="details">
+                        <h1>Chair</h1>
+                        <p>£250</p>
+                      </div>
+                      <div class="buy">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </div>
+                    </div>
+                    <div class="right">
+                      <div class="done">
+                        <i class="fa-solid fa-check"></i>
+                      </div>
+                      <div class="details">
+                        <h1>Chair</h1>
+                        <p>Added to your cart</p>
+                      </div>
+                      <div class="remove">
+                        <i class="fa-solid fa-x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="inside">
+                  <div class="icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </div>
+                  <div class="contents">
+                    <table>
+                      <tr>
+                        <th>Width</th>
+                        <th>Height</th>
+                      </tr>
+                      <tr>
+                        <td>3000mm</td>
+                        <td>4000mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="wrapper">
+                <div class="containerCard">
+                  <i class="fa-solid fa-heart wishlist"></i>
+                  <a href="./productDetail.html">
+                    <div
+                      style="
+                        background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                          no-repeat center center;
+                        -webkit-background-size: 100%;
+                        -moz-background-size: 100%;
+                        -o-background-size: 100%;
+                        background-size: 100%;
+                      "
+                      class="top"
+                    ></div>
+                  </a>
+                  <div class="bottom">
+                    <div class="left">
+                      <div class="details">
+                        <h1>Chair</h1>
+                        <p>£250</p>
+                      </div>
+                      <div class="buy">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </div>
+                    </div>
+                    <div class="right">
+                      <div class="done">
+                        <i class="fa-solid fa-check"></i>
+                      </div>
+                      <div class="details">
+                        <h1>Chair</h1>
+                        <p>Added to your cart</p>
+                      </div>
+                      <div class="remove">
+                        <i class="fa-solid fa-x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="inside">
+                  <div class="icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </div>
+                  <div class="contents">
+                    <table>
+                      <tr>
+                        <th>Width</th>
+                        <th>Height</th>
+                      </tr>
+                      <tr>
+                        <td>3000mm</td>
+                        <td>4000mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="wrapper">
+                <div class="containerCard">
+                  <i class="fa-solid fa-heart wishlist"></i>
+                  <a href="./productDetail.html">
+                    <div
+                      style="
+                        background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                          no-repeat center center;
+                        -webkit-background-size: 100%;
+                        -moz-background-size: 100%;
+                        -o-background-size: 100%;
+                        background-size: 100%;
+                      "
+                      class="top"
+                    ></div>
+                  </a>
+                  <div class="bottom">
+                    <div class="left">
+                      <div class="details">
+                        <h1>Chair</h1>
+                        <p>£250</p>
+                      </div>
+                      <div class="buy">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </div>
+                    </div>
+                    <div class="right">
+                      <div class="done">
+                        <i class="fa-solid fa-check"></i>
+                      </div>
+                      <div class="details">
+                        <h1>Chair</h1>
+                        <p>Added to your cart</p>
+                      </div>
+                      <div class="remove">
+                        <i class="fa-solid fa-x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="inside">
+                  <div class="icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </div>
+                  <div class="contents">
+                    <table>
+                      <tr>
+                        <th>Width</th>
+                        <th>Height</th>
+                      </tr>
+                      <tr>
+                        <td>3000mm</td>
+                        <td>4000mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                      <tr>
+                        <th>Something</th>
+                        <th>Something</th>
+                      </tr>
+                      <tr>
+                        <td>200mm</td>
+                        <td>200mm</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ad Section -->
+      <section id="ad">
+        <div class="container">
+          <h2>Advertisements</h2>
+          <div class="ads row">
+            <div class="ad col-md-6">
+              <img src="~/assets/images/ad1.webp" alt="" />
+            </div>
+            <div class="ad col-md-3">
+              <img src="~/assets/images/ad2.webp" alt="" />
+            </div>
+            <div class="ad col-md-3">
+              <img src="~/assets/images/ad3.webp" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features">
+        <div class="container">
+          <h3>What makes our brand different</h3>
+          <div class="row features">
+            <div class="col-lg-3">
+              <div class="feature">
+                <img src="~/assets/images/Delivery.png" alt="" />
+                <h4>Next day as standard</h4>
+                <p>
+                  Order before 3pm and get your order the next day as standard
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="feature">
+                <img src="~/assets/images/Checkmark--outline.png" alt="" />
+                <h4>Made by true artisans</h4>
+                <p>
+                  Handmade crafted goods made with real passion and craftmanship
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="feature">
+                <img src="~/assets/images/Purchase.png" alt="" />
+                <h4>Unbeatable prices</h4>
+                <p>
+                  For our materials and quality you won’t find better prices
+                  anywhere
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="feature">
+                <img src="~/assets/images/Sprout.png" alt="" />
+                <h4>Recycled packaging</h4>
+                <p>
+                  We use 100% recycled to ensure our footprint is more
+                  manageable
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand Section -->
+      <section id="brand">
+        <div class="container">
+          <div data-slick='{"slidesToShow": 2, "slidesToScroll": 2}'>
+            <div class="brandImg">
+              <img src="~/assets/images/brand1.png" alt="" />
+            </div>
+            <div class="brandImg">
+              <img src="~/assets/images/brand2.webp" alt="" />
+            </div>
+            <div class="brandImg">
+              <img src="~/assets/images/brand3.jpg" alt="" />
+            </div>
+            <div class="brandImg">
+              <img src="~/assets/images/brand4.webp" alt="" />
+            </div>
+            <div class="brandImg">
+              <img src="~/assets/images/brand5.webp" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Idea Section -->
+      <section id="idea">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="idea-content">
+                <h2>It started with a small idea</h2>
+                <p>
+                  A global brand with local beginnings, our story begain in a
+                  small studio in South London in early 2014
+                </p>
+                <a href="">View Collection</a>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <img src="~/assets/images/idea.jpeg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial Section -->
+      <section id="testimonial">
+        <div class="container">
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="testimonialContainer d-block w-100">
+                  <div class="testimonialPerson">
+                    <img src="~/assets/images/testimonial-1.jpg" alt="" />
+                    <p>Robert Downey</p>
+                  </div>
+                  <p class="testimonialContent">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Hic eaque maxime minima unde! Accusantium ea sint accusamus
+                    tempore optio veritatis quidem eius! Incidunt voluptates
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="testimonialContainer d-block w-100">
+                  <div class="testimonialPerson">
+                    <img src="~/assets/images/testimonial-1.jpg" alt="" />
+                    <p>Robert Downey</p>
+                  </div>
+                  <p class="testimonialContent">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Hic eaque maxime minima unde! Accusantium ea sint accusamus
+                    tempore optio veritatis quidem eius! Incidunt voluptates
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="testimonialContainer d-block w-100">
+                  <div class="testimonialPerson">
+                    <img src="~/assets/images/testimonial-1.jpg" alt="" />
+                    <p>Robert Downey</p>
+                  </div>
+                  <p class="testimonialContent">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Hic eaque maxime minima unde! Accusantium ea sint accusamus
+                    tempore optio veritatis quidem eius! Incidunt voluptates
+                    odio, quaerat nihil blanditiis provident inventore, nisi
+                    distinctio molestias ratione nostrum pariatur minima id
+                    placeat unde quod itaque eum sunt temporibus excepturi
+                    cupiditate quo praesentium voluptate.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Subscribe Section -->
+      <section
+        style="background-image: url(./assets/images/subscribe-bg.jpeg)"
+        id="subscribe"
+      >
+        <div class="container">
+          <h2>Join the club and get the benefits</h2>
+          <p>
+            Sign up for our newsletter and receive exclusive offers on new
+            ranges, sales, pop up stores and more
+          </p>
+          <div class="subscribeOptions">
+            <div class="option">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Exclusive offers</span>
+            </div>
+            <div class="option">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Free events</span>
+            </div>
+            <div class="option">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Large discounts</span>
+            </div>
+          </div>
+
+          <form class="subscribeMail">
+            <input type="text" placeholder="your@email.com" />
+            <button>Sign Up</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Blog Section -->
+      <section id="blog">
+        <div class="container">
+          <div class="blogHeader">
+            <h2>Consider Reading</h2>
+            <p>Learn from us! Cause you know, why not?</p>
+          </div>
+          <div class="blogContainer row">
+            <div class="col-md-4">
+              <div class="blog">
+                <a href="./blogDetail.html">
+                  <div href="#" class="blogImg">
+                    <img src="~/assets/images/blog-1.jpeg" alt="" />
+                  </div>
+                </a>
+                <div class="blogContent">
+                  <span class="blogCategory">Education</span>
+                  <span class="blogDate">08.08.2023</span>
+                  <a href="">
+                    <h3>What Will Website Be Like In 100 Years?</h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="blog">
+                <a href="./blogDetail.html">
+                  <div class="blogImg">
+                    <img src="~/assets/images/ad2.webp" alt="" />
+                  </div>
+                </a>
+                <div class="blogContent">
+                  <span class="blogCategory">Education</span>
+                  <span class="blogDate">08.08.2023</span>
+                  <a href="">
+                    <h3>What Will Website Be Like In 100 Years?</h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="blog">
+                <a href="./blogDetail.html">
+                  <div class="blogImg">
+                    <img src="~/assets/images/blog-1.jpeg" alt="" />
+                  </div>
+                </a>
+                <div class="blogContent">
+                  <span class="blogCategory">Education</span>
+                  <span class="blogDate">08.08.2023</span>
+                  <a href="">
+                    <h3>What Will Website Be Like In 100 Years?</h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="readMore">
+            <a href="./blog.html"> Read More </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    @section script{
+    <!-- Slick Slider -->
+    <script type="text/javascript" src="~/assets/slick/slick.min.js"></script>
+    <!-- Custom JS -->
+    <script src="~/assets/js/product.js"></script>
+    }
+

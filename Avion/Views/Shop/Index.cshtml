@@ -1,0 +1,966 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section css{
+    <link rel="stylesheet" href="./assets/css/filter.css" />
+    <link rel="stylesheet" href="./assets/css/product.css" />
+    <link rel="stylesheet" href="./assets/css/pages/shop/shop.css" />
+}
+
+<!-- Main Part -->
+
+<main>
+    <section id="shop">
+        <div class="shopHeader">
+            <h1>All Products</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="shopFilters">
+                        <h5>Product Types</h5>
+                        <ul>
+                            <li><input type="checkbox" name="" id="" />Furniture</li>
+                            <li><input type="checkbox" name="" id="" />Homeware</li>
+                            <li><input type="checkbox" name="" id="" />Sofas</li>
+                            <li><input type="checkbox" name="" id="" />Light fittings</li>
+                            <li><input type="checkbox" name="" id="" />Accessories</li>
+                        </ul>
+                        <hr />
+                        <h5>Price</h5>
+                        <div class="card">
+                            <div class="price-content">
+                                <div>
+                                    <label>Min</label>
+                                    <p id="min-value">$50</p>
+                                </div>
+
+                                <div>
+                                    <label>Max</label>
+                                    <p id="max-value">$500</p>
+                                </div>
+                            </div>
+
+                            <div class="range-slider">
+                                <div class="range-fill"></div>
+
+                                <input type="range"
+                                       class="min-price"
+                                       value="10"
+                                       min="10"
+                                       max="500"
+                                       step="10" />
+                                <input type="range"
+                                       class="max-price"
+                                       value="500"
+                                       min="10"
+                                       max="500"
+                                       step="10" />
+                            </div>
+                        </div>
+                        <a class="filter" href="">Filter</a>
+                        <hr />
+
+                        <h5>Brands</h5>
+                        <ul>
+                            <li><input type="checkbox" name="" id="" />Robert Smith</li>
+                            <li><input type="checkbox" name="" id="" />Liam Gallagher</li>
+                            <li><input type="checkbox" name="" id="" />Biggie Smalls</li>
+                            <li><input type="checkbox" name="" id="" />Thom Yorke</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <!-- Products -->
+                    <div id="products">
+                        <span>Sort by: </span>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="1">Date Added</option>
+                            <option value="2">Alphabetically A-Z</option>
+                            <option value="3">Alphabetically Z-A</option>
+                            <option value="4">Price High-Low</option>
+                            <option value="5">Price Low-High</option>
+                        </select>
+
+                        <div class="product-container row">
+                            <div class="col-md-4">
+                                <div class="product">
+                                    <div class="wrapper">
+                                        <div class="containerCard">
+                                            <i class="fa-solid fa-heart wishlist"></i>
+                                            <a href="./productDetail.html">
+                                                <div style="
+                                background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                                  no-repeat center center;
+                                -webkit-background-size: 100%;
+                                -moz-background-size: 100%;
+                                -o-background-size: 100%;
+                                background-size: 100%;
+                              "
+                                                     class="top"></div>
+                                            </a>
+                                            <div class="bottom">
+                                                <div class="left">
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>£250</p>
+                                                    </div>
+                                                    <div class="buy">
+                                                        <i class="fa-solid fa-cart-shopping"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="done">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </div>
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>Added to your cart</p>
+                                                    </div>
+                                                    <div class="remove">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inside">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </div>
+                                            <div class="contents">
+                                                <table>
+                                                    <tr>
+                                                        <th>Width</th>
+                                                        <th>Height</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3000mm</td>
+                                                        <td>4000mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product">
+                                    <div class="wrapper">
+                                        <div class="containerCard">
+                                            <i class="fa-solid fa-heart wishlist"></i>
+                                            <a href="./productDetail.html">
+                                                <div style="
+                                background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                                  no-repeat center center;
+                                -webkit-background-size: 100%;
+                                -moz-background-size: 100%;
+                                -o-background-size: 100%;
+                                background-size: 100%;
+                              "
+                                                     class="top"></div>
+                                            </a>
+                                            <div class="bottom">
+                                                <div class="left">
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>£250</p>
+                                                    </div>
+                                                    <div class="buy">
+                                                        <i class="fa-solid fa-cart-shopping"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="done">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </div>
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>Added to your cart</p>
+                                                    </div>
+                                                    <div class="remove">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inside">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </div>
+                                            <div class="contents">
+                                                <table>
+                                                    <tr>
+                                                        <th>Width</th>
+                                                        <th>Height</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3000mm</td>
+                                                        <td>4000mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product">
+                                    <div class="wrapper">
+                                        <div class="containerCard">
+                                            <i class="fa-solid fa-heart wishlist"></i>
+                                            <a href="./productDetail.html">
+                                                <div style="
+                                background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                                  no-repeat center center;
+                                -webkit-background-size: 100%;
+                                -moz-background-size: 100%;
+                                -o-background-size: 100%;
+                                background-size: 100%;
+                              "
+                                                     class="top"></div>
+                                            </a>
+                                            <div class="bottom">
+                                                <div class="left">
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>£250</p>
+                                                    </div>
+                                                    <div class="buy">
+                                                        <i class="fa-solid fa-cart-shopping"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="done">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </div>
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>Added to your cart</p>
+                                                    </div>
+                                                    <div class="remove">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inside">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </div>
+                                            <div class="contents">
+                                                <table>
+                                                    <tr>
+                                                        <th>Width</th>
+                                                        <th>Height</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3000mm</td>
+                                                        <td>4000mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product">
+                                    <div class="wrapper">
+                                        <div class="containerCard">
+                                            <i class="fa-solid fa-heart wishlist"></i>
+                                            <a href="./productDetail.html">
+                                                <div style="
+                                background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                                  no-repeat center center;
+                                -webkit-background-size: 100%;
+                                -moz-background-size: 100%;
+                                -o-background-size: 100%;
+                                background-size: 100%;
+                              "
+                                                     class="top"></div>
+                                            </a>
+                                            <div class="bottom">
+                                                <div class="left">
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>£250</p>
+                                                    </div>
+                                                    <div class="buy">
+                                                        <i class="fa-solid fa-cart-shopping"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="done">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </div>
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>Added to your cart</p>
+                                                    </div>
+                                                    <div class="remove">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inside">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </div>
+                                            <div class="contents">
+                                                <table>
+                                                    <tr>
+                                                        <th>Width</th>
+                                                        <th>Height</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3000mm</td>
+                                                        <td>4000mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product">
+                                    <div class="wrapper">
+                                        <div class="containerCard">
+                                            <i class="fa-solid fa-heart wishlist"></i>
+                                            <a href="./productDetail.html">
+                                                <div style="
+                                background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                                  no-repeat center center;
+                                -webkit-background-size: 100%;
+                                -moz-background-size: 100%;
+                                -o-background-size: 100%;
+                                background-size: 100%;
+                              "
+                                                     class="top"></div>
+                                            </a>
+                                            <div class="bottom">
+                                                <div class="left">
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>£250</p>
+                                                    </div>
+                                                    <div class="buy">
+                                                        <i class="fa-solid fa-cart-shopping"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="done">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </div>
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>Added to your cart</p>
+                                                    </div>
+                                                    <div class="remove">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inside">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </div>
+                                            <div class="contents">
+                                                <table>
+                                                    <tr>
+                                                        <th>Width</th>
+                                                        <th>Height</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3000mm</td>
+                                                        <td>4000mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product">
+                                    <div class="wrapper">
+                                        <div class="containerCard">
+                                            <i class="fa-solid fa-heart wishlist"></i>
+                                            <a href="./productDetail.html">
+                                                <div style="
+                                background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                                  no-repeat center center;
+                                -webkit-background-size: 100%;
+                                -moz-background-size: 100%;
+                                -o-background-size: 100%;
+                                background-size: 100%;
+                              "
+                                                     class="top"></div>
+                                            </a>
+                                            <div class="bottom">
+                                                <div class="left">
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>£250</p>
+                                                    </div>
+                                                    <div class="buy">
+                                                        <i class="fa-solid fa-cart-shopping"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="done">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </div>
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>Added to your cart</p>
+                                                    </div>
+                                                    <div class="remove">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inside">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </div>
+                                            <div class="contents">
+                                                <table>
+                                                    <tr>
+                                                        <th>Width</th>
+                                                        <th>Height</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3000mm</td>
+                                                        <td>4000mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product">
+                                    <div class="wrapper">
+                                        <div class="containerCard">
+                                            <i class="fa-solid fa-heart wishlist"></i>
+                                            <a href="./productDetail.html">
+                                                <div style="
+                                background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                                  no-repeat center center;
+                                -webkit-background-size: 100%;
+                                -moz-background-size: 100%;
+                                -o-background-size: 100%;
+                                background-size: 100%;
+                              "
+                                                     class="top"></div>
+                                            </a>
+                                            <div class="bottom">
+                                                <div class="left">
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>£250</p>
+                                                    </div>
+                                                    <div class="buy">
+                                                        <i class="fa-solid fa-cart-shopping"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="done">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </div>
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>Added to your cart</p>
+                                                    </div>
+                                                    <div class="remove">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inside">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </div>
+                                            <div class="contents">
+                                                <table>
+                                                    <tr>
+                                                        <th>Width</th>
+                                                        <th>Height</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3000mm</td>
+                                                        <td>4000mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product">
+                                    <div class="wrapper">
+                                        <div class="containerCard">
+                                            <i class="fa-solid fa-heart wishlist"></i>
+                                            <a href="./productDetail.html">
+                                                <div style="
+                                background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                                  no-repeat center center;
+                                -webkit-background-size: 100%;
+                                -moz-background-size: 100%;
+                                -o-background-size: 100%;
+                                background-size: 100%;
+                              "
+                                                     class="top"></div>
+                                            </a>
+                                            <div class="bottom">
+                                                <div class="left">
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>£250</p>
+                                                    </div>
+                                                    <div class="buy">
+                                                        <i class="fa-solid fa-cart-shopping"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="done">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </div>
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>Added to your cart</p>
+                                                    </div>
+                                                    <div class="remove">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inside">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </div>
+                                            <div class="contents">
+                                                <table>
+                                                    <tr>
+                                                        <th>Width</th>
+                                                        <th>Height</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3000mm</td>
+                                                        <td>4000mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product">
+                                    <div class="wrapper">
+                                        <div class="containerCard">
+                                            <i class="fa-solid fa-heart wishlist"></i>
+                                            <a href="./productDetail.html">
+                                                <div style="
+                                background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                                  no-repeat center center;
+                                -webkit-background-size: 100%;
+                                -moz-background-size: 100%;
+                                -o-background-size: 100%;
+                                background-size: 100%;
+                              "
+                                                     class="top"></div>
+                                            </a>
+                                            <div class="bottom">
+                                                <div class="left">
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>£250</p>
+                                                    </div>
+                                                    <div class="buy">
+                                                        <i class="fa-solid fa-cart-shopping"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="done">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </div>
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>Added to your cart</p>
+                                                    </div>
+                                                    <div class="remove">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inside">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </div>
+                                            <div class="contents">
+                                                <table>
+                                                    <tr>
+                                                        <th>Width</th>
+                                                        <th>Height</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3000mm</td>
+                                                        <td>4000mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product">
+                                    <div class="wrapper">
+                                        <div class="containerCard">
+                                            <i class="fa-solid fa-heart wishlist"></i>
+                                            <a href="./productDetail.html">
+                                                <div style="
+                                background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+                                  no-repeat center center;
+                                -webkit-background-size: 100%;
+                                -moz-background-size: 100%;
+                                -o-background-size: 100%;
+                                background-size: 100%;
+                              "
+                                                     class="top"></div>
+                                            </a>
+                                            <div class="bottom">
+                                                <div class="left">
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>£250</p>
+                                                    </div>
+                                                    <div class="buy">
+                                                        <i class="fa-solid fa-cart-shopping"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="done">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </div>
+                                                    <div class="details">
+                                                        <h1>Chair</h1>
+                                                        <p>Added to your cart</p>
+                                                    </div>
+                                                    <div class="remove">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inside">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </div>
+                                            <div class="contents">
+                                                <table>
+                                                    <tr>
+                                                        <th>Width</th>
+                                                        <th>Height</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3000mm</td>
+                                                        <td>4000mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Something</th>
+                                                        <th>Something</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>200mm</td>
+                                                        <td>200mm</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="" aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+</main>
+
+@section script{
+    <script src="./assets/js/filter.js"></script>
+    <script src="./assets/js/product.js"></script>
+}

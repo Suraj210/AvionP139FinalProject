@@ -1,0 +1,111 @@
+#blogDetail {
+  padding: 4rem 0;
+  .blogDetail-data {
+    .blogDeatil-data--content {
+      margin-bottom: 2rem;
+      h2 {
+        color: #2a254b;
+        font-size: 3.25rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 2rem;
+      }
+      h4 {
+        color: #2a254b;
+        font-size: 1.25rem;
+        padding: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        background-color: #ebe8f4;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+      p {
+        margin-top: 1.5rem;
+        padding-bottom: 0.5rem;
+      }
+      .blog-tags {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 0.5rem;
+        row-gap: 1rem;
+        li {
+          border: 1px solid #2a254b;
+          padding: 4px;
+          text-align: center;
+        }
+      }
+    }
+    .blogDeatil-data--img {
+      width: 100%;
+      height: 400px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .blogDetail-content {
+    padding-top: 5rem 5rem 0 !important;
+    p {
+      text-align: justify;
+      color: #2a254b;
+      font-size: 1.2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}
+
+// Tablet Size
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  #blogDetail {
+    padding-top: 2rem;
+    .blogDetail-data {
+      .blogDeatil-data--content {
+        h2 {
+          font-size: 2.25rem;
+        }
+        h4 {
+          font-size: 1rem;
+          padding: 0.75rem;
+        }
+      }
+    }
+
+    .blogDetail-content {
+      padding: 2rem 0 0 0 !important;
+      p {
+        font-size: 1rem !important;
+      }
+    }
+  }
+}
+
+// Phone Size
+@media only screen and (max-width: 576px) {
+  #blogDetail {
+    padding-top: 1rem;
+    .blogDetail-data {
+      .blogDeatil-data--content {
+        h2 {
+          font-size: 2.25rem;
+        }
+        h4 {
+          font-size: 1rem;
+          padding: 0.75rem;
+        }
+      }
+    }
+
+    .blogDetail-content {
+      padding: 2rem 0 0 0 !important;
+      p {
+        font-size: 1rem !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+main #cart {
+  padding: 3rem 0;
+}
+main #cart button,
+main #cart .checkoutBtn {
+  background-color: #2a254b !important;
+  border: none;
+}
+main #cart button:hover,
+main #cart .checkoutBtn:hover {
+  background-color: #4e4d93 !important;
+}
+main #cart h1 {
+  color: #2a254b;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 3.15rem */
+  text-align: center;
+}
+main #cart p {
+  margin-bottom: 1rem !important;
+}
+main #cart .form-outline {
+  display: flex;
+  align-items: center;
+}
+main #cart .form-outline input {
+  text-align: center;
+}
+main #cart .form-outline label {
+  margin-bottom: 0 !important;
+}/*# sourceMappingURL=cart.css.map */

@@ -1,0 +1,60 @@
+$color_1: #333;
+$color_2: #777;
+$color_3: #fff;
+$color_4: #007bff;
+$color_5: #0056b3;
+$font-family_1: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$background-color_1: #f2f2f2;
+$background-color_2: #fff;
+$background-color_3: #2a254b;
+$background-color_4: #4e4d93;
+$border-color_1: #cac6da;
+
+/* Responsive */
+
+#login {
+  background-color: $background-color_2;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 4rem 2rem 2rem;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  margin: 2rem auto;
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      margin-bottom: 2rem;
+      color: $color_1;
+    }
+  }
+  .input-group {
+    margin-bottom: 1.5rem;
+    input {
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      width: 100%;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+      &:focus {
+        border-color: $border-color_1;
+        outline: none;
+      }
+    }
+  }
+  button {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: $background-color_3;
+    color: $color_3;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: $background-color_4;
+    }
+  }
+}

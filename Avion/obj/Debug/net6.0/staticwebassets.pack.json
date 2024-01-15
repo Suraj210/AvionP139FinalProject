@@ -1,0 +1,397 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\.DS_Store",
+      "PackagePath": "staticwebassets\\assets\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\blog.css",
+      "PackagePath": "staticwebassets\\assets\\css\\blog.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\blog.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\blog.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\blog.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\blog.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\features.css",
+      "PackagePath": "staticwebassets\\assets\\css\\features.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\features.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\features.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\features.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\features.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\filter.css",
+      "PackagePath": "staticwebassets\\assets\\css\\filter.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\about\\about.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\about\\about.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\about\\about.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\about\\about.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\about\\about.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\about\\about.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\blogDetail\\blogDetail.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\blogDetail\\blogDetail.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\blogDetail\\blogDetail.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\blogDetail\\blogDetail.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\blogDetail\\blogDetail.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\blogDetail\\blogDetail.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\blog\\blog.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\blog\\blog.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\blog\\blog.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\blog\\blog.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\blog\\blog.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\blog\\blog.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\cart\\cart.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\cart\\cart.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\cart\\cart.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\cart\\cart.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\cart\\cart.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\cart\\cart.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\contact\\contact.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\contact\\contact.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\contact\\contact.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\contact\\contact.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\contact\\contact.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\contact\\contact.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\home\\home.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\home\\home.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\home\\home.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\home\\home.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\home\\home.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\home\\home.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\layout\\layout.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\layout\\layout.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\layout\\layout.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\layout\\layout.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\layout\\layout.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\layout\\layout.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\login\\login.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\login\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\login\\login.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\login\\login.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\login\\login.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\login\\login.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\privacy\\privacy.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\privacy\\privacy.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\privacy\\privacy.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\privacy\\privacy.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\privacy\\privacy.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\privacy\\privacy.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\productDetail\\productDetail.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\productDetail\\productDetail.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\productDetail\\productDetail.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\productDetail\\productDetail.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\productDetail\\productDetail.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\productDetail\\productDetail.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\register\\register.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\register\\register.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\register\\register.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\register\\register.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\register\\register.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\register\\register.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\shop\\shop.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\shop\\shop.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\shop\\shop.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\shop\\shop.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\shop\\shop.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\shop\\shop.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\terms\\terms.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\terms\\terms.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\terms\\terms.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\terms\\terms.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\terms\\terms.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\terms\\terms.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\wishlist\\wishlist.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\wishlist\\wishlist.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\wishlist\\wishlist.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\wishlist\\wishlist.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\wishlist\\wishlist.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\wishlist\\wishlist.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\product.css",
+      "PackagePath": "staticwebassets\\assets\\css\\product.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\product.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\product.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\product.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\product.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\.DS_Store",
+      "PackagePath": "staticwebassets\\assets\\images\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\Checkmark--outline.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Checkmark--outline.png"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\Delivery.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Delivery.png"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\Purchase.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Purchase.png"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\Sprout.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Sprout.png"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\about-1.jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\about-1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\about-2.jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\about-2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\ad1.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\ad1.webp"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\ad2.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\ad2.webp"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\ad3.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\ad3.webp"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\blog-1.jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog-1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\brand1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\brand1.png"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\brand2.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\brand2.webp"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\brand3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\brand3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\brand4.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\brand4.webp"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\brand5.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\brand5.webp"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\hero.jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\hero.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\idea.jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\idea.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\logo.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\product-1.jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\product-1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\product-2.jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\product-2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\subscribe-bg.jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\subscribe-bg.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\testimonial-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\testimonial-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\title-logo.png",
+      "PackagePath": "staticwebassets\\assets\\images\\title-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\js\\filter.js",
+      "PackagePath": "staticwebassets\\assets\\js\\filter.js"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\js\\layout.js",
+      "PackagePath": "staticwebassets\\assets\\js\\layout.js"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\js\\product.js",
+      "PackagePath": "staticwebassets\\assets\\js\\product.js"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\assets\\slick\\ajax-loader.gif"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\config.rb",
+      "PackagePath": "staticwebassets\\assets\\slick\\config.rb"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\fonts\\slick.eot",
+      "PackagePath": "staticwebassets\\assets\\slick\\fonts\\slick.eot"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\fonts\\slick.svg",
+      "PackagePath": "staticwebassets\\assets\\slick\\fonts\\slick.svg"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\fonts\\slick.ttf",
+      "PackagePath": "staticwebassets\\assets\\slick\\fonts\\slick.ttf"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\fonts\\slick.woff",
+      "PackagePath": "staticwebassets\\assets\\slick\\fonts\\slick.woff"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\slick-theme.css",
+      "PackagePath": "staticwebassets\\assets\\slick\\slick-theme.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\slick-theme.less",
+      "PackagePath": "staticwebassets\\assets\\slick\\slick-theme.less"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\slick-theme.scss",
+      "PackagePath": "staticwebassets\\assets\\slick\\slick-theme.scss"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\slick.css",
+      "PackagePath": "staticwebassets\\assets\\slick\\slick.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\slick.js",
+      "PackagePath": "staticwebassets\\assets\\slick\\slick.js"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\slick.less",
+      "PackagePath": "staticwebassets\\assets\\slick\\slick.less"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\slick.min.js",
+      "PackagePath": "staticwebassets\\assets\\slick\\slick.min.js"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\slick\\slick.scss",
+      "PackagePath": "staticwebassets\\assets\\slick\\slick.scss"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Avion.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Avion.props",
+      "PackagePath": "build\\Avion.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Avion.props",
+      "PackagePath": "buildMultiTargeting\\Avion.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Avion.props",
+      "PackagePath": "buildTransitive\\Avion.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

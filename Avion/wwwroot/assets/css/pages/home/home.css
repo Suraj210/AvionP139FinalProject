@@ -1,0 +1,351 @@
+.readMore {
+  padding: 1rem 2rem;
+  background-color: #f9f9f9;
+  color: #2a254b;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.readMore:hover {
+  transform: scale(1.1);
+}
+
+main #hero .heroImg {
+  position: relative;
+  height: 47rem;
+  width: 100%;
+}
+main #hero .heroImg img {
+  width: 100%;
+  height: 100%;
+}
+main #hero .heroContent {
+  z-index: 2;
+  padding: 3rem 3.8125rem 2.875rem 3.5rem;
+  background-color: #fff;
+  position: absolute;
+  top: 8.12rem;
+  right: 5rem;
+}
+main #hero .heroContent h2 {
+  width: 32.0625rem;
+  color: #22202e;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 2.8rem */
+}
+main #hero .heroContent p {
+  color: #5b5676;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.6875rem */
+  padding: 1.25rem 0 9.81rem;
+}
+main #ad h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 2.8rem */
+  margin-bottom: 3rem;
+}
+main #ad .ads .ad img {
+  width: 100%;
+  height: 20rem;
+  margin-bottom: 3rem;
+}
+main #brand {
+  padding: 4rem 0;
+}
+main #brand .brandImg img {
+  margin: 0 auto;
+}
+main #idea {
+  padding: 3.75rem 0;
+}
+main #idea .idea-content {
+  background-color: #2a254b;
+  padding: 4rem;
+  height: 29rem;
+  margin-bottom: 1.5rem;
+}
+main #idea .idea-content h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+main #idea .idea-content p {
+  color: #fff;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 10rem;
+}
+main #idea .idea-content a {
+  padding: 1rem 2rem;
+  background: rgba(249, 249, 249, 0.15);
+  color: white;
+}
+main #idea img {
+  width: 100%;
+  height: 29rem;
+}
+main #testimonial {
+  padding: 4rem 0;
+}
+main #testimonial #carouselExample {
+  background-color: #f9f9f9;
+  padding: 5rem;
+}
+main #testimonial #carouselExample .testimonialContainer {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+main #testimonial #carouselExample .testimonialContainer .testimonialPerson {
+  width: 15%;
+}
+main #testimonial #carouselExample .testimonialContainer .testimonialPerson img {
+  border-radius: 50%;
+  width: 100%;
+  height: 181px;
+}
+main #testimonial #carouselExample .testimonialContainer .testimonialPerson p {
+  margin: 1.5rem 0;
+  text-align: center;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.6875rem */
+}
+main #testimonial #carouselExample .testimonialContainer .testimonialContent {
+  margin-top: 3.5rem;
+  text-align: center;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.6875rem */
+}
+main #testimonial #carouselExample .carousel-control-prev-icon,
+main #testimonial #carouselExample .carousel-control-next-icon {
+  background-color: #2a254b;
+  border-radius: 5px;
+}
+main #subscribe {
+  padding: 6rem;
+}
+main #subscribe h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 44.8px */
+}
+main #subscribe p {
+  width: 470px;
+  margin: 0.75rem auto 1.88rem;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+}
+main #subscribe .subscribeOptions {
+  display: flex;
+  width: 470px;
+  margin: 1.88rem auto;
+  align-items: center;
+  justify-content: space-evenly;
+}
+main #subscribe .subscribeOptions .option i {
+  color: #fff;
+}
+main #subscribe .subscribeOptions .option span {
+  color: #fff;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.5rem */
+}
+main #subscribe .subscribeMail {
+  margin: 75px 0 0;
+  text-align: center;
+}
+main #subscribe .subscribeMail input {
+  padding: 0.95rem 12.8125rem 0.95rem 2rem;
+  outline: none;
+  border: none;
+}
+main #subscribe .subscribeMail input::-moz-placeholder {
+  color: #c0c0c0;
+}
+main #subscribe .subscribeMail input:-ms-input-placeholder {
+  color: #c0c0c0;
+}
+main #subscribe .subscribeMail input::placeholder {
+  color: #c0c0c0;
+}
+main #subscribe .subscribeMail button {
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  margin-left: -5px;
+  background-color: #2a254b;
+  color: #fff;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  main #hero .heroImg {
+    height: 25rem;
+  }
+  main #hero .heroContent {
+    position: initial;
+    padding: 3rem 1.5rem 2.875rem;
+  }
+  main #hero .heroContent p {
+    padding-bottom: 4rem !important;
+  }
+  main #hero .heroContent a {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  main #ad h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 2.8rem */
+  }
+  main #ad .ads .ad img {
+    height: initial;
+  }
+  main #testimonial .testimonialContainer .testimonialPerson {
+    width: 50% !important;
+  }
+  main #testimonial .testimonialContainer .testimonialContent {
+    font-size: 0.875rem !important;
+  }
+  main #subscribe {
+    padding: 0 !important;
+  }
+  main #subscribe h2 {
+    width: 20rem;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 2.1rem */
+    text-align: left;
+    padding-top: 2.5rem;
+  }
+  main #subscribe p {
+    width: 20rem;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 1.3125rem */
+    text-align: left;
+    margin-left: 0 !important;
+    padding-bottom: 1.25rem;
+  }
+  main #subscribe .subscribeOptions {
+    display: initial;
+  }
+  main #subscribe .subscribeMail {
+    width: 100%;
+    text-align: left;
+    padding-bottom: 3.5rem;
+  }
+  main #subscribe .subscribeMail input {
+    padding-right: 2rem !important;
+  }
+}
+@media only screen and (max-width: 576px) {
+  main #hero .heroImg {
+    height: 19rem;
+  }
+  main #hero .heroContent {
+    position: initial;
+    padding: 3rem 0.5rem 2.875rem;
+  }
+  main #hero .heroContent h2 {
+    width: 19rem;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  main #hero .heroContent p {
+    padding-bottom: 2rem !important;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  main #hero .heroContent a {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  main #ad .ads .ad img {
+    height: initial;
+  }
+  main #brand .slick-next {
+    display: none !important;
+  }
+  main #brand .slick-prev {
+    display: none !important;
+  }
+  main #idea .idea-content p {
+    padding-bottom: 8rem !important;
+  }
+  main #testimonial .testimonialContainer .testimonialPerson {
+    width: 75% !important;
+  }
+  main #testimonial .testimonialContainer .testimonialContent {
+    font-size: 0.875rem !important;
+  }
+  main #subscribe {
+    padding: 0 !important;
+  }
+  main #subscribe h2 {
+    width: 20rem;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 2.1rem */
+    text-align: left;
+    padding-top: 2.5rem;
+  }
+  main #subscribe p {
+    width: 20rem;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 1.3125rem */
+    text-align: left;
+    margin-left: 0 !important;
+    padding-bottom: 1.25rem;
+  }
+  main #subscribe .subscribeOptions {
+    display: initial;
+  }
+  main #subscribe .subscribeMail {
+    width: 100%;
+    text-align: left;
+    padding-bottom: 3.5rem;
+  }
+  main #subscribe .subscribeMail input {
+    padding-right: 2rem !important;
+  }
+}/*# sourceMappingURL=home.css.map */

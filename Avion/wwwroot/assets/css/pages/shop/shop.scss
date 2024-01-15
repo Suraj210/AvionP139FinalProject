@@ -1,0 +1,83 @@
+main {
+  #shop {
+    .shopHeader {
+      background-color: red;
+      padding: 3rem 0;
+      background: url("../../../images/hero.jpeg"),
+        lightgray 50% / cover no-repeat;
+      h1 {
+        text-align: center;
+        color: #fff;
+        font-size: 2.25rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 3.15rem */
+      }
+    }
+    .shopFilters {
+      padding: 3rem 0;
+      position:sticky;
+      top:0;
+      h5 {
+        color: #2a254b;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 1.4rem */
+        padding-bottom: 1.75rem;
+      }
+      ul {
+        padding-bottom: 2rem;
+        li {
+          color: #2a254b;
+          padding-bottom: 0.75rem;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 1.5rem */
+          input {
+            margin-right: 0.75rem;
+          }
+        }
+      }
+      a.filter {
+        background-color: #2a254b;
+        color: #fff;
+        padding: 0.5rem;
+        text-align: center;
+        display: inline-block;
+        margin-bottom: 3rem;
+      }
+      .card {
+        width: 100%;
+        padding: 0 !important;
+        box-shadow: none;
+        border: none;
+        .range-slider {
+          width: 100%;
+          .range-fill {
+            background-color: #2a254b !important;
+          }
+        }
+      }
+    }
+    #products {
+      padding: 3rem 0 !important;
+      .form-select {
+        width: fit-content !important;
+        display: inline;
+      }
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 2rem;
+
+      li {
+        a {
+          color: #2a254b !important;
+        }
+      }
+    }
+  }
+}

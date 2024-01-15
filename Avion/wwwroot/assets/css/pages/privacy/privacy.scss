@@ -1,0 +1,34 @@
+main {
+  #privacy {
+    padding: 4rem 0;
+    h1 {
+      color: #2a254b;
+      text-align: center;
+      font-size: 2.25rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 3.15rem */
+    }
+
+    .privacyContainer {
+      background-color: #ebe8f4;
+      padding: 2rem;
+      ul {
+        padding: 3rem 0;
+        margin: 0 5rem;
+        li {
+          margin-bottom: 2rem;
+          h6 {
+            margin-bottom: 1rem;
+          }
+          p {
+            text-align: justify;
+          }
+          a {
+            color: teal;
+          }
+        }
+      }
+    }
+  }
+}
