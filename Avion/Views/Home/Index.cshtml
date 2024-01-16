@@ -1,4 +1,4 @@
-﻿
+﻿@model HomeVM
 
 @{
     ViewData["Title"] = "Home Page";
@@ -24,12 +24,14 @@
     <main>
       <!-- Hero Section -->
       <section id="hero">
+        @foreach (var hero in Model.Heroes)
+        {
         <div class="container">
+          
           <div class="heroContent">
-            <h2>Luxury homeware for people who love timeless design quality</h2>
+            <h2>@hero.Title</h2>
             <p>
-              With our new collection, view over 400 bespoke pieces from
-              homeware through to furniture today
+              @hero.Description
             </p>
             <div class="readMore">
               <a href="">View Collection</a>
@@ -37,8 +39,9 @@
           </div>
         </div>
         <div class="heroImg">
-          <img src="~/assets/images/hero.jpeg" alt="" />
+          <img src="~/assets/images/@hero.Image" alt="" />
         </div>
+        }
       </section>
 
       <!-- Products -->
@@ -477,15 +480,14 @@
         <div class="container">
           <h2>Advertisements</h2>
           <div class="ads row">
-            <div class="ad col-md-6">
-              <img src="~/assets/images/ad1.webp" alt="" />
-            </div>
-            <div class="ad col-md-3">
-              <img src="~/assets/images/ad2.webp" alt="" />
-            </div>
-            <div class="ad col-md-3">
-              <img src="~/assets/images/ad3.webp" alt="" />
-            </div>
+              @foreach (var ad in Model.Adverts)
+                {
+                    <div class="ad col-md-4">
+                        <img src="~/assets/images/@ad.Image" alt="" />
+                    </div>
+                }
+            
+            
           </div>
         </div>
       </section>
@@ -495,44 +497,20 @@
         <div class="container">
           <h3>What makes our brand different</h3>
           <div class="row features">
+              @foreach (var feature in Model.Features)
+                {
+                    
             <div class="col-lg-3">
               <div class="feature">
-                <img src="~/assets/images/Delivery.png" alt="" />
-                <h4>Next day as standard</h4>
+                <img src="~/assets/images/@feature.Image" alt="" />
+                <h4>@feature.Title</h4>
                 <p>
-                  Order before 3pm and get your order the next day as standard
+                  @feature.Description
                 </p>
               </div>
             </div>
-            <div class="col-lg-3">
-              <div class="feature">
-                <img src="~/assets/images/Checkmark--outline.png" alt="" />
-                <h4>Made by true artisans</h4>
-                <p>
-                  Handmade crafted goods made with real passion and craftmanship
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-3">
-              <div class="feature">
-                <img src="~/assets/images/Purchase.png" alt="" />
-                <h4>Unbeatable prices</h4>
-                <p>
-                  For our materials and quality you won’t find better prices
-                  anywhere
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-3">
-              <div class="feature">
-                <img src="~/assets/images/Sprout.png" alt="" />
-                <h4>Recycled packaging</h4>
-                <p>
-                  We use 100% recycled to ensure our footprint is more
-                  manageable
-                </p>
-              </div>
-            </div>
+                }
+            
           </div>
         </div>
       </section>
@@ -566,16 +544,15 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="idea-content">
-                <h2>It started with a small idea</h2>
+                <h2>@Model.Idea.Title</h2>
                 <p>
-                  A global brand with local beginnings, our story begain in a
-                  small studio in South London in early 2014
+                 @Model.Idea.Description
                 </p>
                 <a href="">View Collection</a>
               </div>
             </div>
             <div class="col-lg-6">
-              <img src="~/assets/images/idea.jpeg" alt="" />
+              <img src="~/assets/images/@Model.Idea.Image" alt="" />
             </div>
           </div>
         </div>
@@ -586,49 +563,25 @@
         <div class="container">
           <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="testimonialContainer d-block w-100">
-                  <div class="testimonialPerson">
-                    <img src="~/assets/images/testimonial-1.jpg" alt="" />
-                    <p>Robert Downey</p>
-                  </div>
-                  <p class="testimonialContent">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Hic eaque maxime minima unde! Accusantium ea sint accusamus
-                    tempore optio veritatis quidem eius! Incidunt voluptates
-                  </p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="testimonialContainer d-block w-100">
-                  <div class="testimonialPerson">
-                    <img src="~/assets/images/testimonial-1.jpg" alt="" />
-                    <p>Robert Downey</p>
-                  </div>
-                  <p class="testimonialContent">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Hic eaque maxime minima unde! Accusantium ea sint accusamus
-                    tempore optio veritatis quidem eius! Incidunt voluptates
-                  </p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="testimonialContainer d-block w-100">
-                  <div class="testimonialPerson">
-                    <img src="~/assets/images/testimonial-1.jpg" alt="" />
-                    <p>Robert Downey</p>
-                  </div>
-                  <p class="testimonialContent">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Hic eaque maxime minima unde! Accusantium ea sint accusamus
-                    tempore optio veritatis quidem eius! Incidunt voluptates
-                    odio, quaerat nihil blanditiis provident inventore, nisi
-                    distinctio molestias ratione nostrum pariatur minima id
-                    placeat unde quod itaque eum sunt temporibus excepturi
-                    cupiditate quo praesentium voluptate.
-                  </p>
-                </div>
-              </div>
+
+                @foreach (var testimonial in Model.Testimonials)
+                {
+                        <div class="carousel-item @(testimonial.IsMain ? "active" : "")">
+                            <div class="testimonialContainer d-block w-100">
+                                <div class="testimonialPerson">
+                                    <img src="~/assets/images/@testimonial.Image.Trim()" alt="" />
+                                    <p>@testimonial.Name.Trim()</p>
+                                </div>
+                                <p class="testimonialContent">
+                                   @testimonial.Message.Trim()
+                                </p>
+                            </div>
+                        </div>
+                }
+
+           
+       
+
             </div>
             <button
               class="carousel-control-prev"

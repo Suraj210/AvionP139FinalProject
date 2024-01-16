@@ -1,5 +1,7 @@
 using Avion.Data;
 using Avion.Models;
+using Avion.Services;
+using Avion.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
@@ -23,8 +25,13 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
+
+builder.Services.AddScoped<IHeroService, HeroService>();
+builder.Services.AddScoped<IAdvertService, AdvertService>();
+builder.Services.AddScoped<IFeatureService, FeatureService>();
+builder.Services.AddScoped<IIdeaService, IdeaService>();
+builder.Services.AddScoped<ITestimonialService, TestimonialService>();
 //builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-//builder.Services.AddScoped<IAdvertService, AdvertService>();
 //builder.Services.AddScoped<ISliderService, SliderServive>();
 //builder.Services.AddScoped<IReviewService, ReviewService>();
 //builder.Services.AddScoped<IProductService, ProductService>();
