@@ -2,6 +2,7 @@
 using Avion.Areas.Admin.ViewModels.Feature;
 using Avion.Areas.Admin.ViewModels.Hero;
 using Avion.Areas.Admin.ViewModels.Idea;
+using Avion.Areas.Admin.ViewModels.Product;
 using Avion.Areas.Admin.ViewModels.Testimonial;
 using Avion.Services.Interfaces;
 using Avion.ViewModels;
@@ -16,18 +17,21 @@ namespace Avion.Controllers
         private readonly IFeatureService _featureService;
         private readonly IIdeaService _ideaService;
         private readonly ITestimonialService _testimonialService;
+        private readonly IProductService _productService;
 
         public HomeController(IHeroService heroService,
                               IAdvertService advertService,
                               IFeatureService featureService,
                               IIdeaService ideaService,
-                              ITestimonialService testimonialService)
+                              ITestimonialService testimonialService,
+                              IProductService productService)
         {
             _heroService = heroService;
             _advertService = advertService;
             _featureService = featureService;
             _ideaService = ideaService;
             _testimonialService = testimonialService;
+            _productService = productService;
 
         }
 
@@ -40,6 +44,7 @@ namespace Avion.Controllers
             List<FeatureVM> features = await _featureService.GetAllAsync();
             IdeaVM idea = await _ideaService.GetAsync();
             List<TestimonialVM> testimonials = await _testimonialService.GetAllAsync();
+            List<ProductVM> products = await _productService.GetAllByTakeAsync(8);
 
             HomeVM model = new()
             {
@@ -47,7 +52,8 @@ namespace Avion.Controllers
                 Adverts = adverts,
                 Features = features,
                 Idea = idea,
-                Testimonials = testimonials
+                Testimonials = testimonials,
+                Products = products
             };
 
             return View(model);

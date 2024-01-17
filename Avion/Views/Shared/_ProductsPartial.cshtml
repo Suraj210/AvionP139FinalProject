@@ -1,0 +1,79 @@
+﻿@model List<ProductVM>
+
+@foreach (var product in Model)
+{
+
+    <div class="product">
+        <div class="wrapper">
+            <div class="containerCard">
+                <i class="fa-solid fa-heart wishlist"></i>
+                <a asp-controller="Shop" asp-action="ProductDetail">
+                    <div style="
+                        background: url(/assets/images/products/@product.Image)
+                          no-repeat center center;
+                        -webkit-background-size: 100%;
+                        -moz-background-size: 100%;
+                        -o-background-size: 100%;
+                        background-size: 100%;
+                      "
+                         class="top"></div>
+                </a>
+                <div class="bottom">
+                    <div class="left">
+                        <div class="details">
+                            <h4>@product.Name</h4>
+                            <p>£@product.Price</p>
+                        </div>
+                        <div class="buy">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="done">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div class="details">
+                            <h4>@product.Name</h4>
+                            <p>Added to your cart</p>
+                        </div>
+                        <div class="remove">
+                            <i class="fa-solid fa-x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inside">
+                <div class="icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                </div>
+                <div class="contents">
+                    <table>
+                        <tr>
+                            <th>Width</th>
+                            <th>Height</th>
+                        </tr>
+                        <tr>
+                            <td>@product.Width sm</td>
+                            <td>@product.Height sm</td>
+                        </tr>
+                        <tr>
+                            <th>Length</th>
+                            <th>Weight</th>
+                        </tr>
+                        <tr>
+                            <td>@product.Length</td>
+                            <td>@product.Weight</td>
+                        </tr>
+                        <tr>
+                            <th>Material</th>
+                        </tr>
+                        <tr>
+                            <td>@product.Material</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}

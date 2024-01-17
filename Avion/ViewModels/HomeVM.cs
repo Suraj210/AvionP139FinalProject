@@ -2,6 +2,7 @@
 using Avion.Areas.Admin.ViewModels.Feature;
 using Avion.Areas.Admin.ViewModels.Hero;
 using Avion.Areas.Admin.ViewModels.Idea;
+using Avion.Areas.Admin.ViewModels.Product;
 using Avion.Areas.Admin.ViewModels.Testimonial;
 
 namespace Avion.ViewModels
@@ -13,5 +14,6 @@ namespace Avion.ViewModels
         public List<FeatureVM> Features { get; set; }
         public IdeaVM  Idea { get; set; }
         public List<TestimonialVM> Testimonials { get; set; }
+        public List<ProductVM> Products { get; set; }
     }
 }
