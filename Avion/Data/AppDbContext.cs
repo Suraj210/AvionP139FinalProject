@@ -12,6 +12,12 @@ namespace Avion.Data
         public DbSet<Feature> Features { get; set; }
         public DbSet<Idea> Ideas { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<BrandCategory> BrandCategories { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
