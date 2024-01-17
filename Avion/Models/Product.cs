@@ -14,6 +14,7 @@
         public decimal Width { get; set; }
         public decimal Height { get; set; }
         public decimal Weight { get; set; }
+        public decimal Length { get; set; }
 
         public Brand Brand { get; set; }
         public int BrandId { get; set; }
