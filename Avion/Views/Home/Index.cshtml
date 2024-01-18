@@ -102,21 +102,14 @@
       <section id="brand">
         <div class="container">
           <div data-slick='{"slidesToShow": 2, "slidesToScroll": 2}'>
+              @foreach (var brand in Model.Brands)
+                {
+                    
             <div class="brandImg">
-              <img src="~/assets/images/brand1.png" alt="" />
+              <img src="~/assets/images/@brand.Image" alt="" />
             </div>
-            <div class="brandImg">
-              <img src="~/assets/images/brand2.webp" alt="" />
-            </div>
-            <div class="brandImg">
-              <img src="~/assets/images/brand3.jpg" alt="" />
-            </div>
-            <div class="brandImg">
-              <img src="~/assets/images/brand4.webp" alt="" />
-            </div>
-            <div class="brandImg">
-              <img src="~/assets/images/brand5.webp" alt="" />
-            </div>
+                }
+  
           </div>
         </div>
       </section>
@@ -235,58 +228,31 @@
             <p>Learn from us! Cause you know, why not?</p>
           </div>
           <div class="blogContainer row">
+              @foreach (var blog in Model.Blogs)
+                {
+                    
             <div class="col-md-4">
               <div class="blog">
-                <a href="./blogDetail.html">
-                  <div href="#" class="blogImg">
-                    <img src="~/assets/images/blog-1.jpeg" alt="" />
-                  </div>
-                </a>
-                <div class="blogContent">
-                  <span class="blogCategory">Education</span>
-                  <span class="blogDate">08.08.2023</span>
-                  <a href="">
-                    <h3>What Will Website Be Like In 100 Years?</h3>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="blog">
-                <a href="./blogDetail.html">
+                <a asp-controller="Blog" asp-action="Detail">
                   <div class="blogImg">
-                    <img src="~/assets/images/ad2.webp" alt="" />
+                    <img src="~/assets/images/@blog.Image" alt="" />
                   </div>
                 </a>
                 <div class="blogContent">
-                  <span class="blogCategory">Education</span>
-                  <span class="blogDate">08.08.2023</span>
+                  <span class="blogCategory">@blog.BlogCategoryName</span>
+                                <span class="blogDate">@blog.CreateTime.ToString("MM/dd/yyyy")</span>
                   <a href="">
-                    <h3>What Will Website Be Like In 100 Years?</h3>
+                    <h3>@blog.Title</h3>
                   </a>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="blog">
-                <a href="./blogDetail.html">
-                  <div class="blogImg">
-                    <img src="~/assets/images/blog-1.jpeg" alt="" />
-                  </div>
-                </a>
-                <div class="blogContent">
-                  <span class="blogCategory">Education</span>
-                  <span class="blogDate">08.08.2023</span>
-                  <a href="">
-                    <h3>What Will Website Be Like In 100 Years?</h3>
-                  </a>
-                </div>
-              </div>
-            </div>
+                }
+         
           </div>
 
           <div class="readMore">
-            <a href="./blog.html"> Read More </a>
+            <a asp-controller="Blog" asp-action="Index"> Read More </a>
           </div>
         </div>
       </section>

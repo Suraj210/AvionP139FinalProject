@@ -1,4 +1,6 @@
 ﻿using Avion.Areas.Admin.ViewModels.Advert;
+using Avion.Areas.Admin.ViewModels.Blog;
+using Avion.Areas.Admin.ViewModels.Brand;
 using Avion.Areas.Admin.ViewModels.Feature;
 using Avion.Areas.Admin.ViewModels.Hero;
 using Avion.Areas.Admin.ViewModels.Idea;
@@ -18,13 +20,17 @@ namespace Avion.Controllers
         private readonly IIdeaService _ideaService;
         private readonly ITestimonialService _testimonialService;
         private readonly IProductService _productService;
+        private readonly IBrandService _brandService;
+        private readonly IBlogService _blogService;
 
         public HomeController(IHeroService heroService,
                               IAdvertService advertService,
                               IFeatureService featureService,
                               IIdeaService ideaService,
                               ITestimonialService testimonialService,
-                              IProductService productService)
+                              IProductService productService,
+                              IBrandService brandService,
+                              IBlogService blogService)
         {
             _heroService = heroService;
             _advertService = advertService;
@@ -32,6 +38,8 @@ namespace Avion.Controllers
             _ideaService = ideaService;
             _testimonialService = testimonialService;
             _productService = productService;
+            _brandService = brandService;
+            _blogService = blogService;
 
         }
 
@@ -45,6 +53,8 @@ namespace Avion.Controllers
             IdeaVM idea = await _ideaService.GetAsync();
             List<TestimonialVM> testimonials = await _testimonialService.GetAllAsync();
             List<ProductVM> products = await _productService.GetAllByTakeAsync(8);
+            List<BrandVM> brands = await _brandService.GetAllAsync();
+            List<BlogVM> blogs = await _blogService.GetAllByTakeAsync(3);
 
             HomeVM model = new()
             {
@@ -53,7 +63,9 @@ namespace Avion.Controllers
                 Features = features,
                 Idea = idea,
                 Testimonials = testimonials,
-                Products = products
+                Products = products,
+                Brands = brands,
+                Blogs = blogs,
             };
 
             return View(model);

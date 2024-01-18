@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
 using Avion.Areas.Admin.ViewModels.Advert;
+using Avion.Areas.Admin.ViewModels.Blog;
+using Avion.Areas.Admin.ViewModels.BlogCategory;
 using Avion.Areas.Admin.ViewModels.Brand;
 using Avion.Areas.Admin.ViewModels.Category;
 using Avion.Areas.Admin.ViewModels.Feature;
 using Avion.Areas.Admin.ViewModels.Hero;
 using Avion.Areas.Admin.ViewModels.Idea;
 using Avion.Areas.Admin.ViewModels.Product;
+using Avion.Areas.Admin.ViewModels.Tag;
 using Avion.Areas.Admin.ViewModels.Testimonial;
 using Avion.Models;
 
@@ -27,6 +30,12 @@ namespace Avion.Helpers.Mapping
 
             CreateMap<Category, CategoryVM>();
             CreateMap<Brand, BrandVM>();
+
+            CreateMap<Blog, BlogVM>().ForMember(dest => dest.BlogCategoryName, opt => opt.MapFrom(src => src.BlogCategory.Name))
+                                     .ForMember(dest => dest.Tags, opt => opt.MapFrom(src => src.BlogTags.Select(m => m.Tag).ToList()));
+
+            CreateMap<Tag, TagVM>();
+            CreateMap<BlogCategory, BlogCategoryVM>();
 
         }
     }

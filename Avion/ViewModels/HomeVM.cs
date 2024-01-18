@@ -1,4 +1,6 @@
 ﻿using Avion.Areas.Admin.ViewModels.Advert;
+using Avion.Areas.Admin.ViewModels.Blog;
+using Avion.Areas.Admin.ViewModels.Brand;
 using Avion.Areas.Admin.ViewModels.Feature;
 using Avion.Areas.Admin.ViewModels.Hero;
 using Avion.Areas.Admin.ViewModels.Idea;
@@ -15,5 +17,7 @@ namespace Avion.ViewModels
         public IdeaVM  Idea { get; set; }
         public List<TestimonialVM> Testimonials { get; set; }
         public List<ProductVM> Products { get; set; }
+        public List<BrandVM> Brands { get; set; }
+        public List<BlogVM> Blogs { get; set; }
     }
 }
