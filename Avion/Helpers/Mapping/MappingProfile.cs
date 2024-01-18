@@ -8,6 +8,7 @@ using Avion.Areas.Admin.ViewModels.Feature;
 using Avion.Areas.Admin.ViewModels.Hero;
 using Avion.Areas.Admin.ViewModels.Idea;
 using Avion.Areas.Admin.ViewModels.Product;
+using Avion.Areas.Admin.ViewModels.Subscribe;
 using Avion.Areas.Admin.ViewModels.Tag;
 using Avion.Areas.Admin.ViewModels.Testimonial;
 using Avion.Models;
@@ -36,6 +37,8 @@ namespace Avion.Helpers.Mapping
 
             CreateMap<Tag, TagVM>();
             CreateMap<BlogCategory, BlogCategoryVM>();
+            CreateMap<Subscribe, SubscribeVM>();
+            CreateMap<SubscribeCreateVM, Subscribe>();
 
         }
     }

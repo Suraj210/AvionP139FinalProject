@@ -5,6 +5,7 @@ using Avion.Areas.Admin.ViewModels.Feature;
 using Avion.Areas.Admin.ViewModels.Hero;
 using Avion.Areas.Admin.ViewModels.Idea;
 using Avion.Areas.Admin.ViewModels.Product;
+using Avion.Areas.Admin.ViewModels.Subscribe;
 using Avion.Areas.Admin.ViewModels.Testimonial;
 using Avion.Services.Interfaces;
 using Avion.ViewModels;
@@ -22,6 +23,7 @@ namespace Avion.Controllers
         private readonly IProductService _productService;
         private readonly IBrandService _brandService;
         private readonly IBlogService _blogService;
+        private readonly ISubscribeService _subscribeService;
 
         public HomeController(IHeroService heroService,
                               IAdvertService advertService,
@@ -30,7 +32,8 @@ namespace Avion.Controllers
                               ITestimonialService testimonialService,
                               IProductService productService,
                               IBrandService brandService,
-                              IBlogService blogService)
+                              IBlogService blogService,
+                              ISubscribeService subscribeService)
         {
             _heroService = heroService;
             _advertService = advertService;
@@ -40,6 +43,7 @@ namespace Avion.Controllers
             _productService = productService;
             _brandService = brandService;
             _blogService = blogService;
+            _subscribeService = subscribeService;
 
         }
 
@@ -71,6 +75,15 @@ namespace Avion.Controllers
             return View(model);
         }
 
-        
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateSubscribe(SubscribeCreateVM subscribe)
+        {
+
+            await _subscribeService.CreateAsync(subscribe);
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }

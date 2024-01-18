@@ -213,9 +213,9 @@
             </div>
           </div>
 
-          <form class="subscribeMail">
-            <input type="text" placeholder="your@email.com" />
-            <button>Sign Up</button>
+            <form asp-action="CreateSubscribe" method="post" class="subscribeMail">
+                <input asp-for="@Model.Subscribe.Email" type="email" placeholder="your@email.com" required />
+                <button type="submit" name="subscribe">Sign Up</button>
           </form>
         </div>
       </section>
