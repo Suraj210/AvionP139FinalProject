@@ -36,15 +36,16 @@ builder.Services.AddScoped<IBrandService, BrandService>();
 builder.Services.AddScoped<IBlogService, BlogService>();
 builder.Services.AddScoped<ITagService, TagService>();
 builder.Services.AddScoped<ISubscribeService, SubscribeService>();
+builder.Services.AddScoped<ILayoutService, LayoutService>();
+builder.Services.AddScoped<ISettingService, SettingService>();
+builder.Services.AddScoped<IAboutService, AboutService>();
+builder.Services.AddScoped<IContactService, ContactService>();
 
 //builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 //builder.Services.AddScoped<ISliderService, SliderServive>();
 //builder.Services.AddScoped<IReviewService, ReviewService>();
-//builder.Services.AddScoped<ISettingService, SettingService>();
-//builder.Services.AddScoped<ILayoutService, LayoutService>();
 //builder.Services.AddScoped<IAboutContentService, AboutContentService>();
 //builder.Services.AddScoped<ITeamService, TeamService>();
-//builder.Services.AddScoped<IContactService, ContactService>();
 //builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();

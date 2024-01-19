@@ -1,4 +1,4 @@
-﻿
+﻿@model ContactPageVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -16,10 +16,10 @@
             <div class="contact-wrapper">
                 <!-- Left contact page -->
 
-                <form id="contact-form" class="form-horizontal" role="form">
+                <form asp-action="CreateMessage" method="post" id="contact-form" class="form-horizontal" role="form">
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <input type="text"
+                            <input asp-for="@Model.NewContact.Name" type="text"
                                    class="form-control"
                                    id="name"
                                    placeholder="NAME"
@@ -31,21 +31,21 @@
 
                     <div class="form-group my-3">
                         <div class="col-sm-12">
-                            <input type="email"
+                            <input asp-for="@Model.NewContact.Email" type="email"
                                    class="form-control"
                                    id="email"
                                    placeholder="EMAIL"
                                    name="email"
-                                   value=""
                                    required />
                         </div>
                     </div>
 
-                    <textarea class="form-control"
+                    <textarea asp-for="@Model.NewContact.Message" class="form-control"
                               rows="10"
                               placeholder="MESSAGE"
                               name="message"
-                              required></textarea>
+                              required>
+                    </textarea>
 
                     <button class="btn btn-primary send-button"
                             id="submit"
@@ -62,13 +62,13 @@
                 <div class="direct-contact-container">
                     <ul class="contact-list">
                         <li class="list-item">
-                            <i class="fa fa-map-marker fa-2x"><span class="contact-text place">City, State</span></i>
+                            <i class="fa fa-map-marker fa-2x"><span class="contact-text place">@Model.Contact.Address</span></i>
                         </li>
 
                         <li class="list-item">
                             <i class="fa fa-phone fa-2x">
                                 <span class="contact-text phone">
-                                    <a href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a>
+                                    <a href="tel:1-212-555-5555" title="Give me a call">@Model.Contact.Phone</a>
                                 </span>
                             </i>
                         </li>
@@ -76,7 +76,7 @@
                         <li class="list-item">
                             <i class="fa fa-envelope fa-2x">
                                 <span class="contact-text gmail">
-                                    <a href="mailto:#" title="Send me an email">hitmeup@gmail.com</a>
+                                    <a href="mailto:#" title="Send me an email">@Model.Contact.Email</a>
                                 </span>
                             </i>
                         </li>

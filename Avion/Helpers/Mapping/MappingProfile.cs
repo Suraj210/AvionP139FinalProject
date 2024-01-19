@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
+using Avion.Areas.Admin.ViewModels.About;
 using Avion.Areas.Admin.ViewModels.Advert;
 using Avion.Areas.Admin.ViewModels.Blog;
 using Avion.Areas.Admin.ViewModels.BlogCategory;
 using Avion.Areas.Admin.ViewModels.Brand;
 using Avion.Areas.Admin.ViewModels.Category;
+using Avion.Areas.Admin.ViewModels.Contact;
 using Avion.Areas.Admin.ViewModels.Feature;
 using Avion.Areas.Admin.ViewModels.Hero;
 using Avion.Areas.Admin.ViewModels.Idea;
@@ -39,6 +41,9 @@ namespace Avion.Helpers.Mapping
             CreateMap<BlogCategory, BlogCategoryVM>();
             CreateMap<Subscribe, SubscribeVM>();
             CreateMap<SubscribeCreateVM, Subscribe>();
+            CreateMap<About, AboutVM>();
+            CreateMap<ContactMessageCreateVM, ContactMessage>();
+            CreateMap<ContactVM, ContactMessageVM>();
 
         }
     }

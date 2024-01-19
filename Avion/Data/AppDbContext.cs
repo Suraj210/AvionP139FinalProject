@@ -22,6 +22,9 @@ namespace Avion.Data
         public DbSet<BlogTag> BlogTags { get; set; }
         public DbSet<BlogCategory> BlogCategories { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
+        public DbSet<Setting> Settings { get; set; }
+        public DbSet<About> Abouts { get; set; }
+        public DbSet<ContactMessage> ContactMessages { get; set; }
 
 
 
@@ -44,6 +47,9 @@ namespace Avion.Data
             modelBuilder.Entity<Tag>().HasQueryFilter(m => !m.SoftDeleted);
             modelBuilder.Entity<BlogCategory>().HasQueryFilter(m => !m.SoftDeleted);
             modelBuilder.Entity<Subscribe>().HasQueryFilter(m => !m.SoftDeleted);
+            modelBuilder.Entity<Setting>().HasQueryFilter(m => !m.SoftDeleted);
+            modelBuilder.Entity<About>().HasQueryFilter(m => !m.SoftDeleted);
+            modelBuilder.Entity<ContactMessage>().HasQueryFilter(m => !m.SoftDeleted);
         }
     }
 }

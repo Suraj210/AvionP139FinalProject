@@ -1,0 +1,64 @@
+﻿@model FooterVM
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="footerContents row">
+                    <div class="footerContent col-lg-4 col-6">
+                        <h6>Menu</h6>
+                        <ul>
+                            <li><a href="">New arrivals</a></li>
+                            <li><a href="">Best sellers</a></li>
+                            <li><a href="">Recently viewed</a></li>
+                            <li><a href="">Popular this week</a></li>
+                            <li><a href="">All products</a></li>
+                        </ul>
+                    </div>
+                    <div class="footerContent col-lg-4 col-6">
+                        <h6>Categories</h6>
+                        <ul>
+                            <li><a href="">Crockery</a></li>
+                            <li><a href="">Furniture</a></li>
+                            <li><a href="">Homeware</a></li>
+                            <li><a href="">Plant pots</a></li>
+                            <li><a href="">Chairs</a></li>
+                            <li><a href="">Crockery</a></li>
+                        </ul>
+                    </div>
+                    <div class="footerContent col-lg-4 col-6">
+                        <h6>Our Company</h6>
+                        <ul>
+                            <li><a href="./about.html">About us</a></li>
+                            <li><a href="./contact.html">Contact us</a></li>
+                            <li><a asp-controller="Privacy" asp-action="Index">Privacy</a></li>
+                            <li><a asp-controller="Terms" asp-action="Index">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-5">
+                <div class="footerRight">
+                    <form class="footerMail">
+                        <h6>Join our mailing list</h6>
+                        <input type="text" placeholder="your@email.com" />
+                        <button>Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <hr class="footerLine" />
+
+        <div class="footerBottom">
+            <span>Copyright 2024 Ismayilov LTD</span>
+            <div class="footerSocial">
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>

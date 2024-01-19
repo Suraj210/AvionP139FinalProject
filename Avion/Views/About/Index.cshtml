@@ -1,4 +1,4 @@
-﻿
+﻿@model AboutPageVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -17,21 +17,18 @@
                 A brand built on the love of craftmanship, quality and outstanding
                 customer service
             </h2>
+            @foreach (var about in Model.Abouts)
+            {
+                
             <div class="aboutPage-content row">
                 <div class="aboutPage-content--left col-md-6">
                     <div>
                         <h2>
-                            From a studio in London to a global brand with over 400
-                            outlets
+                         @about.Title
                         </h2>
                         <p>
-                            When we started Avion, the idea was simple. Make high quality
-                            furniture affordable and available for the mass market.
-                            <br />
-                            <br />
-                            Handmade, and lovingly crafted furniture and homeware is what
-                            we live, breathe and design so our Chelsea boutique become the
-                            hotbed for the London interior design community.
+                                @Html.Raw(about.Description)
+                            
                         </p>
                     </div>
                     <div class="readMore">
@@ -39,34 +36,10 @@
                     </div>
                 </div>
                 <div class="aboutPage-content--right col-md-6">
-                    <img src="./assets/images/about-1.jpeg" alt="" />
+                    <img src="./assets/images/@about.Image" alt="" />
                 </div>
             </div>
-            <div class="aboutPage-content row">
-                <div class="aboutPage-content--left col-md-6">
-                    <div>
-                        <h2>
-                            Our service isn’t just personal, it’s actually hyper
-                            personally exquisite
-                        </h2>
-                        <p>
-                            When we started Avion, the idea was simple. Make high quality
-                            furniture affordable and available for the mass market.
-                            <br />
-                            <br />
-                            Handmade, and lovingly crafted furniture and homeware is what
-                            we live, breathe and design so our Chelsea boutique become the
-                            hotbed for the London interior design community.
-                        </p>
-                    </div>
-                    <div class="readMore">
-                        <a href="">Get in touch</a>
-                    </div>
-                </div>
-                <div class="aboutPage-content--right col-md-6">
-                    <img src="./assets/images/about-2.jpeg" alt="" />
-                </div>
-            </div>
+            }
         </div>
     </section>
     <!-- Features Section -->
@@ -74,44 +47,20 @@
         <div class="container">
             <h3>What makes our brand different</h3>
             <div class="row features">
+                @foreach (var feature in Model.Features)
+                {
+                    
                 <div class="col-lg-3">
                     <div class="feature">
-                        <img src="./assets/images/Delivery.png" alt="" />
-                        <h4>Next day as standard</h4>
+                        <img src="./assets/images/@feature.Image" alt="" />
+                        <h4>@feature.Title</h4>
                         <p>
-                            Order before 3pm and get your order the next day as standard
+                            @feature.Description
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="feature">
-                        <img src="./assets/images/Checkmark--outline.png" alt="" />
-                        <h4>Made by true artisans</h4>
-                        <p>
-                            Handmade crafted goods made with real passion and craftmanship
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="feature">
-                        <img src="./assets/images/Purchase.png" alt="" />
-                        <h4>Unbeatable prices</h4>
-                        <p>
-                            For our materials and quality you won’t find better prices
-                            anywhere
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="feature">
-                        <img src="./assets/images/Sprout.png" alt="" />
-                        <h4>Recycled packaging</h4>
-                        <p>
-                            We use 100% recycled to ensure our footprint is more
-                            manageable
-                        </p>
-                    </div>
-                </div>
+                }
+                
             </div>
         </div>
     </section>
