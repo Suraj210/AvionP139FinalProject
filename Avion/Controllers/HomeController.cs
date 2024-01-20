@@ -58,7 +58,7 @@ namespace Avion.Controllers
             List<TestimonialVM> testimonials = await _testimonialService.GetAllAsync();
             List<ProductVM> products = await _productService.GetAllByTakeAsync(8);
             List<BrandVM> brands = await _brandService.GetAllAsync();
-            List<BlogVM> blogs = await _blogService.GetAllByTakeAsync(3);
+            List<BlogVM> blogs = await _blogService.GetAllByTakeWithCategoryAsync(3);
 
             HomeVM model = new()
             {

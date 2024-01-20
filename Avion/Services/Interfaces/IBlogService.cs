@@ -4,6 +4,9 @@ namespace Avion.Services.Interfaces
 {
     public interface IBlogService
     {
-        Task<List<BlogVM>> GetAllByTakeAsync(int take);
+        Task<List<BlogVM>> GetAllByTakeWithCategoryAsync(int take);
+        Task<List<BlogVM>> GetPaginatedDatasAsync(int page, int take);
+        Task<int> GetCountAsync();
+        Task<BlogVM> GetByIdAsync(int id);
     }
 }

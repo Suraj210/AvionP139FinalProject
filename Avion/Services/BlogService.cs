@@ -23,8 +23,8 @@ namespace Avion.Services
             _env = env;
         }
 
-
-        public async Task<List<BlogVM>> GetAllByTakeAsync(int take)
+        //Get Blogs with its Category by Take function
+        public async Task<List<BlogVM>> GetAllByTakeWithCategoryAsync(int take)
         {
             List<Blog> blogs = await _context.Blogs.OrderByDescending(m => m.CreateTime)
                                                  .Take(take)
@@ -32,6 +32,39 @@ namespace Avion.Services
                                                  .ToListAsync();
 
             return _mapper.Map<List<BlogVM>>(blogs);
+        }
+
+
+        //Get List Blogs with its all datas in paginated format
+        public async Task<List<BlogVM>> GetPaginatedDatasAsync(int page, int take)
+        {
+            List<Blog> blogs = await _context.Blogs.OrderByDescending(m => m.CreateTime)
+                                                   .Include(bc => bc.BlogCategory)
+                                                   .Include(m => m.BlogTags)
+                                                   .ThenInclude(m => m.Tag)
+                                                   .Skip((page * take) - take)
+                                                   .Take(take)
+                                                   .ToListAsync();
+            return _mapper.Map<List<BlogVM>>(blogs);
+        }
+
+        //Get Blog Count
+        public async Task<int> GetCountAsync()
+        {
+            return await _context.Blogs.CountAsync();
+        }
+
+        //Get particular Blog by its Id
+        public async Task<BlogVM> GetByIdAsync(int id)
+        {
+            Blog blog = await _context.Blogs.Where(m => m.Id == id)
+                                            .Include(bc => bc.BlogCategory)
+                                            .Include(m => m.BlogTags)
+                                            .ThenInclude(m => m.Tag)
+                                            .FirstOrDefaultAsync();
+
+            return _mapper.Map<BlogVM>(blog);
+
         }
     }
 }

@@ -40,6 +40,7 @@ builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddScoped<ISettingService, SettingService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<IBlogCategoryService, BlogCategoryService>();
 
 //builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 //builder.Services.AddScoped<ISliderService, SliderServive>();
