@@ -23,5 +23,11 @@ namespace Avion.Services
 
             return _mapper.Map<List<BlogCategoryVM>>(datas);
         }
+
+        public async Task<BlogCategoryVM> GetByIdAsync(int id)
+        {
+            var data = await _context.BlogCategories.FirstOrDefaultAsync(x => x.Id == id);
+            return _mapper.Map<BlogCategoryVM>(data);
+        }
     }
 }

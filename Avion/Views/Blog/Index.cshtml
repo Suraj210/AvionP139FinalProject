@@ -50,7 +50,7 @@
                     <nav class="d-flex justify-content-center mt-3" aria-label="...">
                         <ul class="pagination">
                             <li class="page-item @(Model.PaginatedDatas.HasPrevious ? "" : "disabled")">
-                                <a class="page-link" asp-action="Index" asp-route-page="@(Model.PaginatedDatas.CurrentPage - 1)" tabindex="-1"><</a>
+                                <a class="page-link" asp-action="Index" asp-route-page="@(Model.PaginatedDatas.CurrentPage - 1)" tabindex="-1"><i class="fa-solid fa-backward"></i></a>
                             </li>
                             @for (int i = 1; i <= Model.PaginatedDatas.TotalPage; i++)
                             {
@@ -60,7 +60,7 @@
                             }
 
                             <li class="page-item @(Model.PaginatedDatas.HasNext ? "" : "disabled")">
-                                <a class="page-link" asp-action="Index" asp-route-page="@(Model.PaginatedDatas.CurrentPage+1)">></a>
+                                <a class="page-link" asp-action="Index" asp-route-page="@(Model.PaginatedDatas.CurrentPage+1)"><i class="fa-solid fa-forward"></i></a>
                             </li>
                         </ul>
                     </nav>
@@ -98,7 +98,7 @@
                             
                         <li>
                             <i class="fa-solid fa-chevron-right"></i>
-                            <a href="">@blogCategory.Name</a>
+                                <a asp-controller="Blog" asp-action="GetBlogsByCategory" asp-route-id="@blogCategory.Id">@blogCategory.Name</a>
                         </li>
                         }
                     

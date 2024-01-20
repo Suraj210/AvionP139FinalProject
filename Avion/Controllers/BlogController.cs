@@ -1,7 +1,10 @@
 ﻿using Avion.Areas.Admin.ViewModels.Blog;
 using Avion.Areas.Admin.ViewModels.BlogCategory;
+using Avion.Areas.Admin.ViewModels.Category;
+using Avion.Areas.Admin.ViewModels.Product;
 using Avion.Areas.Admin.ViewModels.Tag;
 using Avion.Helpers;
+using Avion.Services;
 using Avion.Services.Interfaces;
 using Avion.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -50,6 +53,15 @@ namespace Avion.Controllers
             return (int)Math.Ceiling((decimal)(blogCount) / take);
         }
 
+
+        [HttpGet]
+        private async Task<int> GetPageCountByCategoryAsync(int id, int take)
+        {
+            int productCount = await _blogService.GetCountByCategoryAsync(id);
+
+            return (int)Math.Ceiling((decimal)(productCount) / take);
+        }
+
         [HttpGet]
         public async Task<IActionResult> Detail(int? id)
         {
@@ -61,5 +73,45 @@ namespace Avion.Controllers
 
             return View(blog);
         }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetBlogsByCategory(int? id, int page = 1, int take = 4)
+        {
+            if (id is null)
+            {
+                return BadRequest();
+            }
+
+            BlogCategoryVM existCategory = await _blogCategoryService.GetByIdAsync((int)id);
+
+            if (existCategory == null)
+            {
+                return NotFound();
+            }
+
+            var count = await _blogService.GetCountByCategoryAsync((int) id);
+            List<BlogVM> dbPaginatedDatasByCategory  = await _blogService.GetPaginatedDatasByCategoryAsync((int)(id), page, take);
+            List<BlogCategoryVM> categories=await _blogCategoryService.GetAllAsync();
+            List<TagVM> tags = await _tagService.GetAllAsync();
+
+
+            int pageCount = await GetPageCountByCategoryAsync((int)id,take);
+            Paginate<BlogVM> paginatedDatas = new(dbPaginatedDatasByCategory, page, pageCount);
+
+            BlogPageVM model = new()
+            {
+                PaginatedDatas = paginatedDatas,
+                BlogCategories = categories,
+                Tags = tags,
+
+
+            };
+
+            return View(model);
+        }
+
+    
+
     }
 }

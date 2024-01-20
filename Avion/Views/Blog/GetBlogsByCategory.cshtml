@@ -1,0 +1,138 @@
+﻿@model BlogPageVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section css{
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/assets/css/blog.css" />
+    <link rel="stylesheet" href="~/assets/css/pages/blog/blog.css" />
+}
+
+<!-- Main Part -->
+
+<main>
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <h1>Our Blog</h1>
+
+            <hr />
+            <div class="blogHeader">
+                <h2>Consider Reading</h2>
+                <p>Learn from us! Cause you know, why not?</p>
+            </div>
+            <div class="row">
+              
+                    
+                <div class="blogContainer row col-md-9">
+                    @if (Model.PaginatedDatas.Datas.Count != 0)
+                    {
+                        @foreach (var blog in Model.PaginatedDatas.Datas)
+                        {
+                            <div class="col-md-6">
+                                <div class="blog">
+                                    <a asp-controller="Blog" asp-action="Detail" asp-route-id="@blog.Id">
+                                        <div href="#" class="blogImg">
+                                            <img src="~/assets/images/@blog.Image" alt="" />
+                                        </div>
+                                    </a>
+                                    <div class="blogContent">
+                                        <span class="blogCategory">@blog.BlogCategoryName</span>
+                                        <span class="blogDate">@blog.CreateTime.ToString("MM/dd/yyyy")</span>
+                                        <a href="">
+                                            <h3>@blog.Title</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+
+                        <nav class="d-flex justify-content-center mt-3" aria-label="...">
+                            <ul class="pagination">
+                                <li class="page-item @(Model.PaginatedDatas.HasPrevious ? "" : "disabled")">
+                                    <a class="page-link" asp-action="GetBlogsByCategory" asp-route-page="@(Model.PaginatedDatas.CurrentPage - 1)" tabindex="-1">
+                                        <i class="fa-solid fa-backward"></i>
+                                    </a>
+                                </li>
+                                @for (int i = 1; i <= Model.PaginatedDatas.TotalPage; i++)
+                                {
+                                    <li class="page-item @(Model.PaginatedDatas.CurrentPage == i ? "active" : "")">
+                                        <a class="page-link" asp-action="GetBlogsByCategory" asp-route-page="@i">@i <span class="sr-only">(current)</span></a>
+                                    </li>
+                                }
+
+                                <li class="page-item @(Model.PaginatedDatas.HasNext ? "" : "disabled")">
+                                    <a class="page-link" asp-action="GetBlogsByCategory" asp-route-page="@(Model.PaginatedDatas.CurrentPage+1)"><i class="fa-solid fa-forward"></i></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    
+                    }
+                    else
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            No blog has been posted about this category!
+                        </div>
+                    }
+
+               
+
+                </div>
+                
+            
+                <div class="recentBlogs col-md-3">
+                    <h3>Popular posts</h3>
+                    <hr />
+
+                    @foreach (var blog in Model.PaginatedDatas.Datas.Take(3))
+                    {
+                        <div class="blog">
+                            <a asp-controller="Blog" asp-action="Detail" asp-route-id="@blog.Id">
+                                <div href="#" class="blogImg">
+                                    <img src="~/assets/images/@blog.Image" alt="" />
+                                </div>
+                            </a>
+                            <div class="blogContent">
+                                <span class="blogCategory">@blog.BlogCategoryName.Split(" ")[0]</span>
+                                <span class="blogDate">@blog.CreateTime.ToString("MM/dd/yyyy")</span>
+                                <a href="">
+                                    <p>@blog.Title.Substring(0,(int)Math.Ceiling(blog.Title.Length * 0.4))</p>
+                                </a>
+                            </div>
+                        </div>
+
+                    }
+
+
+                    <h3>Categories</h3>
+                    <hr />
+                    <ul class="blog-category">
+                        @foreach (var blogCategory in Model.BlogCategories)
+                        {
+
+                            <li>
+                                <i class="fa-solid fa-chevron-right"></i>
+                                <a asp-action="GetBlogsByCategory" asp-route-id="@blogCategory.Id">@blogCategory.Name</a>
+                            </li>
+                        }
+
+                    </ul>
+                    <h3>Tags</h3>
+                    <hr />
+                    <ul class="blog-tags">
+                        @foreach (var tag in Model.Tags)
+                        {
+                            <li><a href="">@tag.Name</a></li>
+
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+

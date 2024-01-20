@@ -10,5 +10,6 @@ namespace Avion.ViewModels
         public Paginate<BlogVM> PaginatedDatas { get; set; }
         public List<TagVM> Tags { get; set; }
         public List<BlogCategoryVM> BlogCategories { get; set; }
+    
     }
 }
