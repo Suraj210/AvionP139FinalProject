@@ -1,4 +1,3 @@
-"use strict";
 
 let sideBar = document.querySelector("aside .sidebar");
 let sideBarToggle = document.querySelectorAll(".sideBarToggle");
@@ -15,3 +14,15 @@ overlay.addEventListener("click", function () {
   overlay.classList.toggle("d-none");
   sideBar.classList.toggle("transformLeft");
 });
+
+
+
+$(function () {
+$(document).on("submit", ".product-searchbox", function (e) {
+    e.preventDefault();
+    let value = $(".input-search").val();
+    let url = `/Shop/Search?searchText=${value}`;
+    window.location.assign(url);
+
+})
+})

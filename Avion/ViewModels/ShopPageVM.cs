@@ -12,6 +12,8 @@ namespace Avion.ViewModels
         public List<CategoryVM> Categories { get; set; }
         public List<BrandVM> Brands { get; set; }
 
+        public string SearchText { get; set; }
+
 
     }
 }

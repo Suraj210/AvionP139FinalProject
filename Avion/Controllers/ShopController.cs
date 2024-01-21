@@ -9,6 +9,7 @@ using Avion.Services;
 using Avion.Services.Interfaces;
 using Avion.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Avion.Controllers
 {
@@ -172,6 +173,46 @@ namespace Avion.Controllers
             return View(model);
         }
 
+        //Search
+
+        public async Task<IActionResult> Search(string searchText, int page = 1, int take = 6)
+        {
+
+            if (searchText == null)
+            {
+                return RedirectToAction("Index", "Shop");
+            }
+
+            var count = await _productService.GetCountBySearch(searchText);
+            List<ProductVM> dbPaginatedDatasByBrand = await _productService.SearchAsync(searchText, page,take);
+            List<CategoryVM> categories = await _categoryService.GetAllAsync();
+            List<BrandVM> brands = await _brandService.GetAllAsync();
+
+
+
+            int pageCount = await GetPageCountBySearchAsync(searchText, take);
+            Paginate<ProductVM> paginatedDatas = new(dbPaginatedDatasByBrand, page, pageCount);
+
+            ShopPageVM model = new()
+            {
+                PaginatedDatas = paginatedDatas,
+                Categories = categories,
+                Brands = brands,
+                SearchText = searchText
+            };
+
+            return View(model);
+
+
+        }
+
+
+        private async Task<int> GetPageCountBySearchAsync(string searchText, int take)
+        {
+            int productCount = await _productService.GetCountBySearch(searchText);
+
+            return (int)Math.Ceiling((decimal)(productCount) / take);
+        }
 
     }
 }

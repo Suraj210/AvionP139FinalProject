@@ -31,12 +31,15 @@
                             }
                         </ul>
                     </div>
+
                 </div>
                 <div class="col-4">
                     <div class="navRight">
                         <div class="searchArea">
-                            <input type="text" />
-                            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                            <form  class="product-searchbox">
+                            <input type="text" class="input-search" />
+                            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
                         </div>
                         <a asp-controller="Basket" asp-action="Index">
                             <i class="fa-solid fa-cart-shopping"></i>
