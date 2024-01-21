@@ -5,8 +5,12 @@ const rangeFill = document.querySelector(".range-fill");
 
 // Function to validate range and update the fill color on slider
 function validateRange() {
-  let minPrice = parseInt(inputElements[6].value);
-  let maxPrice = parseInt(inputElements[7].value);
+
+    let minInput = document.getElementsByClassName("min-price");
+    let maxInput = document.getElementsByClassName("max-price");
+   
+    let minPrice = parseInt(minInput[0].value)
+    let maxPrice = parseInt(maxInput[0].value)
 
   if (minPrice > maxPrice) {
     let tempValue = maxPrice;

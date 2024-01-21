@@ -41,13 +41,13 @@ builder.Services.AddScoped<ISettingService, SettingService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IBlogCategoryService, BlogCategoryService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 //builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 //builder.Services.AddScoped<ISliderService, SliderServive>();
 //builder.Services.AddScoped<IReviewService, ReviewService>();
 //builder.Services.AddScoped<IAboutContentService, AboutContentService>();
 //builder.Services.AddScoped<ITeamService, TeamService>();
-//builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 

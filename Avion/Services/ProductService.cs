@@ -41,5 +41,23 @@ namespace Avion.Services
 
             return _mapper.Map<List<ProductVM>>(products);
         }
+
+        public async Task<int> GetProductCountAsync()
+        {
+            return await _context.Products.CountAsync();
+        }
+
+        public async Task<List<ProductVM>> GetPaginatedDatasAsync(int page, int take)
+        {
+            List<Product> products = await _context.Products.OrderByDescending(m => m.CreateTime)
+                                                            .Include(m => m.Category)
+                                                            .Include(b=>b.Brand)
+                                                            .Include(m => m.Images)
+                                                            .Skip((page * take) - take)
+                                                            .Take(take)
+                                                            .ToListAsync();
+            return _mapper.Map<List<ProductVM>>(products);
+        }
+
     }
 }
