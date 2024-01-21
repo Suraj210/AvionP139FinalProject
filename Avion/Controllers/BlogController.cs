@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Avion.Controllers
 {
-    public class BlogController : Controller
+    public class BlogController : Controller 
     {
         private readonly IBlogService _blogService;
         private readonly ITagService _tagService;

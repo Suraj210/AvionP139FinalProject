@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Avion.Areas.Admin.ViewModels.Brand;
+using Avion.Areas.Admin.ViewModels.Category;
 using Avion.Data;
 using Avion.Models;
 using Avion.Services.Interfaces;
@@ -26,6 +27,12 @@ namespace Avion.Services
             List<Brand> brands = await _context.Brands.ToListAsync();
 
             return _mapper.Map<List<BrandVM>>(brands);
+        }
+
+        public async Task<BrandVM> GetByIdAsync(int id)
+        {
+            var data = await _context.Brands.FirstOrDefaultAsync(x => x.Id == id);
+            return _mapper.Map<BrandVM>(data);
         }
     }
 }

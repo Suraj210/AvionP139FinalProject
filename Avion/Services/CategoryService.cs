@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Avion.Areas.Admin.ViewModels.BlogCategory;
 using Avion.Areas.Admin.ViewModels.Category;
 using Avion.Data;
 using Avion.Services.Interfaces;
@@ -23,5 +24,11 @@ namespace Avion.Services
 
             return _mapper.Map<List<CategoryVM>>(datas);
         }
+        public async Task<CategoryVM> GetByIdAsync(int id)
+        {
+            var data = await _context.Categories.FirstOrDefaultAsync(x => x.Id == id);
+            return _mapper.Map<CategoryVM>(data);
+        }
+
     }
 }

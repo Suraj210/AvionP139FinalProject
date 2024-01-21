@@ -1,6 +1,6 @@
 ﻿@model ShopPageVM
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "GetProductsByCategory";
 }
 
 @section css{
@@ -29,7 +29,7 @@
                                     <a asp-action="GetProductsByCategory" asp-route-id="@category.Id"> @category.Name</a>
                                 </li>
                             }
-                           
+
                         </ul>
                         <hr />
                         <h5>Price</h5>
@@ -74,9 +74,9 @@
                                     <i class="fa-solid fa-chevron-right"></i>
                                     <a asp-action="GetProductsByBrand" asp-route-id="@brand.Id">@brand.Name </a>
                                 </li>
-                                
+
                             }
-                  
+
                         </ul>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
 
                             @foreach (var product in Model.PaginatedDatas.Datas)
                             {
-                            <div class="col-md-4">
+                                <div class="col-md-4">
                                     <div class="product">
                                         <div class="wrapper">
                                             <div class="containerCard">
@@ -145,37 +145,37 @@
                                                         <tr>
                                                             @if (product.Width != 0)
                                                             {
-                                                            <th>Width</th>
+                                                                <th>Width</th>
                                                             }
 
 
                                                             @if (product.Height != 0)
                                                             {
-                                                            <th>Height</th>
+                                                                <th>Height</th>
                                                             }
 
                                                         </tr>
                                                         <tr>
-                                                             @if (product.Width != 0)
+                                                            @if (product.Width != 0)
                                                             {
-                                                            <td>@product.Width sm</td>
+                                                                <td>@product.Width sm</td>
                                                             }
 
                                                             @if (product.Height != 0)
                                                             {
-                                                            <td>@product.Height sm</td>
+                                                                <td>@product.Height sm</td>
                                                             }
                                                         </tr>
                                                         <tr>
                                                             @if (product.Length != 0)
                                                             {
-                                                            <th>Length</th>
-                                                                
+                                                                <th>Length</th>
+
                                                             }
                                                             @if (product.Weight != 0)
                                                             {
-                                                                
-                                                            <th>Weight</th>
+
+                                                                <th>Weight</th>
                                                             }
 
 
@@ -183,12 +183,12 @@
                                                         <tr>
                                                             @if (product.Length != 0)
                                                             {
-                                                            <td>@product.Length</td>
+                                                                <td>@product.Length</td>
                                                             }
 
                                                             @if (product.Weight != 0)
                                                             {
-                                                            <td>@product.Weight</td>
+                                                                <td>@product.Weight</td>
                                                             }
                                                         </tr>
                                                         <tr>
@@ -205,7 +205,7 @@
                                     </div>
                                 </div>
                             }
-                          
+
                         </div>
                     </div>
                 </div>
@@ -213,21 +213,21 @@
             <nav class="d-flex justify-content-center mt-3" aria-label="...">
                 <ul class="pagination">
                     <li class="page-item @(Model.PaginatedDatas.HasPrevious ? "" : "disabled")">
-                        <a class="page-link" asp-action="Index" asp-route-page="@(Model.PaginatedDatas.CurrentPage - 1)" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+                        <a class="page-link" asp-action="GetProductsByCategory" asp-route-page="@(Model.PaginatedDatas.CurrentPage - 1)" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
                     </li>
                     @for (int i = 1; i <= Model.PaginatedDatas.TotalPage; i++)
                     {
                         <li class="page-item @(Model.PaginatedDatas.CurrentPage == i ? "active" : "")">
-                            <a class="page-link" asp-action="Index" asp-route-page="@i">@i <span class="sr-only">(current)</span></a>
+                            <a class="page-link" asp-action="GetProductsByCategory" asp-route-page="@i">@i <span class="sr-only">(current)</span></a>
                         </li>
                     }
 
                     <li class="page-item @(Model.PaginatedDatas.HasNext ? "" : "disabled")">
-                        <a class="page-link" asp-action="Index" asp-route-page="@(Model.PaginatedDatas.CurrentPage+1)"><span aria-hidden="true">&raquo;</span></a>
+                        <a class="page-link" asp-action="GetProductsByCategory" asp-route-page="@(Model.PaginatedDatas.CurrentPage+1)"><span aria-hidden="true">&raquo;</span></a>
                     </li>
                 </ul>
             </nav>
-            
+
         </div>
     </section>
 </main>
@@ -236,3 +236,4 @@
     <script src="~/assets/js/filter.js"></script>
     <script src="~/assets/js/product.js"></script>
 }
+

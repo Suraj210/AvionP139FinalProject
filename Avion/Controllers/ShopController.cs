@@ -1,6 +1,9 @@
-﻿using Avion.Areas.Admin.ViewModels.Brand;
+﻿using Avion.Areas.Admin.ViewModels.Blog;
+using Avion.Areas.Admin.ViewModels.BlogCategory;
+using Avion.Areas.Admin.ViewModels.Brand;
 using Avion.Areas.Admin.ViewModels.Category;
 using Avion.Areas.Admin.ViewModels.Product;
+using Avion.Areas.Admin.ViewModels.Tag;
 using Avion.Helpers;
 using Avion.Services;
 using Avion.Services.Interfaces;
@@ -22,6 +25,8 @@ namespace Avion.Controllers
             _categoryService = categoryService;
             _brandService = brandService;
         }
+
+        [HttpGet]
         public async Task<IActionResult> Index(int page = 1, int take = 12)
         {
             List<ProductVM> dbPaginatedDatas = await _productService.GetPaginatedDatasAsync(page, take);
@@ -49,9 +54,110 @@ namespace Avion.Controllers
             return (int)Math.Ceiling((decimal)(productCount) / take);
         }
 
+        [HttpGet]
+
         public IActionResult ProductDetail()
         {
             return View();
         }
+
+        //Filter by Category Name Methods
+
+        [HttpGet]
+        private async Task<int> GetPageCountByCategoryAsync(int id, int take)
+        {
+            int productCount = await _productService.GetCountByCategoryAsync(id);
+
+            return (int)Math.Ceiling((decimal)(productCount) / take);
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetProductsByCategory(int? id, int page = 1, int take = 4)
+        {
+            if (id is null)
+            {
+                return BadRequest();
+            }
+
+            CategoryVM existCategory = await _categoryService.GetByIdAsync((int)id);
+
+            if (existCategory == null)
+            {
+                return NotFound();
+            }
+
+            var count = await _productService.GetCountByCategoryAsync((int)id);
+            List<ProductVM> dbPaginatedDatasByCategory = await _productService.GetPaginatedDatasByCategoryAsync((int)(id), page, take);
+            List<CategoryVM> categories = await _categoryService.GetAllAsync();
+            List<BrandVM> brands = await _brandService.GetAllAsync();
+
+
+
+            int pageCount = await GetPageCountByCategoryAsync((int)id, take);
+            Paginate<ProductVM> paginatedDatas = new(dbPaginatedDatasByCategory, page, pageCount);
+
+            ShopPageVM model = new()
+            {
+                PaginatedDatas = paginatedDatas,
+                Categories = categories,
+                Brands = brands
+
+
+            };
+
+            return View(model);
+        }
+
+
+        //Filter by Brand Name Methods
+
+        [HttpGet]
+
+        private async Task<int> GetPageCountByBrandAsync(int id, int take)
+        {
+            int productCount = await _productService.GetCountByBrandAsync(id);
+
+            return (int)Math.Ceiling((decimal)(productCount) / take);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetProductsByBrand(int? id, int page = 1, int take = 4)
+        {
+            if (id is null)
+            {
+                return BadRequest();
+            }
+
+            BrandVM existBrand = await _brandService.GetByIdAsync((int)id);
+
+            if (existBrand == null)
+            {
+                return NotFound();
+            }
+
+            var count = await _productService.GetCountByBrandAsync((int)id);
+            List<ProductVM> dbPaginatedDatasByBrand = await _productService.GetPaginatedDatasByBrandAsync((int)(id), page, take);
+            List<CategoryVM> categories = await _categoryService.GetAllAsync();
+            List<BrandVM> brands = await _brandService.GetAllAsync();
+
+
+
+            int pageCount = await GetPageCountByBrandAsync((int)id, take);
+            Paginate<ProductVM> paginatedDatas = new(dbPaginatedDatasByBrand, page, pageCount);
+
+            ShopPageVM model = new()
+            {
+                PaginatedDatas = paginatedDatas,
+                Categories = categories,
+                Brands = brands
+
+
+            };
+
+            return View(model);
+        }
+
+
     }
 }
