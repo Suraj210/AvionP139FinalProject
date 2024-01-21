@@ -13,5 +13,6 @@ namespace Avion.Services.Interfaces
         Task<List<ProductVM>> GetPaginatedDatasByCategoryAsync(int id, int page, int take);
         Task<List<ProductVM>> GetPaginatedDatasByBrandAsync(int id, int page, int take);
         Task<int> GetCountByBrandAsync(int id);
+        Task<List<ProductVM>> SearchAsync(string searchText, int page, int take);
     }
 }

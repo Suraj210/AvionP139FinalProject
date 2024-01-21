@@ -56,9 +56,23 @@ namespace Avion.Controllers
 
         [HttpGet]
 
-        public IActionResult ProductDetail()
+        public async Task<IActionResult> ProductDetail(int? id)
         {
-            return View();
+            if (id is null) return BadRequest();
+
+            ProductVM product = await _productService.GetByIdAsync((int)id);
+
+            if (product is null) return NotFound();
+
+            List<ProductVM> featuredProducts = await _productService.GetAllByTakeAsync(6);
+
+            ProductDetailVM model = new()
+            {
+                Product = product,
+                FeaturedProducts = featuredProducts
+            };
+
+            return View(model);
         }
 
         //Filter by Category Name Methods

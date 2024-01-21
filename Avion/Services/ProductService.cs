@@ -117,5 +117,31 @@ namespace Avion.Services
             return _mapper.Map<List<ProductVM>>(products);
         }
 
+        //Search 
+
+        public async Task<List<ProductVM>> SearchAsync(string searchText, int page, int take)
+        {
+            var dbProducts = await _context.Products.Where(m => m.Name.ToLower().Trim().Contains(searchText.ToLower().Trim()))
+                                                    .Include(m => m.Images)
+                                                    .Include(m => m.Category)
+                                                    .Include(m => m.Brand)
+                                                    .OrderByDescending(m => m.Id)
+                                                    .Skip((page * take) - take)
+                                                    .Take(take)
+                                                    .ToListAsync();
+
+            return _mapper.Map<List<ProductVM>>(dbProducts);
+        }
+
+        public async Task<int> GetCountBySearch(string searchText)
+        {
+            return await _context.Products.Where(m => m.Name.ToLower().Trim().Contains(searchText.ToLower().Trim()))
+                                          .Include(m => m.Images)
+                                          .Include(m => m.Category)
+                                          .Include(m => m.Brand)
+                                          .OrderByDescending(m => m.Id)
+                                          .CountAsync();
+
+        }
     }
 }

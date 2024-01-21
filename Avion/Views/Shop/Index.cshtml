@@ -101,7 +101,7 @@
                                         <div class="wrapper">
                                             <div class="containerCard">
                                                 <i class="fa-solid fa-heart wishlist"></i>
-                                                <a asp-controller="Shop" asp-action="ProductDetail">
+                                                <a asp-controller="Shop" asp-action="ProductDetail" asp-route-id="@product.Id">
                                                     <div style="
                         background: url(/assets/images/products/@product.Image)
                           no-repeat center center;
@@ -183,12 +183,12 @@
                                                         <tr>
                                                             @if (product.Length != 0)
                                                             {
-                                                            <td>@product.Length</td>
+                                                            <td>@product.Length sm</td>
                                                             }
 
                                                             @if (product.Weight != 0)
                                                             {
-                                                            <td>@product.Weight</td>
+                                                            <td>@product.Weight kg</td>
                                                             }
                                                         </tr>
                                                         <tr>

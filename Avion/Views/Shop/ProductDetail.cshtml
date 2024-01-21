@@ -1,4 +1,4 @@
-﻿
+﻿@model ProductDetailVM
 @{
     ViewData["Title"] = "ProductDetail";
 }
@@ -23,13 +23,13 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="productDetail-img">
-                        <img src="~/assets/images/product-2.jpeg" alt="" />
+                        <img src="~/assets/images/products/@Model.Product.Image" alt="" />
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="productDetail-content">
-                        <h3>The Dandy Chair</h3>
-                        <h4>$250 USD</h4>
+                        <h3>@Model.Product.Name</h3>
+                        <h4>$@Model.Product.Price USD</h4>
                         <div class="productReviews">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -41,10 +41,7 @@
                         <!-- Description -->
                         <h6>Product description:</h6>
                         <p>
-                            A timeless design, with premium materials features as one of
-                            our most popular and iconic pieces. The dandy chair is perfect
-                            for any stylish living space with beech legs and lambskin
-                            leather upholstery.
+                            @Model.Product.Description
                         </p>
                         <!-- Quantity -->
                         <h6>Quantity:</h6>
@@ -89,12 +86,41 @@
                                 <div id="panelsStayOpen-collapseOne"
                                      class="accordion-collapse collapse">
                                     <div class="accordion-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Suspendisse varius enim in eros elementum tristique.
-                                        Duis cursus, mi quis viverra ornare, eros dolor interdum
-                                        nulla, ut commodo diam libero vitae erat. Aenean
-                                        faucibus nibh et justo cursus id rutrum lorem imperdiet.
-                                        Nunc ut sem vitae risus tristique posuere.
+
+                                        
+                                       <ul>
+                                            @if (Model.Product.Width != 0)
+                                            {
+                                            <li>
+                                               Width: @Model.Product.Width sm
+                                           </li>
+                                            }
+                                            @if (Model.Product.Height != 0)
+                                            {
+                                                <li>
+                                                    Height: @Model.Product.Height sm
+                                                </li>
+                                            }
+                                            @if (Model.Product.Length != 0)
+                                            {
+                                                <li>
+                                                    Length: @Model.Product.Length sm
+                                                </li>
+                                            }
+                                            @if (Model.Product.Weight != 0)
+                                            {
+                                                <li>
+                                                    Weight: @Model.Product.Weight kg
+                                                </li>
+                                            }
+                                            @if (Model.Product.Material.Length != 0)
+                                            {
+                                                <li>
+                                                    Materials used: @Model.Product.Material
+                                                </li>
+                                            }
+                                       </ul>
+
                                     </div>
                                 </div>
                             </div>
@@ -150,416 +176,7 @@
                     <h2>You might also love this</h2>
                 </div>
                 <div class="product-container">
-                    <div class="product">
-                        <div class="wrapper">
-                            <div class="containerCard">
-                                <i class="fa-solid fa-heart wishlist"></i>
-                                <a href="./productDetail.html">
-                                    <div style="
-                          background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
-                            no-repeat center center;
-                          -webkit-background-size: 100%;
-                          -moz-background-size: 100%;
-                          -o-background-size: 100%;
-                          background-size: 100%;
-                        "
-                                         class="top"></div>
-                                </a>
-                                <div class="bottom">
-                                    <div class="left">
-                                        <div class="details">
-                                            <h1>Chair</h1>
-                                            <p>£250</p>
-                                        </div>
-                                        <div class="buy">
-                                            <i class="fa-solid fa-cart-shopping"></i>
-                                        </div>
-                                    </div>
-                                    <div class="right">
-                                        <div class="done">
-                                            <i class="fa-solid fa-check"></i>
-                                        </div>
-                                        <div class="details">
-                                            <h1>Chair</h1>
-                                            <p>Added to your cart</p>
-                                        </div>
-                                        <div class="remove">
-                                            <i class="fa-solid fa-x"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="inside">
-                                <div class="icon">
-                                    <i class="fa-solid fa-circle-info"></i>
-                                </div>
-                                <div class="contents">
-                                    <table>
-                                        <tr>
-                                            <th>Width</th>
-                                            <th>Height</th>
-                                        </tr>
-                                        <tr>
-                                            <td>3000mm</td>
-                                            <td>4000mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="wrapper">
-                            <div class="containerCard">
-                                <i class="fa-solid fa-heart wishlist"></i>
-                                <a href="./productDetail.html">
-                                    <div style="
-                          background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
-                            no-repeat center center;
-                          -webkit-background-size: 100%;
-                          -moz-background-size: 100%;
-                          -o-background-size: 100%;
-                          background-size: 100%;
-                        "
-                                         class="top"></div>
-                                </a>
-                                <div class="bottom">
-                                    <div class="left">
-                                        <div class="details">
-                                            <h1>Chair</h1>
-                                            <p>£250</p>
-                                        </div>
-                                        <div class="buy">
-                                            <i class="fa-solid fa-cart-shopping"></i>
-                                        </div>
-                                    </div>
-                                    <div class="right">
-                                        <div class="done">
-                                            <i class="fa-solid fa-check"></i>
-                                        </div>
-                                        <div class="details">
-                                            <h1>Chair</h1>
-                                            <p>Added to your cart</p>
-                                        </div>
-                                        <div class="remove">
-                                            <i class="fa-solid fa-x"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="inside">
-                                <div class="icon">
-                                    <i class="fa-solid fa-circle-info"></i>
-                                </div>
-                                <div class="contents">
-                                    <table>
-                                        <tr>
-                                            <th>Width</th>
-                                            <th>Height</th>
-                                        </tr>
-                                        <tr>
-                                            <td>3000mm</td>
-                                            <td>4000mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="wrapper">
-                            <div class="containerCard">
-                                <i class="fa-solid fa-heart wishlist"></i>
-                                <a href="./productDetail.html">
-                                    <div style="
-                          background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
-                            no-repeat center center;
-                          -webkit-background-size: 100%;
-                          -moz-background-size: 100%;
-                          -o-background-size: 100%;
-                          background-size: 100%;
-                        "
-                                         class="top"></div>
-                                </a>
-                                <div class="bottom">
-                                    <div class="left">
-                                        <div class="details">
-                                            <h1>Chair</h1>
-                                            <p>£250</p>
-                                        </div>
-                                        <div class="buy">
-                                            <i class="fa-solid fa-cart-shopping"></i>
-                                        </div>
-                                    </div>
-                                    <div class="right">
-                                        <div class="done">
-                                            <i class="fa-solid fa-check"></i>
-                                        </div>
-                                        <div class="details">
-                                            <h1>Chair</h1>
-                                            <p>Added to your cart</p>
-                                        </div>
-                                        <div class="remove">
-                                            <i class="fa-solid fa-x"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="inside">
-                                <div class="icon">
-                                    <i class="fa-solid fa-circle-info"></i>
-                                </div>
-                                <div class="contents">
-                                    <table>
-                                        <tr>
-                                            <th>Width</th>
-                                            <th>Height</th>
-                                        </tr>
-                                        <tr>
-                                            <td>3000mm</td>
-                                            <td>4000mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="wrapper">
-                            <div class="containerCard">
-                                <i class="fa-solid fa-heart wishlist"></i>
-                                <a href="./productDetail.html">
-                                    <div style="
-                          background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
-                            no-repeat center center;
-                          -webkit-background-size: 100%;
-                          -moz-background-size: 100%;
-                          -o-background-size: 100%;
-                          background-size: 100%;
-                        "
-                                         class="top"></div>
-                                </a>
-                                <div class="bottom">
-                                    <div class="left">
-                                        <div class="details">
-                                            <h1>Chair</h1>
-                                            <p>£250</p>
-                                        </div>
-                                        <div class="buy">
-                                            <i class="fa-solid fa-cart-shopping"></i>
-                                        </div>
-                                    </div>
-                                    <div class="right">
-                                        <div class="done">
-                                            <i class="fa-solid fa-check"></i>
-                                        </div>
-                                        <div class="details">
-                                            <h1>Chair</h1>
-                                            <p>Added to your cart</p>
-                                        </div>
-                                        <div class="remove">
-                                            <i class="fa-solid fa-x"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="inside">
-                                <div class="icon">
-                                    <i class="fa-solid fa-circle-info"></i>
-                                </div>
-                                <div class="contents">
-                                    <table>
-                                        <tr>
-                                            <th>Width</th>
-                                            <th>Height</th>
-                                        </tr>
-                                        <tr>
-                                            <td>3000mm</td>
-                                            <td>4000mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="wrapper">
-                            <div class="containerCard">
-                                <i class="fa-solid fa-heart wishlist"></i>
-                                <a href="./productDetail.html">
-                                    <div style="
-                          background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
-                            no-repeat center center;
-                          -webkit-background-size: 100%;
-                          -moz-background-size: 100%;
-                          -o-background-size: 100%;
-                          background-size: 100%;
-                        "
-                                         class="top"></div>
-                                </a>
-                                <div class="bottom">
-                                    <div class="left">
-                                        <div class="details">
-                                            <h1>Chair</h1>
-                                            <p>£250</p>
-                                        </div>
-                                        <div class="buy">
-                                            <i class="fa-solid fa-cart-shopping"></i>
-                                        </div>
-                                    </div>
-                                    <div class="right">
-                                        <div class="done">
-                                            <i class="fa-solid fa-check"></i>
-                                        </div>
-                                        <div class="details">
-                                            <h1>Chair</h1>
-                                            <p>Added to your cart</p>
-                                        </div>
-                                        <div class="remove">
-                                            <i class="fa-solid fa-x"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="inside">
-                                <div class="icon">
-                                    <i class="fa-solid fa-circle-info"></i>
-                                </div>
-                                <div class="contents">
-                                    <table>
-                                        <tr>
-                                            <th>Width</th>
-                                            <th>Height</th>
-                                        </tr>
-                                        <tr>
-                                            <td>3000mm</td>
-                                            <td>4000mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Something</th>
-                                            <th>Something</th>
-                                        </tr>
-                                        <tr>
-                                            <td>200mm</td>
-                                            <td>200mm</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <partial name="_ProductsPartial" model="@Model.FeaturedProducts" />
                 </div>
             </div>
         </section>
