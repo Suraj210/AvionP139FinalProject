@@ -43,8 +43,8 @@ validateRange();
 
 $(document).on("click", "#filterForm", function (e) {
     e.preventDefault();
-    let minValue = $(".min-price").val();
-    let maxValue = $(".max-price").val();
+    var minValue = $(".min-price").val();
+    var maxValue = $(".max-price").val();
     let url = `/Shop/Filter?minValue=${minValue}&maxValue=${maxValue}`
     window.location.assign(url);
 })

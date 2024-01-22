@@ -21,5 +21,6 @@ namespace Avion.Services.Interfaces
         Task<List<ProductVM>> OrderByPriceDesc(int page, int take);
         Task<List<ProductVM>> OrderByDate(int page, int take);
         Task<List<ProductVM>> FilterAsync(int minValue, int maxValue);
+        Task<List<ProductVM>> GetLoadedProductsAsync(int skipCount, int take);
     }
 }

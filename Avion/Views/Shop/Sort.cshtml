@@ -33,37 +33,39 @@
                         </ul>
                         <hr />
                         <h5>Price</h5>
-                        <div class="card">
-                            <div class="price-content">
-                                <div>
-                                    <label>Min</label>
-                                    <p id="min-value">$50</p>
+                        <form>
+                            <div class="card">
+                                <div class="price-content">
+                                    <div>
+                                        <label>Min</label>
+                                        <p id="min-value">$50</p>
+                                    </div>
+
+                                    <div>
+                                        <label>Max</label>
+                                        <p id="max-value">$500</p>
+                                    </div>
                                 </div>
 
-                                <div>
-                                    <label>Max</label>
-                                    <p id="max-value">$500</p>
+                                <div class="range-slider">
+                                    <div class="range-fill"></div>
+
+                                    <input type="range"
+                                           class="min-price"
+                                           value="10"
+                                           min="10"
+                                           max="500"
+                                           step="10" />
+                                    <input type="range"
+                                           class="max-price"
+                                           value="500"
+                                           min="10"
+                                           max="500"
+                                           step="10" />
                                 </div>
                             </div>
-
-                            <div class="range-slider">
-                                <div class="range-fill"></div>
-
-                                <input type="range"
-                                       class="min-price"
-                                       value="10"
-                                       min="10"
-                                       max="500"
-                                       step="10" />
-                                <input type="range"
-                                       class="max-price"
-                                       value="500"
-                                       min="10"
-                                       max="500"
-                                       step="10" />
-                            </div>
-                        </div>
-                        <a class="filter" href="">Filter</a>
+                            <button id="filterForm" type="submit"><a class="filter" href="">Filter</a></button>
+                        </form>
                         <hr />
 
                         <h5>Brands</h5>

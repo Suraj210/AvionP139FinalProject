@@ -238,5 +238,19 @@ namespace Avion.Services
             return await _context.Products.Include(m => m.Images).Where(x => x.Price >= minValue && x.Price <= maxValue).CountAsync();
         }
 
+        //Show More
+
+        public async Task<List<ProductVM>> GetLoadedProductsAsync(int skipCount, int take)
+        {
+            List<Product> products = await _context.Products.Include(m => m.Images)
+                                                            .Include(m => m.Category)
+                                                            .Skip(skipCount)
+                                                            .Take(take)
+                                                            .ToListAsync();
+
+            return _mapper.Map<List<ProductVM>>(products);
+
+        }
+
     }
 }
