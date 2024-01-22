@@ -5,6 +5,7 @@ using Avion.Data;
 using Avion.Models;
 using Avion.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Metrics;
 
 namespace Avion.Services
 {
@@ -24,7 +25,7 @@ namespace Avion.Services
         }
         public async Task<List<ProductVM>> GetAllAsync()
         {
-            List<Product> products = await _context.Products.Include(b=>b.Brand)
+            List<Product> products = await _context.Products.Include(b => b.Brand)
                                                             .Include(m => m.Category)
                                                             .Include(m => m.Images)
                                                             .ToListAsync();
@@ -35,7 +36,7 @@ namespace Avion.Services
         public async Task<List<ProductVM>> GetAllByTakeAsync(int take)
         {
             List<Product> products = await _context.Products.Include(m => m.Images)
-                                                            .Include(b=>b.Brand)
+                                                            .Include(b => b.Brand)
                                                             .Include(m => m.Category)
                                                             .Take(take)
                                                             .ToListAsync();
@@ -50,9 +51,9 @@ namespace Avion.Services
 
         public async Task<List<ProductVM>> GetPaginatedDatasAsync(int page, int take)
         {
-            List<Product> products = await _context.Products.OrderByDescending(m => m.Price)
+            List<Product> products = await _context.Products.OrderByDescending(m => m.CreateTime)
                                                             .Include(m => m.Category)
-                                                            .Include(b=>b.Brand)
+                                                            .Include(b => b.Brand)
                                                             .Include(m => m.Images)
                                                             .Skip((page * take) - take)
                                                             .Take(take)
@@ -71,7 +72,7 @@ namespace Avion.Services
         public async Task<ProductVM> GetByIdAsync(int id)
         {
             Product data = await _context.Products.Include(m => m.Category)
-                                                  .Include(b=>b.Brand)
+                                                  .Include(b => b.Brand)
                                                   .Include(m => m.Images)
                                                   .FirstOrDefaultAsync(m => m.Id == id);
 
@@ -83,8 +84,8 @@ namespace Avion.Services
 
         public async Task<List<ProductVM>> GetPaginatedDatasByCategoryAsync(int id, int page, int take)
         {
-            List<Product> products = await _context.Products.Where(m=>m.CategoryId==id)
-                                                            .OrderByDescending(m => m.Price)
+            List<Product> products = await _context.Products.Where(m => m.CategoryId == id)
+                                                            .OrderByDescending(m => m.CreateTime)
                                                             .Include(m => m.Category)
                                                             .Include(b => b.Brand)
                                                             .Include(m => m.Images)
@@ -141,6 +142,84 @@ namespace Avion.Services
                                           .Include(m => m.Brand)
                                           .OrderByDescending(m => m.Id)
                                           .CountAsync();
+
+        }
+
+
+        //Sort
+
+        public async Task<List<ProductVM>> OrderByNameAsc(int page, int take)
+        {
+            var datas = await _context.Products.Include(m => m.Images)
+                                               .Include(m => m.Category)
+                                               .Include(m => m.Brand)
+                                               .OrderBy(p => p.Name)
+                                               .Skip((page * take) - take)
+                                               .Take(take)
+                                               .ToListAsync();
+
+            return _mapper.Map<List<ProductVM>>(datas);
+
+
+        }
+
+        public async Task<List<ProductVM>> OrderByNameDesc(int page, int take)
+        {
+            var datas = await _context.Products.Include(m => m.Images)
+                                               .Include(m => m.Category)
+                                               .Include(m => m.Brand)
+                                               .OrderByDescending(p => p.Name)
+                                               .Skip((page * take) - take)
+                                               .Take(take)
+                                               .ToListAsync();
+
+            return _mapper.Map<List<ProductVM>>(datas);
+
+
+        }
+
+        public async Task<List<ProductVM>> OrderByPriceAsc(int page, int take)
+        {
+            var datas = await _context.Products.Include(m => m.Images)
+                                               .Include(m => m.Category)
+                                               .Include(m => m.Brand)
+                                               .OrderBy(p => p.Price)
+                                               .Skip((page * take) - take)
+                                               .Take(take)
+                                               .ToListAsync();
+
+            return _mapper.Map<List<ProductVM>>(datas);
+
+
+        }
+
+        public async Task<List<ProductVM>> OrderByPriceDesc(int page, int take)
+        {
+            var datas = await _context.Products.Include(m => m.Images)
+                                               .Include(m => m.Category)
+                                               .Include(m => m.Brand)
+                                               .OrderByDescending(p => p.Price)
+                                               .Skip((page * take) - take)
+                                               .Take(take)
+                                               .ToListAsync();
+
+            return _mapper.Map<List<ProductVM>>(datas);
+
+
+        }
+
+        public async Task<List<ProductVM>> OrderByDate(int page, int take)
+        {
+            var datas = await _context.Products.Include(m => m.Images)
+                                               .Include(m => m.Category)
+                                               .Include(m => m.Brand)
+                                               .OrderByDescending(p => p.CreateTime)
+                                               .Skip((page * take) - take)
+                                               .Take(take)
+                                               .ToListAsync();
+
+            return _mapper.Map<List<ProductVM>>(datas);
+
 
         }
     }

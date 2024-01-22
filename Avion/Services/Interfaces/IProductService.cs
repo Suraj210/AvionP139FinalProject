@@ -15,5 +15,10 @@ namespace Avion.Services.Interfaces
         Task<int> GetCountByBrandAsync(int id);
         Task<List<ProductVM>> SearchAsync(string searchText, int page, int take);
         Task<int> GetCountBySearch(string searchText);
+        Task<List<ProductVM>> OrderByNameAsc(int page, int take);
+        Task<List<ProductVM>> OrderByNameDesc(int page, int take);
+        Task<List<ProductVM>> OrderByPriceAsc(int page, int take);
+        Task<List<ProductVM>> OrderByPriceDesc(int page, int take);
+        Task<List<ProductVM>> OrderByDate(int page, int take);
     }
 }

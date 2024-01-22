@@ -13,6 +13,7 @@ namespace Avion.ViewModels
         public List<BrandVM> Brands { get; set; }
 
         public string SearchText { get; set; }
+        public string SortText { get; set; }
 
 
     }

@@ -1,15 +1,10 @@
-﻿using Avion.Areas.Admin.ViewModels.Blog;
-using Avion.Areas.Admin.ViewModels.BlogCategory;
-using Avion.Areas.Admin.ViewModels.Brand;
+﻿using Avion.Areas.Admin.ViewModels.Brand;
 using Avion.Areas.Admin.ViewModels.Category;
 using Avion.Areas.Admin.ViewModels.Product;
-using Avion.Areas.Admin.ViewModels.Tag;
 using Avion.Helpers;
-using Avion.Services;
 using Avion.Services.Interfaces;
 using Avion.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Avion.Controllers
 {
@@ -35,13 +30,13 @@ namespace Avion.Controllers
             int pageCount = await GetPageCountAsync(take);
 
             Paginate<ProductVM> paginatedDatas = new(dbPaginatedDatas, page, pageCount);
-            List<CategoryVM> categories =await _categoryService.GetAllAsync();
-            List<BrandVM> brands =await _brandService.GetAllAsync();
+            List<CategoryVM> categories = await _categoryService.GetAllAsync();
+            List<BrandVM> brands = await _brandService.GetAllAsync();
 
             ShopPageVM model = new()
             {
                 PaginatedDatas = paginatedDatas,
-                Categories = categories,    
+                Categories = categories,
                 Brands = brands
             };
 
@@ -173,7 +168,7 @@ namespace Avion.Controllers
             return View(model);
         }
 
-        //Search
+        //Search Methods
 
         public async Task<IActionResult> Search(string searchText, int page = 1, int take = 6)
         {
@@ -184,7 +179,7 @@ namespace Avion.Controllers
             }
 
             var count = await _productService.GetCountBySearch(searchText);
-            List<ProductVM> dbPaginatedDatasByBrand = await _productService.SearchAsync(searchText, page,take);
+            List<ProductVM> dbPaginatedDatasByBrand = await _productService.SearchAsync(searchText, page, take);
             List<CategoryVM> categories = await _categoryService.GetAllAsync();
             List<BrandVM> brands = await _brandService.GetAllAsync();
 
@@ -214,5 +209,59 @@ namespace Avion.Controllers
             return (int)Math.Ceiling((decimal)(productCount) / take);
         }
 
+
+        //Sort Methos
+
+        public async Task<IActionResult> Sort(string sortValue, int page = 1, int take = 12)
+        {
+            List<ProductVM> products = new();
+
+            if (sortValue == "1")
+            {
+                products = await _productService.OrderByDate(page, take);
+            };
+            if (sortValue == "2")
+            {
+                products = await _productService.OrderByNameAsc(page, take);
+
+            };
+            if (sortValue == "3")
+            {
+                products = await _productService.OrderByNameDesc(page, take);
+
+            };
+            if (sortValue == "5")
+            {
+                products = await _productService.OrderByPriceAsc(page, take);
+
+            };
+
+            if (sortValue == "4")
+            {
+                products = await _productService.OrderByPriceDesc(page, take);
+
+            };
+
+
+            int pageCount = await GetPageCountAsync(take);
+
+            Paginate<ProductVM> paginatedDatas = new(products, page, pageCount);
+
+            List<CategoryVM> categories = await _categoryService.GetAllAsync();
+            List<BrandVM> brands = await _brandService.GetAllAsync();
+
+
+            int count = await _productService.GetProductCountAsync();
+
+            ShopPageVM model = new()
+            {
+                PaginatedDatas = paginatedDatas,
+                Categories = categories,
+                Brands = brands,
+                SortText= sortValue
+            };
+
+            return View(model);
+        }
     }
 }

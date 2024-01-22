@@ -18,11 +18,23 @@ overlay.addEventListener("click", function () {
 
 
 $(function () {
-$(document).on("submit", ".product-searchbox", function (e) {
-    e.preventDefault();
-    let value = $(".input-search").val();
-    let url = `/Shop/Search?searchText=${value}`;
-    window.location.assign(url);
 
-})
+    //Search JS
+    $(document).on("submit", ".product-searchbox", function (e) {
+        e.preventDefault();
+        let value = $(".input-search").val();
+        let url = `/Shop/Search?searchText=${value}`;
+        window.location.assign(url);
+
+    });
+
+    //Sort JS
+
+    $(document).on("change", "#sortProducts", function (e) {
+        e.preventDefault();
+        let sortValue = $(this).val();
+        let url = `/Shop/Sort?sortValue=${sortValue}`;
+        window.location.assign(url);
+    });
+
 })
