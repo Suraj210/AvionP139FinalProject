@@ -37,3 +37,14 @@ inputElements.forEach((element) => {
 
 // Initial call to validateRange
 validateRange();
+
+
+// Filter
+
+$(document).on("click", "#filterForm", function (e) {
+    e.preventDefault();
+    let minValue = $(".min-price").val();
+    let maxValue = $(".max-price").val();
+    let url = `/Shop/Filter?minValue=${minValue}&maxValue=${maxValue}`
+    window.location.assign(url);
+})

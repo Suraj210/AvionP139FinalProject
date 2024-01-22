@@ -14,6 +14,8 @@ namespace Avion.ViewModels
 
         public string SearchText { get; set; }
         public string SortText { get; set; }
+        public int MinValue { get; set; }
+        public int MaxValue { get; set; }
 
 
     }

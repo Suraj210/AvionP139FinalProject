@@ -2,9 +2,11 @@
 using Avion.Areas.Admin.ViewModels.Category;
 using Avion.Areas.Admin.ViewModels.Product;
 using Avion.Helpers;
+using Avion.Models;
 using Avion.Services.Interfaces;
 using Avion.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Avion.Controllers
 {
@@ -263,5 +265,39 @@ namespace Avion.Controllers
 
             return View(model);
         }
+
+
+        //Filter Methods
+
+
+        [HttpGet]
+        public async Task<IActionResult> Filter(int minValue, int maxValue,int page = 1, int take = 12)
+        {
+
+            List<ProductVM> productsByFilter = await _productService.FilterAsync(minValue, maxValue);
+
+            int pageCount = await GetPageCountAsync(take);
+
+            Paginate<ProductVM> paginatedDatas = new(productsByFilter, page, pageCount);
+
+            List<CategoryVM> categories = await _categoryService.GetAllAsync();
+            List<BrandVM> brands = await _brandService.GetAllAsync();
+
+
+            int count = await _productService.GetProductCountAsync();
+
+            ShopPageVM model = new()
+            {
+                PaginatedDatas = paginatedDatas,
+                Categories = categories,
+                Brands = brands,
+                MaxValue=maxValue,
+                MinValue=minValue
+            };
+
+            return View(model);
+
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿@model ShopPageVM
 @{
-    ViewData["Title"] = "GetProductsByCategory";
+    ViewData["Title"] = "Index";
 }
 
 @section css{
@@ -33,37 +33,39 @@
                         </ul>
                         <hr />
                         <h5>Price</h5>
-                        <div class="card">
-                            <div class="price-content">
-                                <div>
-                                    <label>Min</label>
-                                    <p id="min-value">$50</p>
+                        <form>
+                            <div class="card">
+                                <div class="price-content">
+                                    <div>
+                                        <label>Min</label>
+                                        <p id="min-value">$50</p>
+                                    </div>
+
+                                    <div>
+                                        <label>Max</label>
+                                        <p id="max-value">$500</p>
+                                    </div>
                                 </div>
 
-                                <div>
-                                    <label>Max</label>
-                                    <p id="max-value">$500</p>
+                                <div class="range-slider">
+                                    <div class="range-fill"></div>
+
+                                    <input type="range"
+                                           class="min-price"
+                                           value="10"
+                                           min="10"
+                                           max="500"
+                                           step="10" />
+                                    <input type="range"
+                                           class="max-price"
+                                           value="500"
+                                           min="10"
+                                           max="500"
+                                           step="10" />
                                 </div>
                             </div>
-
-                            <div class="range-slider">
-                                <div class="range-fill"></div>
-
-                                <input type="range"
-                                       class="min-price"
-                                       value="10"
-                                       min="10"
-                                       max="500"
-                                       step="10" />
-                                <input type="range"
-                                       class="max-price"
-                                       value="500"
-                                       min="10"
-                                       max="500"
-                                       step="10" />
-                            </div>
-                        </div>
-                        <a class="filter" href="">Filter</a>
+                            <button id="filterForm" type="submit"><a class="filter" href="">Filter</a></button>
+                        </form>
                         <hr />
 
                         <h5>Brands</h5>
@@ -85,6 +87,7 @@
                     <div id="products">
                         <span>Sort by: </span>
                         <select id="sortProducts" class="form-select" aria-label="Default select example">
+                            <option>Choose Sort Option</option>
                             <option value="1">Date Added</option>
                             <option value="2">Alphabetically A-Z</option>
                             <option value="3">Alphabetically Z-A</option>
@@ -210,24 +213,7 @@
                     </div>
                 </div>
             </div>
-            <nav class="d-flex justify-content-center mt-3" aria-label="...">
-                <ul class="pagination">
-                    <li class="page-item @(Model.PaginatedDatas.HasPrevious ? "" : "disabled")">
-                        <a class="page-link" asp-action="GetProductsByCategory" asp-route-page="@(Model.PaginatedDatas.CurrentPage - 1)" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
-                    </li>
-                    @for (int i = 1; i <= Model.PaginatedDatas.TotalPage; i++)
-                    {
-                        <li class="page-item @(Model.PaginatedDatas.CurrentPage == i ? "active" : "")">
-                            <a class="page-link" asp-action="GetProductsByCategory" asp-route-page="@i">@i <span class="sr-only">(current)</span></a>
-                        </li>
-                    }
-
-                    <li class="page-item @(Model.PaginatedDatas.HasNext ? "" : "disabled")">
-                        <a class="page-link" asp-action="GetProductsByCategory" asp-route-page="@(Model.PaginatedDatas.CurrentPage+1)"><span aria-hidden="true">&raquo;</span></a>
-                    </li>
-                </ul>
-            </nav>
-
+          
         </div>
     </section>
 </main>

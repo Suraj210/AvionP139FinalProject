@@ -222,5 +222,21 @@ namespace Avion.Services
 
 
         }
+
+
+
+        //Filter
+        public async Task<List<ProductVM>> FilterAsync(int minValue, int maxValue)
+        {
+            List<Product> products = await _context.Products.Include(m => m.Images).Where(x => x.Price >= minValue && x.Price <= maxValue).ToListAsync();
+            return _mapper.Map<List<ProductVM>>(products);
+
+        }
+
+        public async Task<int> FilterCountAsync(int minValue, int maxValue)
+        {
+            return await _context.Products.Include(m => m.Images).Where(x => x.Price >= minValue && x.Price <= maxValue).CountAsync();
+        }
+
     }
 }
