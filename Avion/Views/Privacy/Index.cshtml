@@ -1,4 +1,4 @@
-﻿
+﻿@model List<PrivacyVM>
 @{
     ViewData["Title"] = "Index";
 }
@@ -15,114 +15,17 @@
             <div class="privacyContainer">
                 <h1>Privacy Policy</h1>
                 <ul>
-                    <li>
-                        <h6>Overview</h6>
-                        <p>
-                            This website is operated by BlendJet. Throughout the site, the
-                            terms “we”, “us” and “our” refer to BlendJet. BlendJet offers
-                            this website, including all information, tools and services
-                            available from this site to you, the user, conditioned upon
-                            your acceptance of all terms, conditions, policies and notices
-                            stated here. By visiting our site and/ or purchasing something
-                            from us, you engage in our “Service” and agree to be bound by
-                            the following terms and conditions (“Terms of Service”,
-                            “Terms”), including those additional terms and conditions and
-                            policies referenced herein and/or available by hyperlink.
-                            These Terms of Service apply to all users of the site,
-                            including without limitation users who are browsers, vendors,
-                            customers, merchants, and/ or contributors of content. Please
-                            read these Terms of Service carefully before accessing or
-                            using our website. By accessing or using any part of the site,
-                            you agree to be bound by these Terms of Service. If you do not
-                            agree to all the terms and conditions of this agreement, then
-                            you may not access the website or use any services. If these
-                            Terms of Service are considered an offer, acceptance is
-                            expressly limited to these Terms of Service. Any new features
-                            or tools which are added to the current store shall also be
-                            subject to the Terms of Service. You can review the most
-                            current version of the Terms of Service at any time on this
-                            page. We reserve the right to update, change or replace any
-                            part of these Terms of Service by posting updates and/or
-                            changes to our website. It is your responsibility to check
-                            this page periodically for changes. Your continued use of or
-                            access to the website following the posting of any changes
-                            constitutes acceptance of those changes.
-                        </p>
-                    </li>
-                    <li>
-                        <h6>1. Information We Collect</h6>
-                        <p>
-                            We may collect the following types of information when you use
-                            our Site: Personal Information: This may include your name,
-                            email address, phone number, and other information you
-                            provide. Usage Information: We collect information about how
-                            you use our Site, including your IP address, browser type, and
-                            pages visited. Cookies: We use cookies to enhance your user
-                            experience and collect information about your preferences.
-                        </p>
-                    </li>
-                    <li>
-                        <h6>2. How We Use Your Information</h6>
-                        <p>
-                            We use the collected information for the following purposes:
-                            To provide and maintain our services. To process and fulfill
-                            orders. To improve and personalize your experience on our
-                            Site. To communicate with you, including sending newsletters
-                            and promotional materials.
-                        </p>
-                    </li>
-                    <li>
-                        <h6>3. Information Sharing</h6>
-                        <p>
-                            We may share your information with third parties for the
-                            following purposes: Service Providers: We may engage
-                            third-party service providers to assist with website
-                            maintenance, analytics, and other services. Legal Compliance:
-                            We may disclose information to comply with legal obligations
-                            or respond to government requests.
-                        </p>
-                    </li>
-                    <li>
-                        <h6>4. Your Choices</h6>
-                        <p>
-                            You can choose not to provide certain information, but this
-                            may limit your ability to use certain features of the Site.
-                            You can opt-out of receiving promotional emails by following
-                            the instructions in those emails.
-                        </p>
-                    </li>
-                    <li>
-                        <h6>5. Security</h6>
-                        <p>
-                            We implement reasonable security measures to protect your
-                            information. However, no method of transmission over the
-                            internet or electronic storage is completely secure.
-                        </p>
-                    </li>
-                    <li>
-                        <h6>6. Links to Third-Party Sites</h6>
-                        <p>
-                            Our Site may contain links to third-party websites. We are not
-                            responsible for the privacy practices or content of these
-                            sites. Please review the privacy policies of third-party sites
-                            before providing any personal information.
-                        </p>
-                    </li>
-                    <li>
-                        <h6>7. Changes to this Privacy Policy</h6>
-                        <p>
-                            We reserve the right to <strong>Update</strong> this Privacy
-                            Policy at any time. Changes will be posted on this page with
-                            the updated date.
-                        </p>
-                    </li>
-                    <li>
-                        <h6>8. Contact Us</h6>
-                        <p>
-                            If you have any questions about this Privacy Policy, please
-                            contact us at <a href="./contact.html">Contact</a> page.
-                        </p>
-                    </li>
+                    @foreach (var privacy in Model)
+                    {
+                        <li>
+                            <h6>@privacy.Title</h6>
+                            <p>
+                                @privacy.Context
+                            </p>
+                        </li>
+
+                    }
+                  
                 </ul>
             </div>
         </div>

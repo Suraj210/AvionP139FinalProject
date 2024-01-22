@@ -42,12 +42,11 @@ builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IBlogCategoryService, BlogCategoryService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ITermService, TermService>();
+builder.Services.AddScoped<IPrivacyService, PrivacyService>();
 
 //builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-//builder.Services.AddScoped<ISliderService, SliderServive>();
-//builder.Services.AddScoped<IReviewService, ReviewService>();
-//builder.Services.AddScoped<IAboutContentService, AboutContentService>();
-//builder.Services.AddScoped<ITeamService, TeamService>();
+
 
 var app = builder.Build();
 

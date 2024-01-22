@@ -9,9 +9,11 @@ using Avion.Areas.Admin.ViewModels.Contact;
 using Avion.Areas.Admin.ViewModels.Feature;
 using Avion.Areas.Admin.ViewModels.Hero;
 using Avion.Areas.Admin.ViewModels.Idea;
+using Avion.Areas.Admin.ViewModels.Privacy;
 using Avion.Areas.Admin.ViewModels.Product;
 using Avion.Areas.Admin.ViewModels.Subscribe;
 using Avion.Areas.Admin.ViewModels.Tag;
+using Avion.Areas.Admin.ViewModels.Terms;
 using Avion.Areas.Admin.ViewModels.Testimonial;
 using Avion.Models;
 
@@ -44,7 +46,8 @@ namespace Avion.Helpers.Mapping
             CreateMap<About, AboutVM>();
             CreateMap<ContactMessageCreateVM, ContactMessage>();
             CreateMap<ContactVM, ContactMessageVM>();
-
+            CreateMap<Term,TermsVM>();
+            CreateMap<Privacy,PrivacyVM>();
         }
     }
 }

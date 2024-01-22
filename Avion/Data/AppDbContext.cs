@@ -25,6 +25,8 @@ namespace Avion.Data
         public DbSet<Setting> Settings { get; set; }
         public DbSet<About> Abouts { get; set; }
         public DbSet<ContactMessage> ContactMessages { get; set; }
+        public DbSet<Term> Terms { get; set; }
+        public DbSet<Privacy> Privacies { get; set; }
 
 
 
@@ -50,6 +52,8 @@ namespace Avion.Data
             modelBuilder.Entity<Setting>().HasQueryFilter(m => !m.SoftDeleted);
             modelBuilder.Entity<About>().HasQueryFilter(m => !m.SoftDeleted);
             modelBuilder.Entity<ContactMessage>().HasQueryFilter(m => !m.SoftDeleted);
+            modelBuilder.Entity<Term>().HasQueryFilter(m => !m.SoftDeleted);
+            modelBuilder.Entity<Privacy>().HasQueryFilter(m => !m.SoftDeleted);
         }
     }
 }

@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Avion.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Avion.Controllers
 {
     public class TermsController : Controller
     {
-        public IActionResult Index()
+        private readonly ITermService _termService;
+
+        public TermsController(ITermService termService)
         {
-            return View();
+            _termService = termService;
+        }
+        public async Task<IActionResult> Index()
+        {
+            var model = await _termService.GetAllAsync();
+            return View(model);
+
         }
     }
 }
