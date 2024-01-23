@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tB3sbqOfviWPm00l2ZSRLUeH60kVBZUgWVJv5RvqRyI=",
+  "Hash": "XAyhT+m39feXr7/5OE1+mugTfcIIbOvnfora7J+zpg0=",
   "Source": "Avion",
   "BasePath": "_content/Avion",
   "Mode": "Default",
@@ -2771,6 +2771,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\.DS_Store"
     },
     {
+      "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\31356f4f-347a-4189-9bc3-f1d4a9e10c11 - ad2.webp",
+      "SourceId": "Avion",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\",
+      "BasePath": "_content/Avion",
+      "RelativePath": "assets/images/31356f4f-347a-4189-9bc3-f1d4a9e10c11 - ad2.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\31356f4f-347a-4189-9bc3-f1d4a9e10c11 - ad2.webp"
+    },
+    {
       "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\about-1.jpeg",
       "SourceId": "Avion",
       "SourceType": "Discovered",
@@ -2990,23 +3007,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\Delivery.png"
-    },
-    {
-      "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\hero.jpeg",
-      "SourceId": "Avion",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\",
-      "BasePath": "_content/Avion",
-      "RelativePath": "assets/images/hero.jpeg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\hero.jpeg"
     },
     {
       "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\idea.jpeg",

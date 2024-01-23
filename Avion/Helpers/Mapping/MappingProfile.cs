@@ -24,6 +24,8 @@ namespace Avion.Helpers.Mapping
         public MappingProfile()
         {
             CreateMap<Hero, HeroVM>();
+            CreateMap<HeroEditVM, Hero>();
+            CreateMap<HeroVM, HeroEditVM>();
             CreateMap<Advert, AdvertVM>();
             CreateMap<Feature, FeatureVM>();
             CreateMap<Idea, IdeaVM>();

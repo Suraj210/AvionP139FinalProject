@@ -1,0 +1,40 @@
+﻿@model HeroEditVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Hero Image -->
+            <img src="~/assets/images/@Model.Image" alt="Hero Image" class="img-fluid rounded shadow">
+           
+        </div>
+        <div class="col-md-6">
+            <!-- Editable Hero Details Form -->
+            <form method="post" asp-action="Edit" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Photo">Image</label>
+                    <input asp-for="Photo" type="file" class="form-control my-3">
+                    <span class="text-danger" asp-validation-for="Photo"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label">Hero Title</label>
+                    <textarea asp-for="Title" class="form-control" id="heroTitle" rows="4"></textarea>
+                    <span class="text-danger" asp-validation-for="Title"></span>
+                </div>
+            
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Hero Description</label>
+                    <textarea asp-for="Description" class="form-control" id="heroDescription" rows="4"></textarea>
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    <div class="back ">
+        <a class="btn btn-dark btn-lg text-white" asp-action="Index">Back</a>
+    </div>
+</div>
+
