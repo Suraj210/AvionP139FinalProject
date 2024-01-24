@@ -26,7 +26,13 @@ namespace Avion.Helpers.Mapping
             CreateMap<Hero, HeroVM>();
             CreateMap<HeroEditVM, Hero>();
             CreateMap<HeroVM, HeroEditVM>();
+
+
             CreateMap<Advert, AdvertVM>();
+            CreateMap<AdvertEditVM, Advert>();
+            CreateMap<AdvertVM, AdvertEditVM>();
+
+
             CreateMap<Feature, FeatureVM>();
             CreateMap<Idea, IdeaVM>();
             CreateMap<Testimonial, TestimonialVM>();

@@ -72,6 +72,7 @@ namespace Avion.Services
             _mapper.Map(request, dbHero);
 
             dbHero.Image = fileName;
+            dbHero.CreateTime = DateTime.Now;
 
             _context.Heros.Update(dbHero);
             await _context.SaveChangesAsync();

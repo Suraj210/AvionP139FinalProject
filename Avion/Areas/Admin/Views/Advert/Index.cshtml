@@ -1,0 +1,48 @@
+﻿@model List<AdvertVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1 class="text-center mt-3 mb-3">Hero</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Created Time
+                    </th>
+                    <th>
+                        Operations
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var advert in Model)
+                {
+                    <tr>
+                        <td class="py-1">
+                            <img style="width:100px; height:100px" src="~/assets/images/@advert.Image" alt="image" />
+                        </td>
+                        <td>
+                            @advert.CreateTime.ToString("MM//dd/yyyy")
+                        </td>
+                        <td class="d-flex">
+                            <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@advert.Id"><i class="fa-solid fa-circle-info"></i></a>
+                            <a class="btn btn-outline-primary mx-1" asp-action="Edit" asp-route-id="@advert.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+                        </td>
+                    </tr>
+
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

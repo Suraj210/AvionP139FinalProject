@@ -1,28 +1,29 @@
 ﻿using AutoMapper;
+using Avion.Areas.Admin.ViewModels.Advert;
 using Avion.Areas.Admin.ViewModels.Hero;
 using Avion.Helpers.Extentions;
+using Avion.Services;
 using Avion.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Avion.Areas.Admin.Controllers
 {
-    public class HeroController : MainController
+    public class AdvertController : MainController
     {
-        private readonly IHeroService _heroService;
+        private readonly IAdvertService _advertService;
         private readonly IMapper _mapper;
 
-
-        public HeroController(IHeroService heroService,
-                             IMapper mapper)
+        public AdvertController(IAdvertService advertService,
+                                IMapper mapper)
         {
-            _heroService = heroService;
+            _advertService = advertService;
             _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return View(await _heroService.GetAllAsync());
+            return View(await _advertService.GetAllAsync());
         }
 
         [HttpGet]
@@ -30,11 +31,11 @@ namespace Avion.Areas.Admin.Controllers
         {
             if (id is null) return BadRequest();
 
-            HeroVM hero = await _heroService.GetByIdAsync((int)id);
+            AdvertVM advert = await _advertService.GetByIdAsync((int)id);
 
-            if (hero is null) return NotFound();
+            if (advert is null) return NotFound();
 
-            return View(hero);
+            return View(advert);
         }
 
 
@@ -43,32 +44,31 @@ namespace Avion.Areas.Admin.Controllers
         {
             if (id is null) return BadRequest();
 
-            HeroVM hero = await _heroService.GetByIdAsync((int)id);
+            AdvertVM advert = await _advertService.GetByIdAsync((int)id);
 
-            if (hero is null) return NotFound();
+            if (advert is null) return NotFound();
 
-            HeroEditVM heroEditVm = _mapper.Map<HeroEditVM>(hero);
+            AdvertEditVM advertEditVm = _mapper.Map<AdvertEditVM>(advert);
 
 
-            return View(heroEditVm);
+            return View(advertEditVm);
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-       
-        public async Task<IActionResult> Edit(int? id, HeroEditVM request)
+
+        public async Task<IActionResult> Edit(int? id, AdvertEditVM request)
         {
 
             if (id is null) return BadRequest();
 
-            HeroVM dbHero = await _heroService.GetByIdAsync((int) id);
+            AdvertVM dbAdvert = await _advertService.GetByIdAsync((int)id);
 
-            if (dbHero is null) return NotFound();
+            if (dbAdvert is null) return NotFound();
 
 
-            request.Image = dbHero.Image;
+            request.Image = dbAdvert.Image;
 
             if (!ModelState.IsValid)
             {
@@ -91,12 +91,13 @@ namespace Avion.Areas.Admin.Controllers
                     return View(request);
                 }
             }
-          
 
 
-            await _heroService.EditAsync(request);
+
+            await _advertService.EditAsync(request);
 
             return RedirectToAction(nameof(Index));
         }
+
     }
 }

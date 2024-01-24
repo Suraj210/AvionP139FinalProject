@@ -39,11 +39,14 @@
             </div>
             <div class="col-lg-6 mt-5">
                 <div class="footerRight">
-                    <form class="footerMail">
+                    <form asp-controller="Home" asp-action="CreateSubscribe" method="post" class="footerMail">
                         <h6>Join our mailing list</h6>
-                        <input type="text" placeholder="your@email.com" />
-                        <button>Sign Up</button>
+                        <input asp-for="@Model.Subscribe.Email" type="email" placeholder="your@email.com" required />
+                        <button type="submit" name="subscribe">Sign Up</button>
                     </form>
+
+
+
                 </div>
             </div>
         </div>
