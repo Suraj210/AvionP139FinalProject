@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Avion.Areas.Admin.ViewModels.Advert;
 using Avion.Areas.Admin.ViewModels.Hero;
 using Avion.Data;
 using Avion.Helpers.Extentions;

@@ -1,0 +1,40 @@
+﻿@model TestimonialEditVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Testimonial Image -->
+            <img src="~/assets/images/@Model.Image" alt="Testimonial Image" class="img-fluid rounded shadow">
+
+        </div>
+        <div class="col-md-6">
+            <!-- Editable Testimonial Details Form -->
+            <form method="post" asp-action="Edit" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Photo">Image</label>
+                    <input asp-for="Photo" type="file" class="form-control my-3">
+                    <span class="text-danger" asp-validation-for="Photo"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Testimonial Name</label>
+                    <textarea asp-for="Name" class="form-control" id="testimonialTitle" rows="4"></textarea>
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Message" class="form-label">Testimonial Message</label>
+                    <textarea asp-for="Message" class="form-control" id="testimonialMessage" rows="4"></textarea>
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    <div class="back ">
+        <a class="btn btn-dark btn-lg text-white" asp-action="Index">Back</a>
+    </div>
+</div>
+

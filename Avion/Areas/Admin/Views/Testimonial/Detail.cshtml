@@ -1,0 +1,26 @@
+﻿@model TestimonialVM
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Testimonial Image -->
+            <img src="~/assets/images/@Model.Image" alt="Testimonial Image" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6">
+            <!-- Testimonial Details -->
+            <div class="d-flex flex-column justify-content-center h-100">
+                <h2 class="mb-3">@Model.Name</h2>
+                <p class="text-muted">Created Time: @Model.CreateTime</p>
+                <p class="mb-4">@Model.Message</p>
+            </div>
+        </div>
+    </div>
+    <div class="back mt-2">
+        <a class="btn btn-dark btn-lg text-white" asp-action="Index">Back</a>
+    </div>
+
+</div>
+
