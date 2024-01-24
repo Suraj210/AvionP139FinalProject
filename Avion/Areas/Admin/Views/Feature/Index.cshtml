@@ -1,10 +1,10 @@
-﻿@model List<HeroVM>
+﻿@model List<FeatureVM>
 @{
     ViewData["Title"] = "Index";
 }
 
 <div class="container">
-    <h1 class="text-center mt-3 mb-3">Hero</h1>
+    <h1 class="text-center mt-3 mb-3">Feature</h1>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -27,24 +27,24 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var hero in Model)
+                @foreach (var feature in Model)
                 {
                     <tr>
                         <td class="py-1">
-                            <img style="width:100px; height:100px" src="~/assets/images/@hero.Image" alt="image" />
+                            <img style="width:50px; height:50px" src="~/assets/images/@feature.Image" alt="image" />
                         </td>
                         <td>
-                            @hero.Title.Substring(0,(int)Math.Ceiling(hero.Title.Length*0.5))...
+                            @feature.Title.Substring(0,(int)Math.Ceiling(feature.Title.Length*0.5))...
                         </td>
                         <td>
-                            @hero.Description.Substring(0,(int)Math.Ceiling(hero.Description.Length * 0.4))...
+                            @feature.Description.Substring(0,(int)Math.Ceiling(feature.Description.Length * 0.4))...
                         </td>
                         <td>
-                            @hero.CreateTime.ToString("MM//dd/yyyy")
+                            @feature.CreateTime.ToString("MM//dd/yyyy")
                         </td>
                         <td class="d-flex">
-                            <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@hero.Id"><i class="fa-solid fa-circle-info"></i></a>
-                            <a class="btn btn-outline-primary mx-1" asp-action="Edit" asp-route-id="@hero.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@feature.Id"><i class="fa-solid fa-circle-info"></i></a>
+                            <a class="btn btn-outline-primary mx-1" asp-action="Edit" asp-route-id="@feature.Id"><i class="fa-solid fa-pen-to-square"></i></a>
                         </td>
                     </tr>
 

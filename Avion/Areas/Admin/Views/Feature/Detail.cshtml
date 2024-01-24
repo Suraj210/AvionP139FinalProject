@@ -1,0 +1,25 @@
+﻿@model FeatureVM
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Feature Image -->
+            <img style="width:100px; height:100px" src="~/assets/images/@Model.Image" alt="Feature Image" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6">
+            <!-- Feature Details -->
+            <div class="d-flex flex-column justify-content-center h-100">
+                <h2 class="mb-3">@Model.Title</h2>
+                <p class="text-muted">Created Time: @Model.CreateTime</p>
+                <p class="mb-4">@Model.Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="back mt-2">
+        <a class="btn btn-dark btn-lg text-white" asp-action="Index">Back</a>
+    </div>
+
+</div>

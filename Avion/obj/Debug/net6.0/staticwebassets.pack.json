@@ -661,8 +661,8 @@
       "PackagePath": "staticwebassets\\assets\\images\\Checkmark--outline.png"
     },
     {
-      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\Delivery.png",
-      "PackagePath": "staticwebassets\\assets\\images\\Delivery.png"
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\Delivery - Copy.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Delivery - Copy.png"
     },
     {
       "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\Purchase.png",
@@ -711,6 +711,10 @@
     {
       "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\brand5.webp",
       "PackagePath": "staticwebassets\\assets\\images\\brand5.webp"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\cfeffaa9-153c-4ade-b2a8-a4d654611bcc - Delivery - Copy.png",
+      "PackagePath": "staticwebassets\\assets\\images\\cfeffaa9-153c-4ade-b2a8-a4d654611bcc - Delivery - Copy.png"
     },
     {
       "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\idea.jpeg",

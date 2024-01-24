@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AgjZy+EG1zxstfsTXGsRUsSGOBxTsIeXj8NH2ryV8gY=",
+  "Hash": "sul/MR58IPCaMiuHb8SybtdIrO3/M+Pj5Gh9rW5qTWU=",
   "Source": "Avion",
   "BasePath": "_content/Avion",
   "Mode": "Default",
@@ -2975,6 +2975,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\brand5.webp"
     },
     {
+      "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\cfeffaa9-153c-4ade-b2a8-a4d654611bcc - Delivery - Copy.png",
+      "SourceId": "Avion",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\",
+      "BasePath": "_content/Avion",
+      "RelativePath": "assets/images/cfeffaa9-153c-4ade-b2a8-a4d654611bcc - Delivery - Copy.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\cfeffaa9-153c-4ade-b2a8-a4d654611bcc - Delivery - Copy.png"
+    },
+    {
       "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\Checkmark--outline.png",
       "SourceId": "Avion",
       "SourceType": "Discovered",
@@ -2992,12 +3009,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\Checkmark--outline.png"
     },
     {
-      "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\Delivery.png",
+      "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\Delivery - Copy.png",
       "SourceId": "Avion",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\",
       "BasePath": "_content/Avion",
-      "RelativePath": "assets/images/Delivery.png",
+      "RelativePath": "assets/images/Delivery - Copy.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3006,7 +3023,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\Delivery.png"
+      "OriginalItemSpec": "wwwroot\\assets\\images\\Delivery - Copy.png"
     },
     {
       "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\idea.jpeg",
