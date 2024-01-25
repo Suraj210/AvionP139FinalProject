@@ -36,20 +36,28 @@
                 @foreach (var testimonial in Model)
                 {
                     <tr>
+                        @if (!testimonial.IsMain)
+                        {
+                            <td>
+                                <form method="post" asp-action="SoftDelete" asp-route-id="@testimonial.Id">
+
+                                    @if (!testimonial.SoftDeleted)
+                                    {
+                                        <button type="submit" style="width:20px; height:20px; background-color:#00ff00;border-radius:50%; cursor:pointer; outline:none; border:none" class="status-true"></button>
+                                    }
+                                    else
+                                    {
+                                        <button type="submit" style="width:20px; height:20px; background-color:red;border-radius:50%; cursor:pointer; outline:none; border:none" class="status-false"></button>
+                                    }
+
+                                </form>
+                            </td>
+                        }else{
                         <td>
-                            <form method="post" asp-action="SoftDelete" asp-route-id="@testimonial.Id">
-
-                                @if (!testimonial.SoftDeleted)
-                                {
-                                    <button type="submit" style="width:20px; height:20px; background-color:#00ff00;border-radius:50%; cursor:pointer; outline:none; border:none" class="status-true"></button>
-                                }
-                                else
-                                {
-                                    <button type="submit" style="width:20px; height:20px; background-color:red;border-radius:50%; cursor:pointer; outline:none; border:none" class="status-false"></button>
-                                }
-
-                            </form>
+                            Main 
                         </td>
+                        }
+
                         <td class="py-1">
                             <img style="width:100px; height:100px" src="~/assets/images/@testimonial.Image" alt="image" />
                         </td>
@@ -62,12 +70,16 @@
                         <td>
                             @testimonial.CreateTime.ToString("MM//dd/yyyy")
                         </td>
-                        <td class="d-flex">
-                            <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@testimonial.Id"><i class="fa-solid fa-circle-info"></i></a>
-                            <a class="btn btn-outline-primary mx-1" asp-action="Edit" asp-route-id="@testimonial.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <td >
+                            <a class="btn btn-outline-info mb-2" asp-action="Detail" asp-route-id="@testimonial.Id"><i class="fa-solid fa-circle-info"></i></a>
+                            <a class="btn btn-outline-primary mx-1 mb-2" asp-action="Edit" asp-route-id="@testimonial.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+                            @if (!testimonial.IsMain)
+                            {
+                                
                             <form class="d-inline-block" method="post">
-                                <button type="submit" class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@testimonial.Id"><i class="fa-solid fa-trash"></i></button>
+                                    <button  type="submit" class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@testimonial.Id"><i class="fa-solid fa-trash"></i></button>
                             </form>
+                            }
                         </td>
                     </tr>
 

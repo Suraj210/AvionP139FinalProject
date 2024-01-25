@@ -1,0 +1,62 @@
+﻿@model List<AboutVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1 class="text-center mt-3 mb-3">Hero</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Created Time
+                    </th>
+                    <th>
+                        Operations
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var about in Model)
+                {
+                    <tr>
+
+                        <td class="py-1">
+                            <img style="width:100px; height:100px" src="~/assets/images/@about.Image" alt="image" />
+                        </td>
+                        <td>
+                            @about.Title.Substring(0,(int)Math.Ceiling(about.Title.Length*0.5))...
+                        </td>
+                        <td>
+                            @about.Description.Substring(0,(int)Math.Ceiling(about.Description.Length * 0.4))...
+                        </td>
+                        <td>
+                            @about.CreateTime.ToString("MM//dd/yyyy")
+                        </td>
+                        <td class="d-flex">
+                            <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@about.Id"><i class="fa-solid fa-circle-info"></i></a>
+                            <a class="btn btn-outline-primary mx-1" asp-action="Edit" asp-route-id="@about.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+                        </td>
+                    </tr>
+
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

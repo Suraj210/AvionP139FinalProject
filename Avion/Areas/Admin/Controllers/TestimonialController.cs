@@ -32,7 +32,6 @@ namespace Avion.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
@@ -142,14 +141,14 @@ namespace Avion.Areas.Admin.Controllers
 
             if (!request.Photo.CheckFileType("image/"))
             {
-                ModelState.AddModelError("Photos", "File can be only image format");
+                ModelState.AddModelError("Photo", "File can be only image format");
                 return View();
             }
 
-            if (!request.Photo.CheckFileSize(200))
+            if (!request.Photo.CheckFileSize(500))
             {
-                ModelState.AddModelError("Photos", "File size can be max 200 kb");
-                return View();
+                ModelState.AddModelError("Photo", "File size can be max 500 kb");
+                return View(request);
             }
 
 

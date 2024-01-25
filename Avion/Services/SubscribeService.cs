@@ -25,12 +25,24 @@ namespace Avion.Services
 
             return _mapper.Map<List<SubscribeVM>>(subscribes);
         }
+
+        public async Task<SubscribeVM> GetByEmailAsync(string email)
+        {
+            return _mapper.Map<SubscribeVM>(await _context.Subscribes.FirstOrDefaultAsync(m => m.Email.Trim().ToLower() == email.Trim().ToLower()));
+        }
         public async Task CreateAsync(SubscribeCreateVM subscribe)
         {
             var data = _mapper.Map<Subscribe>(subscribe);
 
             await _context.Subscribes.AddAsync(data);
 
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            Subscribe subscribe = await _context.Subscribes.Where(m => m.Id == id).FirstOrDefaultAsync();
+            _context.Subscribes.Remove(subscribe);
             await _context.SaveChangesAsync();
         }
 

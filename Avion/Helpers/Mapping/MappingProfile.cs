@@ -60,9 +60,14 @@ namespace Avion.Helpers.Mapping
 
             CreateMap<Tag, TagVM>();
             CreateMap<BlogCategory, BlogCategoryVM>();
+
             CreateMap<Subscribe, SubscribeVM>();
             CreateMap<SubscribeCreateVM, Subscribe>();
+
             CreateMap<About, AboutVM>();
+            CreateMap<AboutEditVM, About>();
+            CreateMap<AboutVM,AboutEditVM>();
+
             CreateMap<ContactMessageCreateVM, ContactMessage>();
             CreateMap<ContactVM, ContactMessageVM>();
             CreateMap<Term,TermsVM>();

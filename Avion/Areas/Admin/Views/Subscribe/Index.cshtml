@@ -1,0 +1,51 @@
+﻿@model List<SubscribeVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1 class="text-center mt-3 mb-3">Subscribers</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Email
+                    </th>
+              
+                    <th>
+                        Apply Time
+                    </th>
+                    <th>
+                        Operations
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var subscriber in Model)
+                {
+                    
+                <tr>
+                    <td class="py-1">
+                        @subscriber.Email
+                    </td>
+              
+                    <td>
+                            @subscriber.CreateTime.ToString("MM//dd/yyyy")
+                    </td>
+                    <td class="d-flex">
+                            <form class="d-inline-block" method="post">
+                                <button type="submit" class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@subscriber.Id"><i class="fa-solid fa-trash"></i></button>
+                            </form>
+                    </td>
+                </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
