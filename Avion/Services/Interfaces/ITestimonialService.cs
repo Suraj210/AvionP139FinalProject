@@ -12,5 +12,6 @@ namespace Avion.Services.Interfaces
         Task<TestimonialVM> GetByIdIgnoreAsync(int id);
         Task<List<TestimonialVM>> GetAllIgnoreAdminAsync();
         Task DeleteAsync(int id);
+        Task CreateAsync(TestiimonialCreateVM request);
     }
 }

@@ -46,6 +46,7 @@ namespace Avion.Helpers.Mapping
             CreateMap<Testimonial, TestimonialVM>().ReverseMap();
             CreateMap<TestimonialEditVM, Testimonial>();
             CreateMap<TestimonialVM, TestimonialEditVM>();
+            CreateMap<TestiimonialCreateVM, Testimonial>();
 
             CreateMap<Product, ProductVM>().ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name))
                                            .ForMember(dest => dest.BrandName, opt => opt.MapFrom(src => src.Brand.Name))

@@ -81,8 +81,6 @@ namespace Avion.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-
-
         public async Task<IActionResult> Edit(int? id, TestimonialEditVM request)
         {
 
@@ -122,6 +120,44 @@ namespace Avion.Areas.Admin.Controllers
             await _testimonialService.EditAsync(request);
 
             return RedirectToAction(nameof(Index));
+        }
+
+
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(TestiimonialCreateVM request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+
+            if (!request.Photo.CheckFileType("image/"))
+            {
+                ModelState.AddModelError("Photos", "File can be only image format");
+                return View();
+            }
+
+            if (!request.Photo.CheckFileSize(200))
+            {
+                ModelState.AddModelError("Photos", "File size can be max 200 kb");
+                return View();
+            }
+
+
+
+            await _testimonialService.CreateAsync(request);
+
+
+            return RedirectToAction("Index");
         }
 
     }

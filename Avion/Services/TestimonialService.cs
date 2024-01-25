@@ -30,29 +30,24 @@ namespace Avion.Services
 
             return _mapper.Map<List<TestimonialVM>>(datas);
         }
-
         public async Task<List<TestimonialVM>> GetAllIgnoreAdminAsync()
         {
             List<Testimonial> datas = await _context.Testimonials.IgnoreQueryFilters().ToListAsync();
 
             return _mapper.Map<List<TestimonialVM>>(datas);
         }
-
         public async Task<TestimonialVM> GetByIdAsync(int id)
         {
             var datas = await _context.Testimonials.IgnoreQueryFilters().FirstOrDefaultAsync(m => m.Id == id);
             TestimonialVM testimonial = _mapper.Map<TestimonialVM>(datas);
             return testimonial;
         }
-
         public async Task<TestimonialVM> GetByIdIgnoreAsync(int id)
         {
             var datas = await _context.Testimonials.IgnoreQueryFilters().FirstOrDefaultAsync(m => m.Id == id);
             TestimonialVM testimonial = _mapper.Map<TestimonialVM>(datas);
             return testimonial;
         }
-
-
         public async Task EditAsync(TestimonialEditVM request)
         {
             string fileName;
@@ -81,7 +76,7 @@ namespace Avion.Services
 
 
 
-            Testimonial dbTestimonial = await _context.Testimonials.FirstOrDefaultAsync(m => m.Id == request.Id);
+            Testimonial dbTestimonial = await _context.Testimonials.IgnoreQueryFilters().FirstOrDefaultAsync(m => m.Id == request.Id);
 
 
             _mapper.Map(request, dbTestimonial);
@@ -93,10 +88,6 @@ namespace Avion.Services
             await _context.SaveChangesAsync();
 
         }
-
-
-
-
         public async Task SoftDeleteAsync(TestimonialVM request)
         {
             //int count = await _context.Testimonials.IgnoreQueryFilters().Where(m => m.SoftDeleted).CountAsync();
@@ -116,8 +107,6 @@ namespace Avion.Services
             _context.Testimonials.Update(dbTestimonial);
             await _context.SaveChangesAsync();
         }
-    
-    
         public async Task DeleteAsync(int id)
         {
             Testimonial testimonial = await _context.Testimonials.IgnoreQueryFilters().Where(m => m.Id == id).FirstOrDefaultAsync();
@@ -131,6 +120,21 @@ namespace Avion.Services
                 File.Delete(path);
             }
         }
-    
+        public async Task CreateAsync(TestiimonialCreateVM request)
+        {
+            string fileName = $"{Guid.NewGuid()}-{request.Photo.FileName}";
+
+            string path = _env.GetFilePath("assets/images", fileName);
+
+            var data = _mapper.Map<Testimonial>(request);
+
+            data.Image = fileName;
+
+            await _context.AddAsync(data);
+
+            await _context.SaveChangesAsync();
+
+            await request.Photo.SaveFileAsync(path);
+        }
     }
 }

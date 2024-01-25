@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qKkz/S0Fk27W8TCdC/kJyFIx+QVyLLM5RmlVixFhyRU=",
+  "Hash": "BhjOItXL76BgIVLcuxD+WY2xgDDkz80uRr61dTCw1jg=",
   "Source": "Avion",
   "BasePath": "_content/Avion",
   "Mode": "Default",
@@ -2805,6 +2805,40 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\23a5d7f0-e7cf-4579-8e56-78f6230bbb3f - about-2.jpeg"
     },
     {
+      "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\852405e3-19d7-444e-81a1-8f91966bc4c2 - about-1.jpeg",
+      "SourceId": "Avion",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\",
+      "BasePath": "_content/Avion",
+      "RelativePath": "assets/images/852405e3-19d7-444e-81a1-8f91966bc4c2 - about-1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\852405e3-19d7-444e-81a1-8f91966bc4c2 - about-1.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\a97b40e1-6334-411c-9e68-720832f0d3d7 - 23a5d7f0-e7cf-4579-8e56-78f6230bbb3f - about-2.jpeg",
+      "SourceId": "Avion",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\",
+      "BasePath": "_content/Avion",
+      "RelativePath": "assets/images/a97b40e1-6334-411c-9e68-720832f0d3d7 - 23a5d7f0-e7cf-4579-8e56-78f6230bbb3f - about-2.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\a97b40e1-6334-411c-9e68-720832f0d3d7 - 23a5d7f0-e7cf-4579-8e56-78f6230bbb3f - about-2.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\about-1.jpeg",
       "SourceId": "Avion",
       "SourceType": "Discovered",
@@ -3670,23 +3704,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\subscribe-bg.jpeg"
-    },
-    {
-      "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\testimonial-1.jpg",
-      "SourceId": "Avion",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\",
-      "BasePath": "_content/Avion",
-      "RelativePath": "assets/images/testimonial-1.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\testimonial-1.jpg"
     },
     {
       "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\title-logo.png",
