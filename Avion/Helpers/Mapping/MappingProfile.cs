@@ -70,8 +70,17 @@ namespace Avion.Helpers.Mapping
 
             CreateMap<ContactMessageCreateVM, ContactMessage>();
             CreateMap<ContactVM, ContactMessageVM>();
-            CreateMap<Term,TermsVM>();
+
+            CreateMap<Term,TermsVM>().ReverseMap();
+            CreateMap<TermsEditVM, Term>();
+            CreateMap<TermsVM,TermsEditVM>();
+            CreateMap<TermsCreateVM, Term>();
+
+
             CreateMap<Privacy,PrivacyVM>();
+            CreateMap<PrivacyEditVM,Privacy>();
+            CreateMap<PrivacyVM,PrivacyEditVM>();
+            CreateMap<PrivacyCreateVM,Privacy>();
         }
     }
 }

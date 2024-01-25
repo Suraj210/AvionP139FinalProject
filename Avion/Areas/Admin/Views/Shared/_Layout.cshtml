@@ -67,6 +67,7 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                   
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Home</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -78,10 +79,13 @@
                             <a asp-area="Admin" asp-controller="Subscribe" asp-action="Index" class="dropdown-item">Subscribe</a>
                         </div>
                     </div>
+
+
                     <div class="nav-item dropdown">
                         <a asp-area="Admin" asp-controller="About" asp-action="Index" class="nav-link "><i class="far fa-file-alt me-2"></i>About</a>
                      
                     </div>
+
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Blog</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -89,6 +93,7 @@
                             <a asp-area="Admin" asp-controller="Tag" asp-action="Index" class="dropdown-item">Tag</a>
                         </div>
                     </div>
+
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Contact</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -96,15 +101,23 @@
                             <a asp-area="Admin" asp-controller="Contact" asp-action="MessageIndex" class="dropdown-item">Contact Message</a>
                         </div>
                     </div>
-                    <div class="nav-item">
-                        <a asp-area="Admin" asp-controller="Setting" asp-action="Index" class="dropdown-item">Setting</a>
-                    </div>
+
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Account</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a asp-area="Admin" asp-controller="Account" asp-action="Index" class="dropdown-item" class="dropdown-item">Users</a>
                         </div>
                     </div>
+
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Others</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a asp-area="Admin" asp-controller="Term" asp-action="Index" class="dropdown-item" class="dropdown-item">Terms of Use</a>
+                            <a asp-area="Admin" asp-controller="Privacy" asp-action="Index" class="dropdown-item">Privacy Policy</a>
+                            <a asp-area="Admin" asp-controller="Setting" asp-action="Index" class="dropdown-item">Setting</a>
+                        </div>
+                    </div>
+
                 </div>
             </nav>
         </div>

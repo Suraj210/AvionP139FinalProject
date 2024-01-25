@@ -1,0 +1,22 @@
+﻿@model TermsVM
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Term Details -->
+            <div class="d-flex flex-column justify-content-center h-100">
+                <h2 class="mb-3">@Model.Title</h2>
+                <p class="mb-4">@Model.Context</p>
+                <p class="text-muted">Created Time: @Model.CreateTime</p>
+            </div>
+        </div>
+    </div>
+    <div class="back mt-2">
+        <a class="btn btn-dark btn-lg text-white" asp-action="Index">Back</a>
+    </div>
+
+</div>
+

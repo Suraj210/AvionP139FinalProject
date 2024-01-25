@@ -1,0 +1,63 @@
+﻿@model List<TermsVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1 class="text-center mt-3 mb-3">Testimonials</h1>
+    <a asp-action="Create" style="cursor:pointer; color:teal; font-size:35px;" class="mb-2">
+        <i class="fa-solid fa-circle-plus "></i>
+    </a>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Context
+                    </th>
+                    <th>
+                        Created Time
+                    </th>
+                    <th>
+                        Operations
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var term in Model)
+                {
+                    <tr>
+                        <td>
+                            @term.Title.Substring(0,(int)Math.Ceiling(term.Title.Length*0.5))...
+                        </td>
+                        <td>
+                            @term.Context.Substring(0,(int)Math.Ceiling(term.Context.Length * 0.4))...
+                        </td>
+                        <td>
+                            @term.CreateTime.ToString("MM//dd/yyyy")
+                        </td>
+                        <td>
+                            <a class="btn btn-outline-info mb-2" asp-action="Detail" asp-route-id="@term.Id"><i class="fa-solid fa-circle-info"></i></a>
+                            <a class="btn btn-outline-primary me-1 mb-2" asp-action="Edit" asp-route-id="@term.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+                         
+
+                                <form class="d-inline-block" method="post">
+                                <button type="submit" class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@term.Id"><i class="fa-solid fa-trash"></i></button>
+                               </form>
+                            
+                        </td>
+                    </tr>
+
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

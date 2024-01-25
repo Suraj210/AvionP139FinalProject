@@ -1,0 +1,31 @@
+﻿@model TermsCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Editable Term Details Form -->
+            <form method="post" asp-action="Create">
+               
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label">Term Title</label>
+                    <textarea asp-for="Title" class="form-control" id="TermTitle" rows="2"></textarea>
+                    <span class="text-danger" asp-validation-for="Title"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Context" class="form-label">Term Context</label>
+                    <textarea asp-for="Context" class="form-control" id="TermMessage" rows="8"></textarea>
+                    <span class="text-danger" asp-validation-for="Context"></span>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    <div class="back ">
+        <a class="btn btn-dark btn-lg text-white d-block" asp-action="Index">Back</a>
+    </div>
+</div>
+
