@@ -58,7 +58,12 @@ namespace Avion.Helpers.Mapping
             CreateMap<Blog, BlogVM>().ForMember(dest => dest.BlogCategoryName, opt => opt.MapFrom(src => src.BlogCategory.Name))
                                      .ForMember(dest => dest.Tags, opt => opt.MapFrom(src => src.BlogTags.Select(m => m.Tag).ToList()));
 
-            CreateMap<Tag, TagVM>();
+            CreateMap<Tag, TagVM>().ReverseMap();
+            CreateMap<TagEditVM, Tag>();
+            CreateMap<TagVM, TagEditVM>();
+            CreateMap<TagCreateVM, Tag>();
+
+
             CreateMap<BlogCategory, BlogCategoryVM>();
 
             CreateMap<Subscribe, SubscribeVM>();

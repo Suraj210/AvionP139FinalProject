@@ -1,0 +1,70 @@
+﻿@model List<TagVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container">
+    <h1 class="text-center mt-3 mb-3">Tags</h1>
+    <a asp-action="Create" style="cursor:pointer; color:teal; font-size:35px;" class="mb-2">
+        <i class="fa-solid fa-circle-plus "></i>
+    </a>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Status
+                    </th>
+            
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Created Time
+                    </th>
+                    <th>
+                        Operations
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var tag in Model)
+                {
+                    <tr>
+                
+                            <td>
+                            <form method="post" asp-action="SoftDelete" asp-route-id="@tag.Id">
+
+                                @if (!tag.SoftDeleted)
+                                {
+                                   <button type="submit" style="width:20px; height:20px; background-color:#00ff00;border-radius:50%; cursor:pointer; outline:none; border:none" class="status-true"></button>
+                                }
+                                else
+                                {
+                                  <button type="submit" style="width:20px; height:20px; background-color:red;border-radius:50%; cursor:pointer; outline:none; border:none" class="status-false"></button>
+                                }
+
+                                </form>
+                            </td>
+                        <td>
+                            @tag.Name
+                        </td>
+                        <td>
+                            @tag.CreateTime.ToString("MM//dd/yyyy")
+                        </td>
+                        <td>
+                            <a class="btn btn-outline-primary mx-1 " asp-action="Edit" asp-route-id="@tag.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <form class="d-inline-block" method="post">
+                                <button type="submit" class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@tag.Id"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                           
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

@@ -90,8 +90,6 @@ namespace Avion.Services
         }
         public async Task SoftDeleteAsync(TestimonialVM request)
         {
-            //int count = await _context.Testimonials.IgnoreQueryFilters().Where(m => m.SoftDeleted).CountAsync();
-
 
             if (request.SoftDeleted)
             {

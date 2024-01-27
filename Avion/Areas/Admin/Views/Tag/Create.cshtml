@@ -1,0 +1,26 @@
+﻿@model TagCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Editable Testimonial Details Form -->
+            <form method="post" asp-action="Create" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Testimonial Name</label>
+                    <input type="text" asp-for="Name" class="form-control" id="testimonialTitle" rows="4"></input>
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    <div class="back ">
+        <a class="btn btn-dark btn-lg text-white d-block" asp-action="Index">Back</a>
+    </div>
+</div>
+
+
