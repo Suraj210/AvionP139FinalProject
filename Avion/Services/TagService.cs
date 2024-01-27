@@ -29,12 +29,7 @@ namespace Avion.Services
         {
             return _mapper.Map<List<TagVM>>(await _context.Tags.IgnoreQueryFilters().ToListAsync());
         }
-        public async Task<TagVM> GetByIdAsync(int id)
-        {
-            var datas = await _context.Tags.FirstOrDefaultAsync(m => m.Id == id);
-            TagVM tag = _mapper.Map<TagVM>(datas);
-            return tag;
-        }
+
         public async Task<TagVM> GetByIdIgnoreAsync(int id)
         {
             var datas = await _context.Tags.IgnoreQueryFilters().FirstOrDefaultAsync(m => m.Id == id);

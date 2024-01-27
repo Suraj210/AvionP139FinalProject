@@ -64,7 +64,10 @@ namespace Avion.Helpers.Mapping
             CreateMap<TagCreateVM, Tag>();
 
 
-            CreateMap<BlogCategory, BlogCategoryVM>();
+            CreateMap<BlogCategory, BlogCategoryVM>().ReverseMap();
+            CreateMap<BlogCategoryEditVM, BlogCategory>();
+            CreateMap<BlogCategoryVM, BlogCategoryEditVM>();
+            CreateMap<BlogCategoryCreateVM, BlogCategory>();
 
             CreateMap<Subscribe, SubscribeVM>();
             CreateMap<SubscribeCreateVM, Subscribe>();

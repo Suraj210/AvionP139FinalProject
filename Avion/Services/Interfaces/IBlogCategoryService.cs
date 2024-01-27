@@ -6,5 +6,13 @@ namespace Avion.Services.Interfaces
     {
         Task<List<BlogCategoryVM>> GetAllAsync();
         Task<BlogCategoryVM> GetByIdAsync(int id);
+        Task<List<BlogCategoryVM>> GetAllIgnoreAdminAsync();
+        Task<BlogCategoryVM> GetByIdIgnoreAsync(int id);
+        Task CreateAsync(BlogCategoryCreateVM blogCategory);
+        Task DeleteAsync(int id);
+        Task SoftDeleteAsync(BlogCategoryVM request);
+        Task EditAsync(BlogCategoryEditVM request);
+        Task<BlogCategoryVM> GetByIdWithoutTrackingAsync(int id);
+        Task<BlogCategoryVM> GetByNameWithoutTrackingAsync(string name);
     }
 }
