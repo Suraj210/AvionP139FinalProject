@@ -10,6 +10,12 @@ namespace Avion.Services.Interfaces
         Task<int> GetCountAsync();
         Task<int> GetCountByCategoryAsync(int id);
         Task<BlogVM> GetByIdAsync(int id);
-
+        Task<BlogVM> GetByIdIgnoreAsync(int id);
+        Task<BlogVM> GetByNameWithoutTrackingAsync(string name);
+        Task SoftDeleteAsync(BlogVM request);
+        Task<List<BlogVM>> GetPaginatedDatasWithIgnoreQuerryAsync(int page, int take);
+        Task<int> GetCountWithIgnoreFilterAsync();
+        Task CreateAsync(BlogCreateVM blog);
+        Task DeleteAsync(int id);
     }
 }

@@ -11,10 +11,12 @@ namespace Avion.Areas.Admin.ViewModels.Blog
 
         public string Image { get; set; }
 
-        public ICollection<Avion.Models.Tag> Tags { get; set; }
+        public List<Avion.Models.Tag> Tags { get; set; }
 
         public string BlogCategoryName { get; set; }
 
         public int BlogCategoryId { get; set; }
+
+        public bool SoftDeleted { get; set; }
     }
 }

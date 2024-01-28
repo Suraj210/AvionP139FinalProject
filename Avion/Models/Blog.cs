@@ -7,7 +7,7 @@
 
         public string Image { get; set; }
 
-        public ICollection<BlogTag> BlogTags { get; set; }
+        public ICollection<BlogTag> BlogTags { get; set; } = new HashSet<BlogTag>();
 
         public BlogCategory BlogCategory { get; set; }
 
