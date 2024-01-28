@@ -165,8 +165,6 @@ namespace Avion.Services
         public async Task CreateAsync(BlogCreateVM blog)
         {
 
-
-
             string fileName = $"{Guid.NewGuid()}-{blog.Photo.FileName}";
 
             string path = _env.GetFilePath("assets/images", fileName);
@@ -226,5 +224,56 @@ namespace Avion.Services
 
 
         }
+
+
+
+        //Edit Blog Post
+
+        public async Task EditAsync(BlogEditVM blog)
+        {
+           
+
+            if (blog.Photo != null)
+            {
+                string fileName = $"{Guid.NewGuid()}-{blog.Photo.FileName}";
+
+                string path = _env.GetFilePath("assets/images", fileName);
+                blog.Image = fileName;
+                await blog.Photo.SaveFileAsync(path);
+            }
+
+            
+
+
+            Blog blogById = await _context.Blogs.IgnoreQueryFilters().Include(m => m.BlogTags).FirstOrDefaultAsync(m => m.Id == blog.Id);
+
+            var existingIds = blogById.BlogTags.Select(m => m.TagId).ToList();
+
+            var selectedIds = blog.Tags.Where(m => m.Selected).Select(m => m.Value).Select(int.Parse).ToList();
+
+            var toAdd = selectedIds.Except(existingIds);
+            var toRemove = existingIds.Except(selectedIds);
+
+            blogById.BlogTags = blogById.BlogTags.Where(m => !toRemove.Contains(m.TagId)).ToList();
+
+            foreach (var item in toAdd)
+            {
+                blogById.BlogTags.Add(new BlogTag
+                {
+                    TagId = item
+                });
+            }
+
+
+
+            _mapper.Map(blog, blogById);
+
+            _context.Blogs.Update(blogById);
+
+            await _context.SaveChangesAsync();
+        }
+
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 namespace Avion.Areas.Admin.ViewModels.Blog
 {
@@ -10,10 +11,11 @@ namespace Avion.Areas.Admin.ViewModels.Blog
         [Required]
         public string Description { get; set; }
 
-        [Required]
+        public string Image { get; set; }
+
         public IFormFile Photo { get; set; }
 
-        public IList<Avion.Models.Tag> Tags { get; set; }
+        public IList<SelectListItem> Tags { get; set; }
         public int BlogCategoryId { get; set; }
     }
 }

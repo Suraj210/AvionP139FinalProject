@@ -17,5 +17,6 @@ namespace Avion.Services.Interfaces
         Task<int> GetCountWithIgnoreFilterAsync();
         Task CreateAsync(BlogCreateVM blog);
         Task DeleteAsync(int id);
+        Task EditAsync(BlogEditVM blog);
     }
 }

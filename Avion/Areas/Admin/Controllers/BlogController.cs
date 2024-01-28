@@ -3,10 +3,12 @@ using Avion.Areas.Admin.ViewModels.BlogCategory;
 using Avion.Data;
 using Avion.Helpers;
 using Avion.Helpers.Extentions;
+using Avion.Models;
 using Avion.Services;
 using Avion.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Avion.Areas.Admin.Controllers
 {
@@ -153,5 +155,125 @@ namespace Avion.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
 
         }
+
+        [HttpGet]
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id is null) return BadRequest();
+            ViewBag.blogCategories = await GetCategoriesAsync();
+            Blog dbBlog = await _context.Blogs.AsNoTracking()
+                                              .IgnoreQueryFilters()
+                                              .Where(m => m.Id == id)
+                                              .Include(bc => bc.BlogCategory)
+                                              .Include(m => m.BlogTags)
+                                              .ThenInclude(m => m.Tag)
+                                              .FirstOrDefaultAsync();
+
+            if (dbBlog is null) return NotFound();
+
+            var selectedTags = dbBlog.BlogTags.Select(m => m.TagId).ToList();
+
+            var tags = _context.Tags.Select(m => new SelectListItem()
+            {
+                Text = m.Name,
+                Value = m.Id.ToString(),
+                Selected = selectedTags.Contains(m.Id)
+            }).ToList();
+
+
+
+
+            return View(new BlogEditVM()
+            {
+                Title = dbBlog.Title,
+                Description = dbBlog.Description,
+                Image = dbBlog.Image,
+                Tags = tags,
+                BlogCategoryId = dbBlog.BlogCategoryId
+
+            });
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> Edit(int? id, BlogEditVM request)
+        {
+            if (id is null) return BadRequest();
+
+            ViewBag.blogCategories = await GetCategoriesAsync();
+
+            Blog dbBlog = await _context.Blogs.IgnoreQueryFilters()
+                                              .Where(m => m.Id == id)
+                                              .Include(bc => bc.BlogCategory)
+                                              .Include(m => m.BlogTags)
+                                              .ThenInclude(m => m.Tag)
+                                              .FirstOrDefaultAsync();
+
+            if (dbBlog is null) return NotFound();
+
+
+            var selectedTags = dbBlog.BlogTags.Select(m => m.TagId).ToList();
+
+
+
+
+            request.Image = dbBlog.Image;
+            dbBlog.BlogCategoryId = request.BlogCategoryId;
+
+
+            if (!ModelState.IsValid)
+            {
+                request.Tags = _tagService.GetAllSelectedAsync();
+                return View(request);
+            }
+
+            BlogVM existBlog = await _blogService.GetByNameWithoutTrackingAsync(request.Title);
+
+
+            if (request.Photo != null)
+            {
+
+                if (!request.Photo.CheckFileType("image/"))
+                {
+                    request.Tags = _tagService.GetAllSelectedAsync();
+                    ModelState.AddModelError("Photos", "File can only be in image format");
+                    return View(request);
+
+                }
+
+                if (!request.Photo.CheckFileSize(500))
+                {
+                    request.Tags = _tagService.GetAllSelectedAsync();
+                    ModelState.AddModelError("Photos", "File size can be max 500 kb");
+                    return View(request);
+                }
+
+
+
+            }
+
+
+            if (existBlog is not null)
+            {
+                if (existBlog.Id == request.Id)
+                {
+                    await _blogService.EditAsync(request);
+
+                    return RedirectToAction(nameof(Index));
+                }
+
+                ModelState.AddModelError("Name", "This name already exists");
+                return View(request);
+            }
+
+            await _blogService.EditAsync(request);
+
+            return RedirectToAction(nameof(Index));
+
+        }
+
     }
 }
