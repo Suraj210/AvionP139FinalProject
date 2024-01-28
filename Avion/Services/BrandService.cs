@@ -162,5 +162,51 @@ namespace Avion.Services
             }
         }
 
+
+        //Edit Brand
+
+        public async Task EditAsync(BrandEditVM request)
+        {
+
+
+            if (request.Photo != null)
+            {
+                string fileName = $"{Guid.NewGuid()}-{request.Photo.FileName}";
+
+                string path = _env.GetFilePath("assets/images", fileName);
+                request.Image = fileName;
+                await request.Photo.SaveFileAsync(path);
+            }
+
+
+
+
+            Brand brandById = await _context.Brands.IgnoreQueryFilters().Include(m => m.BrandCategories).FirstOrDefaultAsync(m => m.Id == request.Id);
+
+            var existingIds = brandById.BrandCategories.Select(m => m.CategoryId).ToList();
+
+            var selectedIds = request.Categories.Where(m => m.Selected).Select(m => m.Value).Select(int.Parse).ToList();
+
+            var toAdd = selectedIds.Except(existingIds);
+            var toRemove = existingIds.Except(selectedIds);
+
+            brandById.BrandCategories = brandById.BrandCategories.Where(m => !toRemove.Contains(m.CategoryId)).ToList();
+
+            foreach (var item in toAdd)
+            {
+                brandById.BrandCategories.Add(new BrandCategory
+                {
+                    CategoryId = item
+                });
+            }
+
+
+
+            _mapper.Map(request, brandById);
+
+            _context.Brands.Update(brandById);
+
+            await _context.SaveChangesAsync();
+        }
     }
 }

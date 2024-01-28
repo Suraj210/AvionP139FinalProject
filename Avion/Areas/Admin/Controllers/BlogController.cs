@@ -263,7 +263,7 @@ namespace Avion.Areas.Admin.Controllers
 
                     return RedirectToAction(nameof(Index));
                 }
-
+                request.Tags = _tagService.GetAllSelectedAsync();
                 ModelState.AddModelError("Name", "This name already exists");
                 return View(request);
             }

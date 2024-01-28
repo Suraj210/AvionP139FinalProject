@@ -14,5 +14,6 @@ namespace Avion.Services.Interfaces
         Task<BrandVM> GetByNameWithoutTrackingAsync(string name);
         Task CreateAsync(BrandCreateVM request);
         Task DeleteAsync(int id);
+        Task EditAsync(BrandEditVM request);
     }
 }
