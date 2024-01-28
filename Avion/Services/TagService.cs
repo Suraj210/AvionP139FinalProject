@@ -75,6 +75,8 @@ namespace Avion.Services
         {
             Tag dbTag = await _context.Tags.IgnoreQueryFilters().AsNoTracking().FirstOrDefaultAsync(m => m.Id == tag.Id);
 
+            dbTag.CreateTime = DateTime.Now;
+
             _mapper.Map(tag, dbTag);
 
             _context.Tags.Update(dbTag);

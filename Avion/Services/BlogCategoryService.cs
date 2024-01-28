@@ -83,6 +83,8 @@ namespace Avion.Services
         {
             BlogCategory dbBlogCategory = await _context.BlogCategories.IgnoreQueryFilters().AsNoTracking().FirstOrDefaultAsync(m => m.Id == request.Id);
 
+            dbBlogCategory.CreateTime= DateTime.Now;
+
             _mapper.Map(request, dbBlogCategory);
 
             _context.BlogCategories.Update(dbBlogCategory);

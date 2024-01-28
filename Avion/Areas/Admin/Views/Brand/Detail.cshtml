@@ -1,0 +1,52 @@
+﻿@model BrandVM
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+<style>
+
+    .category {
+        border: 1px solid #2a254b;
+        padding: 4px;
+        text-align: center;
+        width: fit-content;
+        color: #2a254b;
+    }
+
+
+
+</style>
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Blog Image -->
+            <img src="~/assets/images/@Model.Image" alt="Testimonial Image" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6">
+            <!-- Testimonial Details -->
+            <div class="d-flex flex-column justify-content-center h-100">
+                <h2 class="mb-3">@Model.Name</h2>
+                <p class="text-muted">Created Time: @Model.CreateTime</p>
+                <span>Categories:</span>
+                <div class="d-flex gap-2 flex-wrap">
+                    @foreach (var item in Model.Categories)
+                    {
+                        <p class="category">@item.Name</p>
+                    }
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="back mt-2">
+        <a class="btn btn-dark btn-lg text-white" asp-action="Index">Back</a>
+    </div>
+
+</div>
+

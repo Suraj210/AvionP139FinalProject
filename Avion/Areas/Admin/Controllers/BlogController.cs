@@ -1,10 +1,8 @@
 ﻿using Avion.Areas.Admin.ViewModels.Blog;
-using Avion.Areas.Admin.ViewModels.BlogCategory;
 using Avion.Data;
 using Avion.Helpers;
 using Avion.Helpers.Extentions;
 using Avion.Models;
-using Avion.Services;
 using Avion.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -162,6 +160,7 @@ namespace Avion.Areas.Admin.Controllers
         {
             if (id is null) return BadRequest();
             ViewBag.blogCategories = await GetCategoriesAsync();
+
             Blog dbBlog = await _context.Blogs.AsNoTracking()
                                               .IgnoreQueryFilters()
                                               .Where(m => m.Id == id)
@@ -222,7 +221,7 @@ namespace Avion.Areas.Admin.Controllers
 
             request.Image = dbBlog.Image;
             dbBlog.BlogCategoryId = request.BlogCategoryId;
-
+            dbBlog.CreateTime= DateTime.Now;
 
             if (!ModelState.IsValid)
             {

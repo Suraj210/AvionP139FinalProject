@@ -3,6 +3,7 @@ using Avion.Areas.Admin.ViewModels.BlogCategory;
 using Avion.Areas.Admin.ViewModels.Category;
 using Avion.Data;
 using Avion.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Avion.Services
@@ -30,5 +31,16 @@ namespace Avion.Services
             return _mapper.Map<CategoryVM>(data);
         }
 
+
+        //Methods for Admin Panel
+        public List<SelectListItem> GetAllSelectedAsync()
+        {
+            return _context.Categories.Select(m => new SelectListItem()
+            {
+                Text = m.Name,
+                Value = m.Id.ToString(),
+
+            }).ToList();
+        }
     }
 }

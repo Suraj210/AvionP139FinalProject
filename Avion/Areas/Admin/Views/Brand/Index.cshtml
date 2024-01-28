@@ -1,0 +1,115 @@
+﻿@model Paginate<BrandVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1 class="text-center mt-3 mb-3">Brands</h1>
+    <a asp-action="Create" style="cursor:pointer; color:teal; font-size:35px;" class="mb-2">
+        <i class="fa-solid fa-circle-plus "></i>
+    </a>
+    <div class="table-responsive">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Categories
+                    </th>
+                    <th>
+                        Created Time
+                    </th>
+                    <th>
+                        Operations
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var brand in Model.Datas)
+                {
+                    <tr>
+
+                        <td>
+                            <form method="post" asp-action="SoftDelete" asp-route-id="@brand.Id">
+
+                                @if (!brand.SoftDeleted)
+                                {
+                                    <button type="submit" style="width:20px; height:20px; background-color:#00ff00;border-radius:50%; cursor:pointer; outline:none; border:none" class="status-true"></button>
+                                }
+                                else
+                                {
+                                    <button type="submit" style="width:20px; height:20px; background-color:red;border-radius:50%; cursor:pointer; outline:none; border:none" class="status-false"></button>
+                                }
+
+                            </form>
+                        </td>
+
+
+                        <td class="py-1">
+                            <img style="width:100px; height:100px" src="~/assets/images/@brand.Image" alt="image" />
+                        </td>
+                        <td>
+                            @brand.Name
+                        </td>
+                        <td>
+                            @if (brand.Categories.Count != 0)
+                            {
+                                @(
+                                    "#" + brand.Categories[0].Name + " and others."
+                                    )
+                            }
+                            else
+                            {
+
+                                @("No category has been added.")
+                            }
+                        </td>
+                        <td>
+                            @brand.CreateTime.ToString("MM//dd/yyyy")
+                        </td>
+                        <td>
+                            <a class="btn btn-outline-info mb-2" asp-action="Detail" asp-route-id="@brand.Id"><i class="fa-solid fa-circle-info"></i></a>
+                            <a class="btn btn-outline-primary mx-1 mb-2" asp-action="Edit" asp-route-id="@brand.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+
+
+                            <form class="d-inline-block" method="post">
+                                <button type="submit" class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@brand.Id"><i class="fa-solid fa-trash"></i></button>
+                            </form>
+
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+        <nav class="d-flex justify-content-center mt-3" aria-label="...">
+            <ul class="pagination">
+                <li class="page-item @(Model.HasPrevious ? "" : "disabled")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)" tabindex="-1"><i class="fa-solid fa-backward"></i></a>
+                </li>
+                @for (int i = 1; i <= Model.TotalPage; i++)
+                {
+                    <li class="page-item @(Model.CurrentPage == i ? "active" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-page="@i">@i <span class="sr-only">(current)</span></a>
+                    </li>
+                }
+
+                <li class="page-item @(Model.HasNext ? "" : "disabled")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage+1)"><i class="fa-solid fa-forward"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</div>
+

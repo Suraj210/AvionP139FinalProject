@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IhXnsP/gKav5OcFDKhZwYvGGGewBrbRNZaw+bnmpp2k=",
+  "Hash": "5DSN7OlElbKSIhhMSogrK2aU9BNoHSaX2Njh80lSspA=",
   "Source": "Avion",
   "BasePath": "_content/Avion",
   "Mode": "Default",
@@ -2888,6 +2888,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\852405e3-19d7-444e-81a1-8f91966bc4c2 - about-1.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\8bdceabd-f9a8-4c34-8828-2b977852eacf-23a5d7f0-e7cf-4579-8e56-78f6230bbb3f - about-2.jpeg",
+      "SourceId": "Avion",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\",
+      "BasePath": "_content/Avion",
+      "RelativePath": "assets/images/8bdceabd-f9a8-4c34-8828-2b977852eacf-23a5d7f0-e7cf-4579-8e56-78f6230bbb3f - about-2.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\8bdceabd-f9a8-4c34-8828-2b977852eacf-23a5d7f0-e7cf-4579-8e56-78f6230bbb3f - about-2.jpeg"
     },
     {
       "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\images\\about-2.jpeg",

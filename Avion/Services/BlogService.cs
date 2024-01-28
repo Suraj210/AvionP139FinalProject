@@ -97,6 +97,8 @@ namespace Avion.Services
 
 
         //For Admin Panel
+
+
         public async Task<BlogVM> GetByNameWithoutTrackingAsync(string name)
         {
             Blog blog = await _context.Blogs.Where(m => m.Title.Trim().ToLower() == name.Trim().ToLower()).FirstOrDefaultAsync();

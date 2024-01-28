@@ -53,7 +53,9 @@ namespace Avion.Helpers.Mapping
                                            .ForMember(dest => dest.Image, opt => opt.MapFrom(src => src.Images.FirstOrDefault(m => m.IsMain).Image));
 
             CreateMap<Category, CategoryVM>();
-            CreateMap<Brand, BrandVM>();
+            CreateMap<Brand, BrandVM>().ForMember(dest => dest.Categories, opt => opt.MapFrom(src => src.BrandCategories.Select(m => m.Category).ToList())).ReverseMap();
+            CreateMap<BrandCreateVM, Brand>();
+
 
             CreateMap<Blog, BlogVM>().ForMember(dest => dest.BlogCategoryName, opt => opt.MapFrom(src => src.BlogCategory.Name))
                                      .ForMember(dest => dest.Tags, opt => opt.MapFrom(src => src.BlogTags.Select(m => m.Tag).ToList()))
