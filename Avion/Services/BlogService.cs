@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Avion.Areas.Admin.ViewModels.Blog;
-using Avion.Areas.Admin.ViewModels.BlogCategory;
 using Avion.Data;
 using Avion.Helpers.Extentions;
 using Avion.Models;
@@ -140,8 +139,6 @@ namespace Avion.Services
 
         }
 
-
-
         //Soft delete Blog 
         public async Task SoftDeleteAsync(BlogVM request)
         {
@@ -161,7 +158,6 @@ namespace Avion.Services
             _context.Blogs.Update(dbBlog);
             await _context.SaveChangesAsync();
         }
-
 
         //Create Blog Post
         public async Task CreateAsync(BlogCreateVM blog)
@@ -196,10 +192,7 @@ namespace Avion.Services
 
         }
 
-
-
         //Delete Blog Post
-
         public async Task DeleteAsync(int id)
         {
             Blog dbBlog = await _context.Blogs.IgnoreQueryFilters()
@@ -227,10 +220,7 @@ namespace Avion.Services
 
         }
 
-
-
         //Edit Blog Post
-
         public async Task EditAsync(BlogEditVM blog)
         {
            

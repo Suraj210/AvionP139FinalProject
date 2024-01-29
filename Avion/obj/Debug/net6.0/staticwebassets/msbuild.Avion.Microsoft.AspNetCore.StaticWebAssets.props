@@ -2672,6 +2672,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\6df403c7-4931-4aad-8f6a-5307e78fe287-22925eab-ec82-4f4b-9dbc-62155f557237 - 852405e3-19d7-444e-81a1-8f91966bc4c2 - about-1.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\7fe79f41-49d6-4d19-8fa7-f77310528800-6df403c7-4931-4aad-8f6a-5307e78fe287-22925eab-ec82-4f4b-9dbc-62155f557237 - 852405e3-19d7-444e-81a1-8f91966bc4c2 - about-1.jpeg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Avion</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Avion</BasePath>
+      <RelativePath>assets/images/7fe79f41-49d6-4d19-8fa7-f77310528800-6df403c7-4931-4aad-8f6a-5307e78fe287-22925eab-ec82-4f4b-9dbc-62155f557237 - 852405e3-19d7-444e-81a1-8f91966bc4c2 - about-1.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\7fe79f41-49d6-4d19-8fa7-f77310528800-6df403c7-4931-4aad-8f6a-5307e78fe287-22925eab-ec82-4f4b-9dbc-62155f557237 - 852405e3-19d7-444e-81a1-8f91966bc4c2 - about-1.jpeg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\80c03aa5-c32f-47df-9605-d69cdd935bd0 - 6df403c7-4931-4aad-8f6a-5307e78fe287-22925eab-ec82-4f4b-9dbc-62155f557237 - 852405e3-19d7-444e-81a1-8f91966bc4c2 - about-1.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>Avion</SourceId>

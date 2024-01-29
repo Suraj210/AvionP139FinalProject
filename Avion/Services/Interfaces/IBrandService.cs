@@ -1,5 +1,6 @@
 ﻿using Avion.Areas.Admin.ViewModels.Blog;
 using Avion.Areas.Admin.ViewModels.Brand;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Avion.Services.Interfaces
 {
@@ -15,5 +16,6 @@ namespace Avion.Services.Interfaces
         Task CreateAsync(BrandCreateVM request);
         Task DeleteAsync(int id);
         Task EditAsync(BrandEditVM request);
+        List<SelectListItem> GetAllSelectedAsync();
     }
 }
