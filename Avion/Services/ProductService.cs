@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
-using Avion.Areas.Admin.ViewModels.Blog;
 using Avion.Areas.Admin.ViewModels.Product;
 using Avion.Data;
 using Avion.Models;
 using Avion.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.Metrics;
 
 namespace Avion.Services
 {
@@ -36,8 +34,6 @@ namespace Avion.Services
         public async Task<List<ProductVM>> GetAllByTakeAsync(int take)
         {
             List<Product> products = await _context.Products.Include(m => m.Images)
-                                                            .Include(b => b.Brand)
-                                                            .Include(m => m.Category)
                                                             .Take(take)
                                                             .ToListAsync();
 
@@ -52,8 +48,6 @@ namespace Avion.Services
         public async Task<List<ProductVM>> GetPaginatedDatasAsync(int page, int take)
         {
             List<Product> products = await _context.Products.OrderByDescending(m => m.CreateTime)
-                                                            .Include(m => m.Category)
-                                                            .Include(b => b.Brand)
                                                             .Include(m => m.Images)
                                                             .Skip((page * take) - take)
                                                             .Take(take)
@@ -71,9 +65,7 @@ namespace Avion.Services
         //Get particular Product by its Id
         public async Task<ProductVM> GetByIdAsync(int id)
         {
-            Product data = await _context.Products.Include(m => m.Category)
-                                                  .Include(b => b.Brand)
-                                                  .Include(m => m.Images)
+            Product data = await _context.Products.Include(m => m.Images)
                                                   .FirstOrDefaultAsync(m => m.Id == id);
 
             return _mapper.Map<ProductVM>(data);
@@ -86,8 +78,6 @@ namespace Avion.Services
         {
             List<Product> products = await _context.Products.Where(m => m.CategoryId == id)
                                                             .OrderByDescending(m => m.CreateTime)
-                                                            .Include(m => m.Category)
-                                                            .Include(b => b.Brand)
                                                             .Include(m => m.Images)
                                                             .Skip((page * take) - take)
                                                             .Take(take)
@@ -109,8 +99,6 @@ namespace Avion.Services
         {
             List<Product> products = await _context.Products.Where(m => m.BrandId == id)
                                                             .OrderByDescending(m => m.Price)
-                                                            .Include(m => m.Category)
-                                                            .Include(b => b.Brand)
                                                             .Include(m => m.Images)
                                                             .Skip((page * take) - take)
                                                             .Take(take)
@@ -124,8 +112,6 @@ namespace Avion.Services
         {
             var dbProducts = await _context.Products.Where(m => m.Name.ToLower().Trim().Contains(searchText.ToLower().Trim()))
                                                     .Include(m => m.Images)
-                                                    .Include(m => m.Category)
-                                                    .Include(m => m.Brand)
                                                     .OrderByDescending(m => m.Id)
                                                     .Skip((page * take) - take)
                                                     .Take(take)
@@ -138,8 +124,6 @@ namespace Avion.Services
         {
             return await _context.Products.Where(m => m.Name.ToLower().Trim().Contains(searchText.ToLower().Trim()))
                                           .Include(m => m.Images)
-                                          .Include(m => m.Category)
-                                          .Include(m => m.Brand)
                                           .OrderByDescending(m => m.Id)
                                           .CountAsync();
 
@@ -151,8 +135,6 @@ namespace Avion.Services
         public async Task<List<ProductVM>> OrderByNameAsc(int page, int take)
         {
             var datas = await _context.Products.Include(m => m.Images)
-                                               .Include(m => m.Category)
-                                               .Include(m => m.Brand)
                                                .OrderBy(p => p.Name)
                                                .Skip((page * take) - take)
                                                .Take(take)
@@ -166,8 +148,6 @@ namespace Avion.Services
         public async Task<List<ProductVM>> OrderByNameDesc(int page, int take)
         {
             var datas = await _context.Products.Include(m => m.Images)
-                                               .Include(m => m.Category)
-                                               .Include(m => m.Brand)
                                                .OrderByDescending(p => p.Name)
                                                .Skip((page * take) - take)
                                                .Take(take)
@@ -181,8 +161,6 @@ namespace Avion.Services
         public async Task<List<ProductVM>> OrderByPriceAsc(int page, int take)
         {
             var datas = await _context.Products.Include(m => m.Images)
-                                               .Include(m => m.Category)
-                                               .Include(m => m.Brand)
                                                .OrderBy(p => p.Price)
                                                .Skip((page * take) - take)
                                                .Take(take)
@@ -196,8 +174,6 @@ namespace Avion.Services
         public async Task<List<ProductVM>> OrderByPriceDesc(int page, int take)
         {
             var datas = await _context.Products.Include(m => m.Images)
-                                               .Include(m => m.Category)
-                                               .Include(m => m.Brand)
                                                .OrderByDescending(p => p.Price)
                                                .Skip((page * take) - take)
                                                .Take(take)
@@ -211,8 +187,6 @@ namespace Avion.Services
         public async Task<List<ProductVM>> OrderByDate(int page, int take)
         {
             var datas = await _context.Products.Include(m => m.Images)
-                                               .Include(m => m.Category)
-                                               .Include(m => m.Brand)
                                                .OrderByDescending(p => p.CreateTime)
                                                .Skip((page * take) - take)
                                                .Take(take)
@@ -243,7 +217,6 @@ namespace Avion.Services
         public async Task<List<ProductVM>> GetLoadedProductsAsync(int skipCount, int take)
         {
             List<Product> products = await _context.Products.Include(m => m.Images)
-                                                            .Include(m => m.Category)
                                                             .Skip(skipCount)
                                                             .Take(take)
                                                             .ToListAsync();
