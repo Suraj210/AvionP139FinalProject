@@ -25,12 +25,7 @@
                     <th>
                         Description
                     </th> 
-                    <th>
-                        Tags
-                    </th>
-                    <th>
-                        Category
-                    </th>
+                   
                     <th>
                         Created Time
                     </th>
@@ -69,23 +64,7 @@
                         <td>
                             @blog.Description.Substring(0,(int)Math.Ceiling(blog.Description.Length * 0.2))...
                         </td>
-                        <td>
-                            @if (blog.Tags.Count() != 0)
-                            {
-                                @(
-                                   "#" + blog.Tags[0].Name + " and others."
-                                 )
-                            }
-                            else
-                            {
-
-                                @("No tag has been added.")
-                            }
-                        </td>
-                        <td>
-                            @blog.BlogCategoryName
-                        </td>
-
+                       
                         <td>
                             @blog.CreateTime.ToString("MM//dd/yyyy")
                         </td>

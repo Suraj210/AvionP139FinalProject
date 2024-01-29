@@ -43,12 +43,15 @@
                 <p class="mb-4">@Model.Description</p>
                 <span>Category:</span>
                 <p class="blogCategory">@Model.BlogCategoryName</p>
-
                 <span>Tags:</span>
                 <div class="d-flex gap-2 flex-wrap">
                 @foreach (var item in Model.Tags)
                 {
-                    <p class="tag">@item.Name</p>
+                        @if (!item.SoftDeleted)
+                        {
+                            
+                        <p class="tag">@item.Name</p>
+                        }
                 }
 
                 </div>

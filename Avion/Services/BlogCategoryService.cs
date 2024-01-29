@@ -55,7 +55,10 @@ namespace Avion.Services
 
         public async Task DeleteAsync(int id)
         {
-            BlogCategory dbBlogCategory = await _context.BlogCategories.IgnoreQueryFilters().Where(m => m.Id == id).FirstOrDefaultAsync();
+            BlogCategory dbBlogCategory = await _context.BlogCategories.IgnoreQueryFilters()
+                                                                       .Where(m => m.Id == id)  
+                                                                       .Include(m=>m.MyProperty)
+                                                                       .FirstOrDefaultAsync();
             _context.BlogCategories.Remove(dbBlogCategory);
             await _context.SaveChangesAsync();
         }
