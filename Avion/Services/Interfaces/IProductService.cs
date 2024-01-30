@@ -22,5 +22,12 @@ namespace Avion.Services.Interfaces
         Task<List<ProductVM>> OrderByDate(int page, int take);
         Task<List<ProductVM>> FilterAsync(int minValue, int maxValue);
         Task<List<ProductVM>> GetLoadedProductsAsync(int skipCount, int take);
+        Task<List<ProductVM>> GetPaginatedDatasWithIgnoreQuerryAsync(int page, int take);
+        Task<int> GetCountWithIgnoreFilterAsync();
+        Task<ProductVM> GetByIdIgnoreAsync(int id);
+        Task SoftDeleteAsync(ProductVM request);
+        Task CreateAsync(ProductCreateVM request);
+        Task<ProductVM> GetByNameWithoutTrackingAsync(string name);
+        Task DeleteAsync(int id);
     }
 }

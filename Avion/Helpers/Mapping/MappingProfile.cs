@@ -51,7 +51,11 @@ namespace Avion.Helpers.Mapping
 
             CreateMap<Product, ProductVM>().ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name))
                                            .ForMember(dest => dest.BrandName, opt => opt.MapFrom(src => src.Brand.Name))
-                                           .ForMember(dest => dest.Image, opt => opt.MapFrom(src => src.Images.FirstOrDefault(m => m.IsMain).Image));
+                                           .ForMember(dest => dest.Image, opt => opt.MapFrom(src => src.Images.FirstOrDefault(m => m.IsMain).Image)).ReverseMap();
+            CreateMap<ProductEditVM, Product>().ReverseMap();
+            CreateMap<ProductVM, ProductEditVM>();
+            CreateMap<ProductCreateVM, Product>();
+
 
             CreateMap<Category, CategoryVM>().ForMember(dest=> dest.Brands, opt=> opt.MapFrom(src=>src.BrandCategories.Select(b=>b.Brand))).ReverseMap();
             CreateMap<CategoryEditVM, Category>();

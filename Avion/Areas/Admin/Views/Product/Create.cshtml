@@ -1,0 +1,74 @@
+﻿@model ProductCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Editable Product Details Form -->
+            <form method="post" asp-action="Create" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Photos">Image</label>
+                    <input asp-for="Photos" type="file" class="form-control my-3">
+                    <span class="text-danger" asp-validation-for="Photos"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Product Title</label>
+                    <textarea asp-for="Name" class="form-control" id="ProductTitle" rows="4"></textarea>
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Product Description</label>
+                    <textarea asp-for="Description" class="form-control" id="ProductMessage" rows="4"></textarea>
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="CategoryId">Categories</label>
+                    <select asp-for="CategoryId" asp-items="@ViewBag.productCategories" class="form-control">
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="BrandId">Brands</label>
+                    <select asp-for="BrandId" asp-items="@ViewBag.productBrands" class="form-control">
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Price" class="form-label">Product Price</label>
+                    <input type="number" asp-for="Price" class="form-control" id="ProductMessage" />
+                    <span class="text-danger" asp-validation-for="Price"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Material" class="form-label">Product Material</label>
+                    <input type="text" asp-for="Material" class="form-control"  />
+                    <span class="text-danger" asp-validation-for="Material"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Width" class="form-label">Product Width</label>
+                    <input type="number" asp-for="Width" class="form-control" value="0" />
+                    <span class="text-danger" asp-validation-for="Width"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Height" class="form-label">Product Height</label>
+                    <input type="number" asp-for="Height" class="form-control" value="0" />
+                    <span class="text-danger" asp-validation-for="Height"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Length" class="form-label">Product Length</label>
+                    <input type="number" asp-for="Length" class="form-control" value="0" />
+                    <span class="text-danger" asp-validation-for="Length"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Weight" class="form-label">Product Weight</label>
+                    <input type="number" asp-for="Weight" class="form-control" value="0" />
+                    <span class="text-danger" asp-validation-for="Weight"></span>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="back ">
+        <a class="btn btn-dark btn-lg text-white d-block" asp-action="Index">Back</a>
+    </div>
+</div>
+

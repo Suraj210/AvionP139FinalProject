@@ -1,18 +1,12 @@
-﻿@model BlogVM
+﻿@model ProductVM
 @{
     ViewData["Title"] = "Detail";
 }
 
+
 <style>
 
-    .tag {
-        border: 1px solid #2a254b;
-        padding: 4px;
-        text-align: center;
-        width: fit-content;
-        color: #2a254b;
-    }
-    .blogCategory{
+    .productCategory {
         color: #2a254b;
         font-size: 1.25rem;
         padding: 1rem;
@@ -22,7 +16,20 @@
         background-color: #ebe8f4;
         display: inline-block;
         margin-bottom: 1rem;
-        width:fit-content;
+        width: fit-content;
+    }
+
+    .productBrand {
+        color: black;
+        font-size: 1.25rem;
+        padding: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        background-color: teal;
+        display: inline-block;
+        margin-bottom: 1rem;
+        width: fit-content;
     }
 
 </style>
@@ -33,40 +40,38 @@
     <div class="row">
         <div class="col-md-6">
             <!-- Blog Image -->
-            <img src="~/assets/images/@Model.Image" alt="Testimonial Image" class="img-fluid rounded shadow">
+            <img src="~/assets/images/products/@Model.Image" alt="Testimonial Image" class="img-fluid rounded shadow">
         </div>
         <div class="col-md-6">
             <!-- Testimonial Details -->
             <div class="d-flex flex-column justify-content-center h-100">
-                <h2 class="mb-3">@Model.Title</h2>
+                <h2 class="mb-3">@Model.Name</h2>
                 <p class="text-muted">Created Time: @Model.CreateTime</p>
                 <p class="mb-4">@Model.Description</p>
-                @if(Model.BlogCategoryName is not null)
+                @if(Model.CategoryName is not null)
                 {
-                    
                 <span>Category:</span>
-                    <p class="blogCategory">@Model.BlogCategoryName</p>
+                <p class="productCategory">@Model.CategoryName</p>
                 }
                 else
                 {
-                    <p class="blogCategory">No Category</p>
+                    <p class="productCategory">No Category</p>
 
-                    
+
                 }
-                    <span>Tags:</span>
-                <div class="d-flex gap-2 flex-wrap">
-                @foreach (var item in Model.Tags)
+                @if (Model.BrandName is not null)
                 {
-                        @if (!item.SoftDeleted)
-                        {
-                            
-                        <p class="tag">@item.Name</p>
-                        }
+                    
+                <span>Brand:</span>
+                <p class="productBrand">@Model.BrandName</p>
+                }
+                else
+                {
+                    <p class="productBrand">No Brand</p>
+
                 }
 
-                </div>
-                
-                
+
             </div>
         </div>
     </div>
@@ -75,4 +80,6 @@
     </div>
 
 </div>
+
+
 

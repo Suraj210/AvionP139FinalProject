@@ -135,6 +135,11 @@ namespace Avion.Services
                                             .ThenInclude(m => m.Tag)
                                             .FirstOrDefaultAsync();
 
+            if (blog.BlogCategory.SoftDeleted)
+            {
+                blog.BlogCategory = null;
+            }
+
             return _mapper.Map<BlogVM>(blog);
 
         }
