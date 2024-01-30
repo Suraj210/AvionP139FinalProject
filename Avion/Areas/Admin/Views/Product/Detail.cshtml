@@ -32,6 +32,41 @@
         width: fit-content;
     }
 
+    .product-image {
+        width: 100%;
+        height: 350px;
+        border-radius: 5px;
+    }
+
+    .active-image {
+        border: 3px solid greenyellow;
+    }
+
+    .image-delete {
+        position: relative;
+    }
+
+        .image-delete button {
+            position: absolute;
+            left: 50%;
+            top: 5%;
+            transform: translate(-50%,-50%);
+            opacity: 0;
+            transition: all 0.4s;
+        }
+
+        .image-delete:hover button {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 1;
+        }
+
+        .image-delete:hover img {
+            opacity: 0.5;
+        }
+
 </style>
 
 
@@ -40,7 +75,13 @@
     <div class="row">
         <div class="col-md-6">
             <!-- Blog Image -->
-            <img src="~/assets/images/products/@Model.Image" alt="Testimonial Image" class="img-fluid rounded shadow">
+            @if (Model.Images.Count() != 0)
+            {
+                foreach (var item in Model.Images)
+                {
+                    <img class="product-image @(item.IsMain ? "active-image": "")" src="~/assets/images/products/@item.Image" alt="Product Image">
+                }
+            }
         </div>
         <div class="col-md-6">
             <!-- Testimonial Details -->

@@ -13,7 +13,6 @@ namespace Avion.Services
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _env;
-
         public ProductService(AppDbContext context,
                              IMapper mapper,
                              IWebHostEnvironment env)
@@ -31,7 +30,6 @@ namespace Avion.Services
 
             return _mapper.Map<List<ProductVM>>(products);
         }
-
         public async Task<List<ProductVM>> GetAllByTakeAsync(int take)
         {
             List<Product> products = await _context.Products.Include(m => m.Images)
@@ -40,12 +38,10 @@ namespace Avion.Services
 
             return _mapper.Map<List<ProductVM>>(products);
         }
-
         public async Task<int> GetProductCountAsync()
         {
             return await _context.Products.CountAsync();
         }
-
         public async Task<List<ProductVM>> GetPaginatedDatasAsync(int page, int take)
         {
             List<Product> products = await _context.Products.OrderByDescending(m => m.CreateTime)
@@ -55,14 +51,11 @@ namespace Avion.Services
                                                             .ToListAsync();
             return _mapper.Map<List<ProductVM>>(products);
         }
-
-
         //Get Product Count by Category
         public async Task<int> GetCountByCategoryAsync(int id)
         {
             return await _context.Products.Where(m => m.CategoryId == id).CountAsync();
         }
-
         //Get particular Product by its Id
         public async Task<ProductVM> GetByIdAsync(int id)
         {
@@ -72,9 +65,7 @@ namespace Avion.Services
             return _mapper.Map<ProductVM>(data);
 
         }
-
         //Get list of Products by categoryname
-
         public async Task<List<ProductVM>> GetPaginatedDatasByCategoryAsync(int id, int page, int take)
         {
             List<Product> products = await _context.Products.Where(m => m.CategoryId == id)
@@ -85,17 +76,12 @@ namespace Avion.Services
                                                             .ToListAsync();
             return _mapper.Map<List<ProductVM>>(products);
         }
-
-
         //Get Product Count by Brand
         public async Task<int> GetCountByBrandAsync(int id)
         {
             return await _context.Products.Where(m => m.BrandId == id).CountAsync();
         }
-
-
         //Get list of Products by BrandName
-
         public async Task<List<ProductVM>> GetPaginatedDatasByBrandAsync(int id, int page, int take)
         {
             List<Product> products = await _context.Products.Where(m => m.BrandId == id)
@@ -106,9 +92,7 @@ namespace Avion.Services
                                                             .ToListAsync();
             return _mapper.Map<List<ProductVM>>(products);
         }
-
         //Search 
-
         public async Task<List<ProductVM>> SearchAsync(string searchText, int page, int take)
         {
             var dbProducts = await _context.Products.Where(m => m.Name.ToLower().Trim().Contains(searchText.ToLower().Trim()))
@@ -120,7 +104,6 @@ namespace Avion.Services
 
             return _mapper.Map<List<ProductVM>>(dbProducts);
         }
-
         public async Task<int> GetCountBySearch(string searchText)
         {
             return await _context.Products.Where(m => m.Name.ToLower().Trim().Contains(searchText.ToLower().Trim()))
@@ -129,10 +112,7 @@ namespace Avion.Services
                                           .CountAsync();
 
         }
-
-
         //Sort
-
         public async Task<List<ProductVM>> OrderByNameAsc(int page, int take)
         {
             var datas = await _context.Products.Include(m => m.Images)
@@ -145,7 +125,6 @@ namespace Avion.Services
 
 
         }
-
         public async Task<List<ProductVM>> OrderByNameDesc(int page, int take)
         {
             var datas = await _context.Products.Include(m => m.Images)
@@ -158,7 +137,6 @@ namespace Avion.Services
 
 
         }
-
         public async Task<List<ProductVM>> OrderByPriceAsc(int page, int take)
         {
             var datas = await _context.Products.Include(m => m.Images)
@@ -171,7 +149,6 @@ namespace Avion.Services
 
 
         }
-
         public async Task<List<ProductVM>> OrderByPriceDesc(int page, int take)
         {
             var datas = await _context.Products.Include(m => m.Images)
@@ -184,7 +161,6 @@ namespace Avion.Services
 
 
         }
-
         public async Task<List<ProductVM>> OrderByDate(int page, int take)
         {
             var datas = await _context.Products.Include(m => m.Images)
@@ -197,9 +173,6 @@ namespace Avion.Services
 
 
         }
-
-
-
         //Filter
         public async Task<List<ProductVM>> FilterAsync(int minValue, int maxValue)
         {
@@ -207,14 +180,11 @@ namespace Avion.Services
             return _mapper.Map<List<ProductVM>>(products);
 
         }
-
         public async Task<int> FilterCountAsync(int minValue, int maxValue)
         {
             return await _context.Products.Include(m => m.Images).Where(x => x.Price >= minValue && x.Price <= maxValue).CountAsync();
         }
-
         //Show More
-
         public async Task<List<ProductVM>> GetLoadedProductsAsync(int skipCount, int take)
         {
             List<Product> products = await _context.Products.Include(m => m.Images)
@@ -225,17 +195,13 @@ namespace Avion.Services
             return _mapper.Map<List<ProductVM>>(products);
 
         }
-
-
         // For ADMIN Panel
-
         public async Task<ProductVM> GetByNameWithoutTrackingAsync(string name)
         {
             Product product = await _context.Products.Where(m => m.Name.Trim().ToLower() == name.Trim().ToLower()).FirstOrDefaultAsync();
 
             return _mapper.Map<ProductVM>(product);
         }
-
         //Get List Products with its all datas in paginated format with Ignore Queryy Filters
         public async Task<List<ProductVM>> GetPaginatedDatasWithIgnoreQuerryAsync(int page, int take)
         {
@@ -249,14 +215,11 @@ namespace Avion.Services
                                                    .ToListAsync();
             return _mapper.Map<List<ProductVM>>(products);
         }
-
         //Get Product Count with Ignore Querry Filters
         public async Task<int> GetCountWithIgnoreFilterAsync()
         {
             return await _context.Products.IgnoreQueryFilters().CountAsync();
         }
-
-
         //Get particular Product by its Id with Ignore QueryFilters
         public async Task<ProductVM> GetByIdIgnoreAsync(int id)
         {
@@ -280,7 +243,6 @@ namespace Avion.Services
             return _mapper.Map<ProductVM>(product);
 
         }
-
         //Soft delete Product 
         public async Task SoftDeleteAsync(ProductVM request)
         {
@@ -300,8 +262,6 @@ namespace Avion.Services
             _context.Products.Update(dbProduct);
             await _context.SaveChangesAsync();
         }
-
-
         //Create Product
         public async Task CreateAsync(ProductCreateVM request)
         {
@@ -333,8 +293,6 @@ namespace Avion.Services
             await _context.SaveChangesAsync();
 
         }
-
-
         //Delete Product
         public async Task DeleteAsync(int id)
         {

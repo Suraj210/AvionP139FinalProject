@@ -6,6 +6,7 @@ namespace Avion.Areas.Admin.ViewModels.Product
     public class ProductEditVM
     {
         public int Id { get; set; }
+
         [Required]
         public string Name { get; set; }
 
@@ -15,7 +16,6 @@ namespace Avion.Areas.Admin.ViewModels.Product
         [Required]
         public decimal Price { get; set; }
 
-        [Required]
         public List<IFormFile> Photos { get; set; }
 
         public List<ProductImage> Images { get; set; }
