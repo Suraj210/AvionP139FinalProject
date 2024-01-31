@@ -2,7 +2,8 @@
 
 @foreach (var product in Model)
 {
-
+    if(product is not null)
+    {
     <div class="product">
         <div class="wrapper">
             <div class="containerCard">
@@ -25,7 +26,7 @@
                             <p>£@product.Price</p>
                         </div>
                         <div class="buy">
-                            <i class="fa-solid fa-cart-shopping"></i>
+                            <i data-id="@product.Id" class="fa-solid fa-cart-shopping cart-add"></i>
                         </div>
                     </div>
                     <div class="right">
@@ -37,7 +38,7 @@
                             <p>Added to your cart</p>
                         </div>
                         <div class="remove">
-                            <i class="fa-solid fa-x"></i>
+                                <i data-id="@product.Id" class="fa-solid fa-x delete-basket-item"></i>
                         </div>
                     </div>
                 </div>
@@ -109,4 +110,5 @@
             </div>
         </div>
     </div>
+    }
 }

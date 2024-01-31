@@ -29,5 +29,6 @@ namespace Avion.Services.Interfaces
         Task CreateAsync(ProductCreateVM request);
         Task<ProductVM> GetByNameWithoutTrackingAsync(string name);
         Task DeleteAsync(int id);
+        Task<ProductVM> GetByIdWithIncludesAsync(int id);
     }
 }

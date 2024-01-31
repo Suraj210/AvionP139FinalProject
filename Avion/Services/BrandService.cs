@@ -126,6 +126,8 @@ namespace Avion.Services
         {
             Brand dbBrand = await _context.Brands.IgnoreQueryFilters()
                                                  .Where(m => m.Id == id)
+                                                 .Include(m => m.Products)
+                                                 .ThenInclude(m => m.Images)
                                                  .Include(m => m.BrandCategories)
                                                  .ThenInclude(m => m.Category)
                                                  .FirstOrDefaultAsync();

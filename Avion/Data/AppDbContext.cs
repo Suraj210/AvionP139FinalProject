@@ -1,6 +1,7 @@
 ﻿using Avion.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using NuGet.ContentModel;
 
 namespace Avion.Data
 {
@@ -27,7 +28,10 @@ namespace Avion.Data
         public DbSet<ContactMessage> ContactMessages { get; set; }
         public DbSet<Term> Terms { get; set; }
         public DbSet<Privacy> Privacies { get; set; }
-
+        public DbSet<Wishlist> Wishlists { get; set; }
+        public DbSet<WishlistProduct> WishlistProducts { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketProduct> BasketProducts { get; set; }
 
 
 

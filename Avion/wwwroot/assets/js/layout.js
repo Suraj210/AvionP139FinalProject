@@ -37,4 +37,92 @@ $(function () {
         window.location.assign(url);
     });
 
+
+    //Basket JS
+    $(document).on("click", ".cart-add", function () {
+        let id = $(this).attr("data-id");;
+        let count = $(".basket-count").text();
+        $.ajax({
+            url: `/shop/addbasket?id=${id}`,
+            type: "Post",
+            success: function (res) {
+
+                count++;
+                $(".basket-count").text(count);
+
+            }
+        })
+
+    })
+
+    $(document).on("click", ".basket-table .basket-plus", function (e) {
+
+        let id = parseInt($(this).attr("data-id"))
+        let count = $(".basket-count").text();
+        $.ajax({
+
+            url: `basket/plusicon?id=${id}`,
+            type: "Post",
+            success: function (res) {
+
+                $(e.target).prev().children().attr("value",res.countItem)
+                $(".grandTotal").text("$" + res.grandTotal.toFixed(2));
+                $(e.target).parent().next().children().text("$" + res.productTotalPrice.toFixed(2) )
+                count++;
+
+                $(".basket-count").text(count);
+            }
+        })
+
+    })
+
+    $(document).on("click", ".basket-table .basket-minus", function (e) {
+
+        let id = parseInt($(this).attr("data-id"))
+        let count = $(".basket-count").text();
+        let a = 0;
+
+        $.ajax({
+
+            url: `basket/minusicon?id=${id}`,
+            type: "Post",
+            success: function (res) {
+
+                $(e.target).next().children().attr("value", res.countItem)
+                $(".grandTotal").text("$" +res.grandTotal.toFixed(2));
+                $(e.target).parent().next().children().text("$" + res.productTotalPrice.toFixed(2))
+                $(".basket-count").text(res.countBasket)
+
+            }
+        })
+
+    })
+
+
+
+    $(document).on("click", ".delete-basket-item", function (e) {
+        let id = parseInt($(this).attr("data-id"));
+
+        $.ajax({
+            url: `basket/delete?id=${id}`,
+            type: "Post",
+            success: function (res) {
+
+
+                $(".basket-count").text(res.count);
+                $(e.target).closest(".addedProduct").remove();
+                $(".grandTotal").text("$" + res.grandTotal);
+
+                if (res.count === 0) {
+                    $(".empty").removeClass("d-none");
+                    $(".basket-table").addClass("d-none");
+                }
+
+
+            }
+        })
+
+
+    })
+
 })

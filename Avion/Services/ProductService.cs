@@ -65,6 +65,18 @@ namespace Avion.Services
             return _mapper.Map<ProductVM>(data);
 
         }
+        //Get particular Product by its Id with includes
+        public async Task<ProductVM> GetByIdWithIncludesAsync(int id)
+        {
+            Product data = await _context.Products.Where(m=>m.Id==id)
+                                                  .Include(m => m.Images)
+                                                  .Include(c=>c.Category)
+                                                  .Include(b=>b.Brand)
+                                                  .FirstOrDefaultAsync();
+            return _mapper.Map<ProductVM>(data);
+
+        }
+
         //Get list of Products by categoryname
         public async Task<List<ProductVM>> GetPaginatedDatasByCategoryAsync(int id, int page, int take)
         {

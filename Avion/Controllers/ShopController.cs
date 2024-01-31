@@ -15,13 +15,16 @@ namespace Avion.Controllers
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
         private readonly IBrandService _brandService;
+        private readonly IBasketService _basketService;
         public ShopController(IProductService productService,
                               ICategoryService categoryService,
-                              IBrandService brandService)
+                              IBrandService brandService,
+                              IBasketService basketService)
         {
             _productService = productService;
             _categoryService = categoryService;
             _brandService = brandService;
+            _basketService = basketService;
         }
 
         [HttpGet]
@@ -298,6 +301,43 @@ namespace Avion.Controllers
             return View(model);
 
         }
-     
+
+
+        [HttpPost]
+
+        public async Task<IActionResult> AddBasket(int? id)
+        {
+
+
+            if (id is null) return RedirectToAction("Index", "Error"); ;
+
+            ProductVM product = await _productService.GetByIdAsync((int)id);
+
+            if (product is null) return RedirectToAction("Index", "Error"); ;
+
+            _basketService.AddBasket((int)id, product);
+
+
+            return Ok();
+        }
+
+       // [HttpPost]
+
+        //public async Task<IActionResult> AddWishlist(int? id)
+        //{
+
+
+        //    if (id is null) return RedirectToAction("Index", "Error"); ;
+
+        //    ProductVM product = await _productService.GetByIdWithIncludesAsync((int)id);
+
+        //    if (product is null) return RedirectToAction("Index", "Error"); ;
+
+        //    int a = _wishlistService.AddWishlist((int)id, product);
+
+        //    return Ok(a);
+        //}
+
+
     }
 }

@@ -4,6 +4,7 @@ using Avion.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Avion.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240131101106_CreateBasketAndWishlist")]
+    partial class CreateBasketAndWishlist
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -161,7 +163,7 @@ namespace Avion.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Baskets");
+                    b.ToTable("Basket");
                 });
 
             modelBuilder.Entity("Avion.Models.BasketProduct", b =>
@@ -187,7 +189,7 @@ namespace Avion.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("BasketProducts");
+                    b.ToTable("BasketProduct");
                 });
 
             modelBuilder.Entity("Avion.Models.Blog", b =>
@@ -704,7 +706,7 @@ namespace Avion.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Wishlists");
+                    b.ToTable("Wishlist");
                 });
 
             modelBuilder.Entity("Avion.Models.WishlistProduct", b =>
@@ -727,7 +729,7 @@ namespace Avion.Migrations
 
                     b.HasIndex("WishlistId");
 
-                    b.ToTable("WishlistProducts");
+                    b.ToTable("WishlistProduct");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
