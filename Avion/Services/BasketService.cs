@@ -145,7 +145,7 @@ namespace Avion.Services
             foreach (var item in basket)
             {
 
-                var product = await _productService.GetByIdWithIncludesAsync(item.Id);
+                var product = await _productService.GetByIdAsync(item.Id);
 
                 decimal total = item.Count * product.Price;
 
@@ -154,7 +154,7 @@ namespace Avion.Services
 
             _httpContextAccessor.HttpContext.Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
 
-            var basketItem = await _productService.GetByIdWithIncludesAsync(id);
+            var basketItem = await _productService.GetByIdAsync(id);
             var productTotalPrice = existProduct.Count * basketItem.Price;
             return new CountPlusAndMinus
             {
@@ -175,14 +175,14 @@ namespace Avion.Services
 
             existProduct.Count++;
 
-            var basketItem = await _productService.GetByIdWithIncludesAsync(id);
+            var basketItem = await _productService.GetByIdAsync(id);
 
             var productTotalPrice = existProduct.Count * basketItem.Price;
 
             foreach (var item in basket)
             {
 
-                var product = await _productService.GetByIdWithIncludesAsync(item.Id);
+                var product = await _productService.GetByIdAsync(item.Id);
 
                 decimal total = item.Count * product.Price;
 
