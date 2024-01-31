@@ -3072,6 +3072,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\product-2.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\products\00702497-1f61-40ea-818f-3bf6f60f2153-173f46d2-c4c7-425a-9581-cd9d31fb3761-ad1.webp))">
+      <SourceType>Package</SourceType>
+      <SourceId>Avion</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Avion</BasePath>
+      <RelativePath>assets/images/products/00702497-1f61-40ea-818f-3bf6f60f2153-173f46d2-c4c7-425a-9581-cd9d31fb3761-ad1.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\products\00702497-1f61-40ea-818f-3bf6f60f2153-173f46d2-c4c7-425a-9581-cd9d31fb3761-ad1.webp))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\products\0b1c9035-b490-4204-b5de-830545584077-ad1.webp))">
       <SourceType>Package</SourceType>
       <SourceId>Avion</SourceId>

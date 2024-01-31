@@ -14,7 +14,7 @@ namespace Avion.Controllers
         }
         public async Task<IActionResult> Index()
         {
-           
+            ViewBag.CartCount = _basketService.GetCount();
             return View(await _basketService.GetBasketDatasAsync());
         }
 

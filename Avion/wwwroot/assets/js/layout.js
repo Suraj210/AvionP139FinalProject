@@ -27,17 +27,13 @@ $(function () {
         window.location.assign(url);
 
     });
-
     //Sort JS
-
     $(document).on("change", "#sortProducts", function (e) {
         e.preventDefault();
         let sortValue = $(this).val();
         let url = `/Shop/Sort?sortValue=${sortValue}`;
         window.location.assign(url);
     });
-
-
     //Basket JS
     $(document).on("click", ".cart-add", function () {
         let id = $(this).attr("data-id");;
@@ -54,7 +50,6 @@ $(function () {
         })
 
     })
-
     $(document).on("click", ".basket-table .basket-plus", function (e) {
 
         let id = parseInt($(this).attr("data-id"))
@@ -70,12 +65,11 @@ $(function () {
                 $(e.target).parent().next().children().text("$" + res.productTotalPrice.toFixed(2) )
                 count++;
 
-                $(".basket-count").text(count);
+                $(".basket-count").text(res.countBasket);
             }
         })
 
     })
-
     $(document).on("click", ".basket-table .basket-minus", function (e) {
 
         let id = parseInt($(this).attr("data-id"))
@@ -97,9 +91,6 @@ $(function () {
         })
 
     })
-
-
-
     $(document).on("click", ".delete-basket-item", function (e) {
         let id = parseInt($(this).attr("data-id"));
 
@@ -124,5 +115,65 @@ $(function () {
 
 
     })
+    //Wishlist JS
+    $(document).on("click", ".wishlist-add", function () {
 
+
+        let id = $(this).attr("data-id");;
+        let count = $(".wishlist-count").text();
+        $.ajax({
+            url: `/shop/addwishlist?id=${id}`,
+            type: "Post",
+            success: function (res) {
+
+                $(".wishlist-count").text(res);
+
+            }
+        })
+
+
+    })
+    $(document).on("click", ".cart-add-basket", function () {
+
+
+        let id = $(this).attr("data-id");
+        console.log(id)
+        let count = $(".basket-count").text();
+        $.ajax({
+            url: `shop/addbasket?id=${id}`,
+            type: "Post",
+            success: function (res) {
+
+                count++;
+                $(".basket-count").text(count);
+
+            }
+        })
+
+    })
+    $(document).on("click", ".delete-wishlist-item", function (e) {
+
+
+        let id = parseInt($(this).attr("data-id"));
+
+        $.ajax({
+            url: `wishlist/delete?id=${id}`,
+            type: "Post",
+            success: function (res) {
+                res--;
+
+                $(".wishlist-count").text(res);
+                $(e.target).closest(".addedProduct").remove();
+                console.log(res)
+                if (res == 0) {
+                    $(".empty").removeClass("d-none");
+                    $(".wishlist-table").addClass("d-none");
+                }
+
+
+            }
+        })
+
+
+    })
 })

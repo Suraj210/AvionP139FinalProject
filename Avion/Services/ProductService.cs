@@ -32,7 +32,7 @@ namespace Avion.Services
         }
         public async Task<List<ProductVM>> GetAllByTakeAsync(int take)
         {
-            List<Product> products = await _context.Products.Include(m => m.Images)
+            List<Product> products = await _context.Products.OrderByDescending(m=>m.CreateTime).Include(m => m.Images)
                                                             .Take(take)
                                                             .ToListAsync();
 

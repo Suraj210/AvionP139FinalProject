@@ -81,7 +81,6 @@ namespace Avion.Services
         public async Task<List<BasketDetailVM>> GetBasketDatasAsync()
         {
             List<BasketVM> basket;
-
             if (_httpContextAccessor.HttpContext.Request.Cookies["basket"] != null)
             {
                 basket = JsonConvert.DeserializeObject<List<BasketVM>>(_httpContextAccessor.HttpContext.Request.Cookies["basket"]);

@@ -50,6 +50,10 @@
                         </a>
                         <a asp-controller="Wishlist" asp-action="Index">
                             <i class="fa-regular fa-heart"></i>
+                            <span>
+
+                                ( <span class="wishlist-count">@Model.WishlistCount</span>)
+                            </span>
                         </a>
                     </div>
                 </div>
