@@ -1,4 +1,4 @@
-﻿
+﻿@model LoginVM
 @{
     ViewData["Title"] = "Login";
 }
@@ -12,22 +12,19 @@
 <main>
     <section id="login">
         <div class="container">
-            <form class="login-form">
+            <form method="post" asp-controller="Account" asp-action="Login" class="login-form">
                 <h1>Welcome Back</h1>
                 <p>Please login to your account</p>
-                <div class="input-group">
-                    <input type="text"
-                           id="username"
-                           name="username"
-                           placeholder="Username"
-                           required />
+                <div style="color:red" ; asp-validation-summary="All"></div>
+                <div class="mb-3">
+                    <label asp-for="EmailOrUsername" class="form-label">EmailOrUsername</label>
+                    <input asp-for="EmailOrUsername" class="form-control">
+                    <span style="color:red;margin-bottom:5px;" asp-validation-for="EmailOrUsername"></span>
                 </div>
-                <div class="input-group">
-                    <input type="password"
-                           id="password"
-                           name="password"
-                           placeholder="Password"
-                           required />
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label">Password</label>
+                    <input asp-for="Password" class="form-control">
+                    <span style="color:red;margin-bottom:5px;" asp-validation-for="Password"></span>
                 </div>
                 <div class="input-group">
                     <input type="checkbox" style="width: 13px" />

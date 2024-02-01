@@ -20,9 +20,11 @@
                             <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
                             @if (Model.UserFullName is not null) @*User.Identity.IsAuthenticated*@
                             {
-                                <a href="#" class="d-none">@Model.UserFullName</a>
+                                <a href="#">@Model.UserFullName</a>
+                                <form asp-controller="Account" asp-action="Logout" asp-route-userId="@Model.UserId" style="display: inline;">
+                                    <input type="submit" value="Logout" style="background-color:brown; color:white;border:none" />
+                                </form>
                             }
-
                             else
                             {
                                 

@@ -1,4 +1,4 @@
-﻿
+﻿@model RegisterVM
 @{
     ViewData["Title"] = "Register";
 }
@@ -8,30 +8,69 @@
     <link rel="stylesheet" href="~/assets/css/pages/register/register.css" />
 }
 
+
+<!-- Your custom CSS -->
+<style>
+    body {
+        background-color: #f2f2f2;
+    }
+
+    .container-register {
+        max-width: 400px;
+        margin: 100px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+       /* color: #dc3545;*/ /* Bootstrap danger color */
+    }
+
+    label {
+       /* color: #dc3545;*/
+    }
+
+   
+</style>
+
+
 <!-- Main Part -->
 <main>
     <section id="login">
-        <div class="container">
-            <form class="login-form">
-                <h1>Register</h1>
-                <div class="input-group">
-                    <input type="text" placeholder="Fullname" required />
+        <div class="container-register">
+            <h2>Registration</h2>
+            <div style="color:red" ; asp-validation-summary="All"></div>
+            <form method="post" asp-controller="Account" asp-action="Register">
+                <div class="mb-3">
+                    <label asp-for="FullName" class="form-label">Full Name</label>
+                    <input asp-for="FullName" class="form-control">
+                    <span style="color:red;margin-bottom:5px;" asp-validation-for="FullName"></span>
                 </div>
-                <div class="input-group">
-                    <input type="text" placeholder="Username" required />
+                <div class="mb-3">
+                    <label asp-for="UserName" class="form-label">Username</label>
+                    <input asp-for="UserName" class="form-control">
+                    <span style="color:red;margin-bottom:5px;" asp-validation-for="UserName"></span>
                 </div>
-                <div class="input-group">
-                    <input type="password" placeholder="Password" required />
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">Email address</label>
+                    <input asp-for="Email" class="form-control" aria-describedby="emailHelp">
+                    <span style="color:red;margin-bottom:5px;" asp-validation-for="Email"></span>
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
-                <div class="input-group">
-                    <input type="password" placeholder="Confirm password" required />
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label">Password</label>
+                    <input asp-for="Password" class="form-control">
+                    <span style="color:red;margin-bottom:5px;" asp-validation-for="Password"></span>
                 </div>
-                <div class="input-group">
-                    <input type="checkbox" style="width: 13px" required />
-                    <span style="margin-left: 5px">Accept Terms and Conditions</span>
+                <div class="mb-3">
+                    <label asp-for="ConfirmPassword" class="form-label">Confirm password</label>
+                    <input asp-for="ConfirmPassword" class="form-control">
+                    <span style="color:red;margin-bottom:5px;" asp-validation-for="ConfirmPassword"></span>
                 </div>
-
-                <button type="submit">Register</button>
+                <button type="submit" class="btn btn-christmas">Register</button>
             </form>
         </div>
     </section>

@@ -25,6 +25,24 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
+builder.Services.Configure<IdentityOptions>(option =>
+{
+    option.Password.RequireNonAlphanumeric = true; //simvol olab biler
+    option.Password.RequireDigit = true; //reqem olmalidir
+    option.Password.RequireLowercase = true; //balaca herf olmalidir
+    option.Password.RequireUppercase = true; //boyuk olmalidir
+    option.Password.RequiredLength = 6; //minimum 6 
+
+    option.User.RequireUniqueEmail = true;
+
+    //option.SignIn.RequireConfirmedEmail = true;
+    //Default lockout  settings
+
+    option.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+    option.Lockout.MaxFailedAccessAttempts = 5;
+    option.Lockout.AllowedForNewUsers = true;
+
+});
 
 builder.Services.AddScoped<IHeroService, HeroService>();
 builder.Services.AddScoped<IAdvertService, AdvertService>();
