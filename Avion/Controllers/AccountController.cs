@@ -2,15 +2,12 @@
 using Avion.Data;
 using Avion.Helpers.Enums;
 using Avion.Models;
-using Avion.Services;
 using Avion.Services.Interfaces;
 using Avion.ViewModels.Basket;
 using Avion.ViewModels.Wishlist;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using System.Data;
 
 namespace Avion.Controllers
 {
@@ -327,17 +324,11 @@ namespace Avion.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-
-
-
-
         [HttpGet]
         public IActionResult ForgotPassword()
         {
             return View();
         }
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ForgotPassword(ForgotPasswordVM model)
@@ -378,21 +369,16 @@ namespace Avion.Controllers
 
             return RedirectToAction(nameof(VerifyResetPassword));
         }
-
         [HttpGet]
         public IActionResult VerifyResetPassword()
         {
             return View();
         }
-
-
         [HttpGet]
         public IActionResult ResetPassword(string userId, string token)
         {
             return View(new ResetPasswordVM { Token = token, UserId = userId });
         }
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ResetPassword(ResetPasswordVM resetPassword)
