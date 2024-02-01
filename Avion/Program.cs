@@ -1,4 +1,5 @@
 using Avion.Data;
+using Avion.Helpers;
 using Avion.Models;
 using Avion.Services;
 using Avion.Services.Interfaces;
@@ -12,7 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));
-
+// map emailconfig to emailsettings
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailConfig"));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -35,7 +37,7 @@ builder.Services.Configure<IdentityOptions>(option =>
 
     option.User.RequireUniqueEmail = true;
 
-    //option.SignIn.RequireConfirmedEmail = true;
+    option.SignIn.RequireConfirmedEmail = true;
     //Default lockout  settings
 
     option.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
@@ -64,6 +66,7 @@ builder.Services.AddScoped<ITermService, TermService>();
 builder.Services.AddScoped<IPrivacyService, PrivacyService>();
 builder.Services.AddScoped<IBasketService, BasketService>();
 builder.Services.AddScoped<IWishlistService, WishlistService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 

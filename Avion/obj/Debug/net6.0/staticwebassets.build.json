@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "g1sVt1ULJluKy50JddGxWz+9Ir0fPmLxMk7nnIMTpv0=",
+  "Hash": "UwIvapxTrlfQ05/O4qDZ79e01I4b53eyBa23YRx+8vk=",
   "Source": "Avion",
   "BasePath": "_content/Avion",
   "Mode": "Default",
@@ -4214,6 +4214,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\slick\\slick-theme.scss"
+    },
+    {
+      "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\templates\\register-confirm.html",
+      "SourceId": "Avion",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\",
+      "BasePath": "_content/Avion",
+      "RelativePath": "templates/register-confirm.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\templates\\register-confirm.html"
+    },
+    {
+      "Identity": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\templates\\reset-password.html",
+      "SourceId": "Avion",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\",
+      "BasePath": "_content/Avion",
+      "RelativePath": "templates/reset-password.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\templates\\reset-password.html"
     }
   ]
 }

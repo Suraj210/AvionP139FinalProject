@@ -31,6 +31,7 @@ namespace Avion.ViewComponents
             {
                 AppUser currentUser = await _userManager.FindByIdAsync(userId);
                 model.UserFullName = currentUser.FullName;
+                model.UserId = currentUser.Id;
             }
 
 

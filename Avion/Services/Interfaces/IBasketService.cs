@@ -14,7 +14,7 @@ namespace Avion.Services.Interfaces
         Task<CountPlusAndMinus> MinusIcon(int id);
         Task<DeleteBasketItemResponse> DeleteItem(int id);
         List<BasketVM> GetDatasFromCoockies();
-        //Task<Basket> GetByUserIdAsync(string userId);
-       // Task<List<BasketProduct>> GetAllByBasketIdAsync(int? basketId);
+        Task<Basket> GetByUserIdAsync(string userId);
+        Task<List<BasketProduct>> GetAllByBasketIdAsync(int? basketId);
     }
 }

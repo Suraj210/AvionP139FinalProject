@@ -141,15 +141,15 @@ namespace Avion.Services
             _httpContextAccessor.HttpContext.Response.Cookies.Append("wishlist", JsonConvert.SerializeObject(wishlist));
         }
 
-        //public async Task<Wishlist> GetByUserIdAsync(string userId)
-        //{
-        //    return await _context.Wishlists.Include(m => m.WishlistProducts).FirstOrDefaultAsync(m => m.AppUserId == userId);
-        //}
+        public async Task<Wishlist> GetByUserIdAsync(string userId)
+        {
+            return await _context.Wishlists.Include(m => m.WishlistProducts).FirstOrDefaultAsync(m => m.AppUserId == userId);
+        }
 
-        //public async Task<List<WishlistProduct>> GetAllByWishlistIdAsync(int? wishlistId)
-        //{
-        //    return await _context.WishlistProducts.Where(m => m.WishlistId == wishlistId).ToListAsync();
-        //}
+        public async Task<List<WishlistProduct>> GetAllByWishlistIdAsync(int? wishlistId)
+        {
+            return await _context.WishlistProducts.Where(m => m.WishlistId == wishlistId).ToListAsync();
+        }
 
     }
 }

@@ -252,3 +252,11 @@ C:\Users\acer\Desktop\Avion\Avion\obj\Debug\net6.0\refint\Avion.dll
 C:\Users\acer\Desktop\Avion\Avion\obj\Debug\net6.0\Avion.pdb
 C:\Users\acer\Desktop\Avion\Avion\obj\Debug\net6.0\Avion.genruntimeconfig.cache
 C:\Users\acer\Desktop\Avion\Avion\obj\Debug\net6.0\ref\Avion.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\MailKit.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\MimeKit.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll

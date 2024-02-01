@@ -6,6 +6,6 @@
         public string UserFullName { get; set; }
         public int BasketCount { get; set; }
         public int WishlistCount { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
     }
 }

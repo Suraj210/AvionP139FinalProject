@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-6">
                     <div class="navContent">
-                        <ul>
+                        <ul class="align-items-center">
                             <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                             <li><a asp-controller="Shop" asp-action="Index">Shop</a></li>
                             <li><a asp-controller="Blog" asp-action="Index">Blog</a></li>
@@ -20,10 +20,11 @@
                             <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
                             @if (Model.UserFullName is not null) @*User.Identity.IsAuthenticated*@
                             {
-                                <a href="#">@Model.UserFullName</a>
                                 <form asp-controller="Account" asp-action="Logout" asp-route-userId="@Model.UserId" style="display: inline;">
-                                    <input type="submit" value="Logout" style="background-color:brown; color:white;border:none" />
+                                    <input type="submit" value="Logout" style="background-color:brown; color:white;border:none; padding:5px;" />
                                 </form>
+                                <p style="font-size:18px; font-weight:400;">@Model.UserFullName.ToUpper()</p>
+
                             }
                             else
                             {
@@ -76,8 +77,21 @@
                     <li><a asp-controller="Blog" asp-action="Index">Blog</a></li>
                     <li><a asp-controller="About" asp-action="Index">About</a></li>
                     <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
-                    <li><a asp-controller="Account" asp-action="Login">Login</a></li>
-                    <li><a asp-controller="Account" asp-action="Register">Register</a></li>
+                    @if (Model.UserFullName is not null) @*User.Identity.IsAuthenticated*@
+                    {
+                        <form asp-controller="Account" asp-action="Logout" asp-route-userId="@Model.UserId" style="display: inline;">
+                            <input type="submit" value="Logout" style="background-color:brown; color:white;border:none; padding:5px;" />
+                        </form>
+                        <p style="font-size:18px; font-weight:400;">@Model.UserFullName.ToUpper()</p>
+
+
+                    }
+                    else
+                    {
+
+                        <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                        <li><a asp-controller="Account" asp-action="Register">Register</a></li>
+                    }
                 </ul>
             </div>
             <span class="copyright">Copyright 2024 ©</span>

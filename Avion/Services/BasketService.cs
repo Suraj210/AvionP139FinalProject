@@ -1,8 +1,10 @@
 ﻿using Avion.Areas.Admin.ViewModels.Product;
 using Avion.Data;
 using Avion.Helpers.Responses;
+using Avion.Models;
 using Avion.Services.Interfaces;
 using Avion.ViewModels.Basket;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
 namespace Avion.Services
@@ -219,5 +221,15 @@ namespace Avion.Services
 
         }
 
+
+        public async Task<Basket> GetByUserIdAsync(string userId)
+        {
+            return await _context.Baskets.Include(m => m.BasketProducts).FirstOrDefaultAsync(m => m.AppUserId == userId);
+        }
+
+        public async Task<List<BasketProduct>> GetAllByBasketIdAsync(int? basketId)
+        {
+            return await _context.BasketProducts.Where(m => m.BasketId == basketId).ToListAsync();
+        }
     }
 }
