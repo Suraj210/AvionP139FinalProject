@@ -47,9 +47,6 @@ namespace Avion.Controllers
         {
             return View();
         }
-
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterVM request)
@@ -117,7 +114,6 @@ namespace Avion.Controllers
         {
             return View();  
         }
-
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
             if (userId is null || token is null) return RedirectToAction("Index", "Error"); ;
@@ -132,13 +128,11 @@ namespace Avion.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginVM request)
@@ -334,6 +328,89 @@ namespace Avion.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
+
+
+        [HttpGet]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordVM model)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            AppUser existUser = await _userManager.FindByEmailAsync(model.Email);
+
+            if (existUser is null || !existUser.EmailConfirmed)
+            {
+                ModelState.AddModelError("Email", "User is not found.");
+
+                return View();
+            }
+
+            TempData["Email"] = existUser.Email;
+
+            string token = await _userManager.GeneratePasswordResetTokenAsync(existUser);
+            string link = Url.Action(nameof(ResetPassword), "Account", new { userId = existUser.Id, token }, Request.Scheme, Request.Host.ToString());
+            string subject = "Reset Password";
+            string html;
+
+            using (StreamReader reader = new StreamReader("wwwroot/templates/reset-password.html"))
+            {
+                html = reader.ReadToEnd();
+            }
+
+            string fullName = existUser.FullName;
+
+            html = html.Replace("{{fullName}}", fullName);
+            html = html.Replace("{{link}}", link);
+
+            _emailService.Send(existUser.Email, subject, html);
+
+            return RedirectToAction(nameof(VerifyResetPassword));
+        }
+
+        [HttpGet]
+        public IActionResult VerifyResetPassword()
+        {
+            return View();
+        }
+
+
+        [HttpGet]
+        public IActionResult ResetPassword(string userId, string token)
+        {
+            return View(new ResetPasswordVM { Token = token, UserId = userId });
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordVM resetPassword)
+        {
+
+            if (!ModelState.IsValid) return View(resetPassword);
+            AppUser existUser = await _userManager.FindByIdAsync(resetPassword.UserId);
+            if (existUser == null) return RedirectToAction("Index", "Error");
+
+            if (await _userManager.CheckPasswordAsync(existUser, resetPassword.Password))
+            {
+                ModelState.AddModelError("", "New password cant be same with old password");
+                return View(resetPassword);
+            }
+            await _userManager.ResetPasswordAsync(existUser, resetPassword.Token, resetPassword.Password);
+            return RedirectToAction(nameof(Login));
+
+        }
         //[HttpGet]
         //public async Task<IActionResult> CreateRoles()
         //{

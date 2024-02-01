@@ -15,6 +15,10 @@
         background-color: #f2f2f2;
     }
 
+    #login{
+        padding:0!important;
+    }
+
     .container-register {
         max-width: 400px;
         margin: 100px auto;
@@ -70,7 +74,7 @@
                     <input asp-for="ConfirmPassword" class="form-control">
                     <span style="color:red;margin-bottom:5px;" asp-validation-for="ConfirmPassword"></span>
                 </div>
-                <button type="submit" class="btn btn-christmas">Register</button>
+                <button style="width:100%;" type="submit" class="btn btn-christmas">Register</button>
             </form>
         </div>
     </section>
