@@ -11,6 +11,7 @@ using Avion.Areas.Admin.ViewModels.Hero;
 using Avion.Areas.Admin.ViewModels.Idea;
 using Avion.Areas.Admin.ViewModels.Privacy;
 using Avion.Areas.Admin.ViewModels.Product;
+using Avion.Areas.Admin.ViewModels.Review;
 using Avion.Areas.Admin.ViewModels.Setting;
 using Avion.Areas.Admin.ViewModels.Subscribe;
 using Avion.Areas.Admin.ViewModels.Tag;
@@ -112,6 +113,9 @@ namespace Avion.Helpers.Mapping
             CreateMap<PrivacyCreateVM,Privacy>();
 
             CreateMap<SettingEditVM,Setting>();
+
+            CreateMap<ReviewCreateVM, Review>().ReverseMap();
+            CreateMap<Review, ReviewVM>();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Avion.Areas.Admin.ViewModels.Brand;
 using Avion.Areas.Admin.ViewModels.Category;
 using Avion.Areas.Admin.ViewModels.Product;
+using Avion.Areas.Admin.ViewModels.Review;
 using Avion.Helpers;
 using Avion.Models;
 using Avion.Services.Interfaces;
@@ -17,17 +18,20 @@ namespace Avion.Controllers
         private readonly IBrandService _brandService;
         private readonly IBasketService _basketService;
         private readonly IWishlistService _wishlistService;
+        private readonly IReviewService _reviewService;
         public ShopController(IProductService productService,
                               ICategoryService categoryService,
                               IBrandService brandService,
                               IBasketService basketService,
-                              IWishlistService wishlistService)
+                              IWishlistService wishlistService,
+                              IReviewService reviewService)
         {
             _productService = productService;
             _categoryService = categoryService;
             _brandService = brandService;
             _basketService = basketService;
             _wishlistService = wishlistService;
+            _reviewService = reviewService;
         }
 
         [HttpGet]
@@ -69,11 +73,14 @@ namespace Avion.Controllers
             if (product is null) return NotFound();
 
             List<ProductVM> featuredProducts = await _productService.GetAllByTakeAsync(6);
+            List<ReviewVM> reviews = await _reviewService.GetReviewsByProductAsync((int)id);
 
             ProductDetailVM model = new()
             {
                 Product = product,
-                FeaturedProducts = featuredProducts
+                FeaturedProducts = featuredProducts,
+                Reviews = reviews,
+                Id=product.Id
             };
 
             return View(model);
@@ -266,7 +273,7 @@ namespace Avion.Controllers
                 PaginatedDatas = paginatedDatas,
                 Categories = categories,
                 Brands = brands,
-                SortText= sortValue
+                SortText = sortValue
             };
 
             return View(model);
@@ -277,7 +284,7 @@ namespace Avion.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Filter(int minValue, int maxValue,int page = 1, int take = 12)
+        public async Task<IActionResult> Filter(int minValue, int maxValue, int page = 1, int take = 12)
         {
 
             List<ProductVM> productsByFilter = await _productService.FilterAsync(minValue, maxValue);
@@ -297,14 +304,16 @@ namespace Avion.Controllers
                 PaginatedDatas = paginatedDatas,
                 Categories = categories,
                 Brands = brands,
-                MaxValue=maxValue,
-                MinValue=minValue
+                MaxValue = maxValue,
+                MinValue = minValue
             };
 
             return View(model);
 
         }
 
+
+        //Basket and Wishlist
 
         [HttpPost]
 
@@ -339,6 +348,22 @@ namespace Avion.Controllers
             int a = _wishlistService.AddWishlist((int)id, product);
 
             return Ok(a);
+        }
+
+
+        //Product Review
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> CreateReview(ReviewCreateVM request, int? id, string userId)
+        {
+            if (id is null || userId == null) return BadRequest();
+            if (!ModelState.IsValid) return RedirectToAction(nameof(ReviewCreateVM), new { id });
+
+            await _reviewService.CreateReview(request, (int)id, userId);
+
+            return RedirectToAction(nameof(ProductDetail), new { id });
+
         }
 
 

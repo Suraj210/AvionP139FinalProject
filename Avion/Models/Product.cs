@@ -21,7 +21,7 @@
 
         public Category Category { get; set; }
         public int CategoryId { get; set; }
-
+        public List<Review> Reviews { get; set; }
         public List<WishlistProduct> WishlistProducts { get; set; }
         public List<BasketProduct> BasketProducts { get; set; }
     }

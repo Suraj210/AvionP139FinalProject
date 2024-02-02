@@ -1,4 +1,5 @@
 ﻿@model ProductDetailVM
+@inject UserManager<AppUser> userManager
 @{
     ViewData["Title"] = "ProductDetail";
 }
@@ -14,11 +15,49 @@
     <link rel="stylesheet"
           href="~/assets/css/pages/productDetail/productDetail.css" />
 }
+<style>
+    #productReview {
+        padding: 2rem;
+    }
 
+        #productReview form {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        #productReview .review-card {
+            background-color: #b4abe5;
+        }
+
+            #productReview .review-card p {
+                font-size: 1rem;
+            }
+
+    .review-title {
+        text-align: center;
+        color: #22202e;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+    }
+
+    .reviewBtn {
+        color: #fff;
+        background-color: #2a254b;
+        padding: 1rem;
+        transition: all 0.4s;
+    }
+
+        .reviewBtn:hover {
+            transform: scale(1.05);
+        }
+</style>
 <!-- Main Part -->
 
 <main>
     <div class="container">
+
         <section id="productDetail">
             <div class="row">
                 <div class="col-md-6">
@@ -169,6 +208,107 @@
                 </div>
             </div>
         </section>
+
+        <section id="productReview">
+            <h5 class="review-title">Product reviews:</h5>
+            @if(Model.Reviews.Count != 0)
+            {
+            <div class="row my-3">
+                <!-- Review Card -->
+                <div class="col-md-8 mx-auto">
+                    <div class="card review-card">
+
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <a style="margin-bottom:50px!important" asp-controller="Account" asp-action="Login">Write review</a>
+                        }
+                        @foreach (var item in Model.Reviews)
+                        {
+                            
+                        <div class="card-body">
+                            <!-- Review Title -->
+                            <h5 class="card-title">@item.Title</h5>
+                            <!-- Review Message -->
+                            <p class="card-text">
+                               @item.Message
+                            </p>
+                            <!-- Review Author -->
+                            <p class="card-text">- @item.Name</p>
+                            <!-- Review Creation Time -->
+                            <p class="card-text">
+                                <small class="text-muted">Posted on @item.CreateTime.ToString("dd/MM/yyyy")</small>
+                            </p>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            } else
+            {
+                <div class="alert alert-danger" role="alert">
+                    No Review!
+                </div>
+            }
+            @if (User.Identity.IsAuthenticated)
+            {
+                
+            <form method="post" asp-controller="Shop" asp-action="CreateReview" asp-route-id="@Model.Id" asp-route-userId="@userManager.Users?.FirstOrDefault(u=>u.UserName==User.Identity.Name).Id" class="w-60 mt-5">
+                <!-- Email Input -->
+                <div class="mb-3">
+                    <label asp-for="@Model.NewReview.Email" class="form-label">Email Address</label>
+                    <input type="email"
+                           class="form-control"
+                           id="inputEmail"
+                           placeholder="Enter your email"
+                           required
+                           asp-for="@Model.NewReview.Email"
+                           name="email"
+                           />
+                    <span style="color:red; margin-bottom:20px" asp-validation-for="@Model.NewReview.Email"></span>
+                </div>
+                <!-- Name Input -->
+                <div class="mb-3">
+                    <label asp-for="@Model.NewReview.Name" class="form-label">Your Name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="inputName"
+                           placeholder="Enter your name"
+                           required
+                           asp-for="@Model.NewReview.Name"
+                           name="name"/>
+                    <span style="color:red; margin-bottom:20px" asp-validation-for="@Model.NewReview.Name"></span>
+
+                </div>
+                <!-- Title Input -->
+                <div class="mb-3">
+                    <label asp-for="@Model.NewReview.Title" class="form-label">Review Title</label>
+                    <input type="text"
+                           class="form-control"
+                           id="inputTitle"
+                           placeholder="Enter review title"
+                           required 
+                           asp-for="@Model.NewReview.Title" 
+                           name="title"/>
+                    <span style="color:red; margin-bottom:20px" asp-validation-for="@Model.NewReview.Title"></span>
+                </div>
+                <!-- Message Input -->
+                <div class="mb-3">
+                    <label asp-for="@Model.NewReview.Message" class="form-label">Your Review</label>
+                    <textarea class="form-control"
+                              id="inputMessage"
+                              rows="5"
+                              placeholder="Enter your review"
+                              required
+                              asp-for="@Model.NewReview.Message" name="title"></textarea>
+                    <span style="color:red; margin-bottom:20px" asp-validation-for="@Model.NewReview.Message"></span>
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="reviewBtn w-100">Submit Review</button>
+            </form>
+            }
+        </section>
+        
+        
         <!-- Products -->
         <section id="products">
             <div class="container">

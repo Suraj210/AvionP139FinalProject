@@ -67,6 +67,7 @@ builder.Services.AddScoped<IPrivacyService, PrivacyService>();
 builder.Services.AddScoped<IBasketService, BasketService>();
 builder.Services.AddScoped<IWishlistService, WishlistService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 

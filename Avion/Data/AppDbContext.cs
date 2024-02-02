@@ -32,6 +32,7 @@ namespace Avion.Data
         public DbSet<WishlistProduct> WishlistProducts { get; set; }
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<BasketProduct> BasketProducts { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
 
 
