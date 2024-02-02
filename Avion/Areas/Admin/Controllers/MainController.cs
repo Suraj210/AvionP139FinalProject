@@ -6,7 +6,7 @@ namespace Avion.Areas.Admin.Controllers
 {
 
     [Area("Admin")]
-    //[Authorize(Roles = "SuperAdmin, Admin")]
+    [Authorize(Roles = "SuperAdmin, Admin")]
     public class MainController : Controller
     {
         

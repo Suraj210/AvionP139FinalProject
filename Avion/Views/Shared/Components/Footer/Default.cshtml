@@ -8,29 +8,30 @@
                     <div class="footerContent col-lg-4 col-6">
                         <h6>Menu</h6>
                         <ul>
-                            <li><a href="">New arrivals</a></li>
-                            <li><a href="">Best sellers</a></li>
-                            <li><a href="">Recently viewed</a></li>
-                            <li><a href="">Popular this week</a></li>
-                            <li><a href="">All products</a></li>
+                            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li><a asp-controller="Shop" asp-action="Index">Shop</a></li>
+                            <li><a asp-controller="Blog" asp-action="Index">Blog</a></li>
+                            <li><a asp-controller="About" asp-action="Index">About</a></li>
+                            <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
                         </ul>
                     </div>
                     <div class="footerContent col-lg-4 col-6">
                         <h6>Categories</h6>
                         <ul>
-                            <li><a href="">Crockery</a></li>
-                            <li><a href="">Furniture</a></li>
-                            <li><a href="">Homeware</a></li>
-                            <li><a href="">Plant pots</a></li>
-                            <li><a href="">Chairs</a></li>
-                            <li><a href="">Crockery</a></li>
+                            <li><a asp-controller="Shop" asp-action="Index">Table</a></li>
+                            <li><a asp-controller="Shop" asp-action="Index">Sofa</a></li>
+                            <li><a asp-controller="Shop" asp-action="Index">Chair</a></li>
+                            <li><a asp-controller="Shop" asp-action="Index">Bed</a></li>
+                            <li><a asp-controller="Shop" asp-action="Index">Desk</a></li>
+                            <li><a asp-controller="Shop" asp-action="Index">Accessories</a></li>
+                            
                         </ul>
                     </div>
                     <div class="footerContent col-lg-4 col-6">
                         <h6>Our Company</h6>
                         <ul>
-                            <li><a href="./about.html">About us</a></li>
-                            <li><a href="./contact.html">Contact us</a></li>
+                            <li><a asp-controller="About" asp-action="Index">About us</a></li>
+                            <li><a asp-controller="Contact" asp-action="Index">Contact us</a></li>
                             <li><a asp-controller="Privacy" asp-action="Index">Privacy</a></li>
                             <li><a asp-controller="Terms" asp-action="Index">Terms of Use</a></li>
                         </ul>
