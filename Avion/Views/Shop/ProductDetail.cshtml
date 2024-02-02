@@ -82,38 +82,17 @@
                         <p>
                             @Model.Product.Description
                         </p>
-                        <!-- Quantity -->
-                        <h6>Quantity:</h6>
-                        <div class="d-flex mb-4 productQuant" style="width: 300px">
-                            <button class="btn btn-primary px-3 me-2"
-                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                <i class="fas fa-minus"></i>
-                            </button>
-
-                            <div class="form-outline">
-                                <input id="form1"
-                                       min="1"
-                                       name="quantity"
-                                       value="1"
-                                       type="number"
-                                       class="form-control" />
-                            </div>
-
-                            <button class="btn btn-primary px-3 ms-2"
-                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
+               
                         <!-- Interactions -->
-                        <div class="pt-4">
-                            <a href="./cart.html" class="addToCart">Add to cart</a>
-                            <a href="./wishlist.html" class="addToWishlist">Save to favorites</a>
+                        <div class="py-4 mt-4">
+                            <a style="cursor:pointer;" data-id="@Model.Product.Id" class="addToCart cart-add">Add to cart</a>
+                            <a style="cursor:pointer;" data-id="@Model.Product.Id" class="addToWishlist wishlist-add">Save to favorites</a>
                         </div>
                         <!-- Accordion -->
                         <div class="accordion mt-5" id="accordionPanelsStayOpenExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed"
+                                    <button class="accordion-button collapsed cart-add"
                                             type="button"
                                             data-bs-toggle="collapse"
                                             data-bs-target="#panelsStayOpen-collapseOne"
@@ -299,7 +278,7 @@
                               rows="5"
                               placeholder="Enter your review"
                               required
-                              asp-for="@Model.NewReview.Message" name="title"></textarea>
+                              asp-for="@Model.NewReview.Message" name="message"></textarea>
                     <span style="color:red; margin-bottom:20px" asp-validation-for="@Model.NewReview.Message"></span>
                 </div>
                 <!-- Submit Button -->
