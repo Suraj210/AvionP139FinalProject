@@ -529,6 +529,18 @@
       "PackagePath": "staticwebassets\\assets\\css\\pages\\contact\\contact.scss"
     },
     {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\error\\error.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\error\\error.css"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\error\\error.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\error\\error.css.map"
+    },
+    {
+      "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\error\\error.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\pages\\error\\error.scss"
+    },
+    {
       "Id": "C:\\Users\\acer\\Desktop\\Avion\\Avion\\wwwroot\\assets\\css\\pages\\home\\home.css",
       "PackagePath": "staticwebassets\\assets\\css\\pages\\home\\home.css"
     },

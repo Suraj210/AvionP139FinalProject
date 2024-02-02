@@ -1,0 +1,31 @@
+﻿@model int
+
+@{
+    Layout = null;
+}
+
+    <link rel="stylesheet" href="~/assets/css/pages/error/error.css" />
+
+
+<main>
+    <section id="error">
+        <div class="noise"></div>
+        <div class="overlay"></div>
+        <div class="terminal">
+            <h1>Error <span class="errorcode">@Model</span></h1>
+            <p class="output">
+                @ViewBag.ErrorMessage
+            </p>
+            <p class="output">
+                Please try to <a asp-controller="Home" asp-action="Index">go back</a> or
+                <a asp-controller="Home" asp-action="Index">return to the homepage</a>.
+            </p>
+            <p class="output">Good luck.</p>
+        </div>
+    </section>
+</main>
+
+
+
+
+
