@@ -1,10 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Avion.Areas.Admin.ViewModels.Account;
+using Avion.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Avion.Areas.Admin.Controllers
 {
     public class AccountController : MainController
     {
-        rivate readonly UserManager<AppUser> _userManager;
+        private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
@@ -59,6 +64,26 @@ namespace Avion.Areas.Admin.Controllers
 
             await _userManager.AddToRoleAsync(user, role.Name);
 
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> RemoveRoleFromUser()
+        {
+            ViewBag.roles = await GetRolesAsync();
+            ViewBag.users = await GetUsersAsync();
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RemoveRoleFromUser(UserRoleVM request)
+        {
+            AppUser user = await _userManager.FindByIdAsync(request.UserId);
+            IdentityRole role = await _roleManager.FindByIdAsync(request.RoleId);
+
+            await _userManager.RemoveFromRoleAsync(user, role.Name);
             return RedirectToAction(nameof(Index));
         }
 

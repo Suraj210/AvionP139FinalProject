@@ -8,7 +8,9 @@ C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\Avion.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\Avion.pdb
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\Humanizer.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\MailKit.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\MessagePack.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\MessagePack.Annotations.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -55,6 +57,7 @@ C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\Microsoft.VisualStudio.Web.Co
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\MimeKit.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\NuGet.Common.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\NuGet.Configuration.dll
@@ -73,11 +76,14 @@ C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Composition.TypedParts
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Formats.Asn1.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Windows.Extensions.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\af\Humanizer.resources.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\ar\Humanizer.resources.dll
@@ -228,7 +234,9 @@ C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\runtimes\win\lib\net6.0\Micro
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
 C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\acer\Desktop\Avion\Avion\obj\Debug\net6.0\Avion.csproj.AssemblyReference.cache
 C:\Users\acer\Desktop\Avion\Avion\obj\Debug\net6.0\Avion.GeneratedMSBuildEditorConfig.editorconfig
@@ -252,11 +260,3 @@ C:\Users\acer\Desktop\Avion\Avion\obj\Debug\net6.0\refint\Avion.dll
 C:\Users\acer\Desktop\Avion\Avion\obj\Debug\net6.0\Avion.pdb
 C:\Users\acer\Desktop\Avion\Avion\obj\Debug\net6.0\Avion.genruntimeconfig.cache
 C:\Users\acer\Desktop\Avion\Avion\obj\Debug\net6.0\ref\Avion.dll
-C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
-C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\MailKit.dll
-C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\MimeKit.dll
-C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Formats.Asn1.dll
-C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
-C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\acer\Desktop\Avion\Avion\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll

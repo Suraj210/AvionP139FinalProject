@@ -1,0 +1,87 @@
+﻿@model List<UserVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mt-3 mb-3">Accounts</h1>
+    @if (User.IsInRole("SuperAdmin"))
+    {
+        <a asp-action="AddRoleToUser" style="cursor:pointer; color:teal; font-size:35px;" class="mb-2">
+            <i class="fa-solid fa-circle-plus "></i>
+        </a>
+        <a asp-action="RemoveRoleFromUser" style="cursor:pointer; color:magenta; font-size:35px;" class="mb-2">
+            <i class="fa-solid fa-circle-minus"></i>
+        </a>
+    }
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        FullName
+                    </th>
+
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        UserName
+                    </th>
+                    <th>
+                        Role
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @user.FullName
+                        </td>
+                        <td>
+                            @user.Email
+                        </td>
+                        <td>
+                            @user.UserName
+                        </td>
+
+                        <td>
+                            @foreach (var name in user.RoleName)
+                            {
+
+                                <span> @name</span>
+
+                            }
+                        </td>
+
+                        <td>
+                            @if (User.IsInRole("SuperAdmin"))
+                            {
+                                bool hasNonSuperAdminRole = !user.RoleName.Any(role => role.Contains("SuperAdmin"));
+
+
+                                if (hasNonSuperAdminRole)
+                                {
+
+                                    <form class="d-inline-block" method="post">
+                                        <button type="submit" class="btn btn-outline-danger" asp-action="DeleteUser" asp-route-id="@user.Id"><i class="fa-solid fa-trash"></i></button>
+                                    </form>
+                                
+                                }
+
+
+                            }
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,4 +1,6 @@
-﻿namespace Avion.Areas.Admin.ViewModels.Account
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace Avion.Areas.Admin.ViewModels.Account
 {
     public class UserVM
     {
@@ -8,5 +10,6 @@
         public string UserName { get; set; }
         public IList<string> RoleName { get; set; }
         public bool EmailConfirm { get; set; }
+        public List<IdentityRole> Roles { get; set; }
     }
 }
