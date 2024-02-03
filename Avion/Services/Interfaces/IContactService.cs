@@ -6,5 +6,8 @@ namespace Avion.Services.Interfaces
     {
         ContactVM GetData();
         Task CreateAsync(ContactMessageCreateVM vm);
+        Task DeleteAsync(int id);
+        Task<List<ContactMessageVM>> GetAllMessagesAsync();
+        Task<ContactMessageVM> GetMessageByIdAsync(int id);
     }
 }

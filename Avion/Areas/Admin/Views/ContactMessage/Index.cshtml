@@ -1,0 +1,60 @@
+﻿@model List<ContactMessageVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container" style="margin-left:30px">
+    <h1 class="text-center mt-3 mb-3">Contact Messages</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Message
+                    </th>
+
+                    <th>
+                        CreatedDate
+                    </th>
+                    <th>
+                        Operations
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var message in Model)
+                {
+                    <tr>
+                        <td class="py-1">
+                            @message.Name
+                        </td>
+                        <td class="py-1">
+                            @message.Email
+                        </td>
+                        <td class="py-1">
+                            @message.Message.Substring(0, (int)Math.Ceiling(message.Message.Length * 0.3))
+                        </td>
+                        <td>
+                            @message.CreateTime.ToString("MM/dd/yyyy")
+                        </td>
+                        <td>
+                            <a class="btn btn-outline-info " asp-action="Detail" asp-route-id="@message.Id"><i class="fa-solid fa-circle-info"></i></a>
+                            <form class="d-inline-block" method="post">
+                                <button type="submit" class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@message.Id"><i class="fa-solid fa-trash"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

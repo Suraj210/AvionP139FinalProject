@@ -100,6 +100,7 @@ namespace Avion.Helpers.Mapping
 
             CreateMap<ContactMessageCreateVM, ContactMessage>();
             CreateMap<ContactVM, ContactMessageVM>();
+            CreateMap<ContactMessage, ContactMessageVM>();
 
             CreateMap<Term,TermsVM>().ReverseMap();
             CreateMap<TermsEditVM, Term>();

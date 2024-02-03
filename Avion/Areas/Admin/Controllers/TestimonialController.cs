@@ -91,6 +91,7 @@ namespace Avion.Areas.Admin.Controllers
 
 
             request.Image = dbTestimonial.Image;
+            request.IsMain =dbTestimonial.IsMain;
 
             if (!ModelState.IsValid)
             {

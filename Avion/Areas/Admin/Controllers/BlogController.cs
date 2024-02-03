@@ -243,10 +243,10 @@ namespace Avion.Areas.Admin.Controllers
 
                 }
 
-                if (!request.Photo.CheckFileSize(500))
+                if (!request.Photo.CheckFileSize(1000))
                 {
                     request.Tags = _tagService.GetAllSelectedAsync();
-                    ModelState.AddModelError("Photos", "File size can be max 500 kb");
+                    ModelState.AddModelError("Photos", "File size can be max 1000 kb");
                     return View(request);
                 }
 

@@ -85,9 +85,9 @@ namespace Avion.Areas.Admin.Controllers
                     return View(request);
                 }
 
-                if (!request.Photo.CheckFileSize(500))
+                if (!request.Photo.CheckFileSize(1000))
                 {
-                    ModelState.AddModelError("Photo", "File size can  be max 500 kb");
+                    ModelState.AddModelError("Photo", "File size can  be max 1000 kb");
                     return View(request);
                 }
             }
