@@ -1,7 +1,16 @@
 ﻿@model HeaderVM
 
+    <style>
+        marquee{
+            background-color: #ebe8f4;
+            padding:0.5rem 0;
+            color: #2a254b;
+        }
+    </style>
+
+
 <header>
-    <marquee>Hello world</marquee>
+    <marquee> LIMITED TIME OFFER: BIGGEST FURNITURE SALE OF THE YEAR! </marquee>
     <div class="container">
         <nav>
             <div class="row align-items-center">
@@ -47,16 +56,16 @@
                         </div>
                         <a asp-controller="Basket" asp-action="Index">
                             <i class="fa-solid fa-cart-shopping"></i>
-                            <span>
+                            <span style="position:relative;">
 
-                           ( <span class="basket-count">@Model.BasketCount</span>)
+                                <span style="position:absolute; top: -11px; background-color: #2a254b; border-radius: 50%; width: 20px; height: 20px; font-size: 16px; left: -4px; color: white;text-align: center;" class="basket-count ">@Model.BasketCount</span>
                             </span>
                         </a>
                         <a asp-controller="Wishlist" asp-action="Index">
                             <i class="fa-regular fa-heart"></i>
-                            <span>
+                            <span style="position:absolute;">
 
-                                ( <span class="wishlist-count">@Model.WishlistCount</span>)
+                                <span style="position:absolute; top: -11px; background-color: #2a254b; border-radius: 50%; width: 20px; height: 20px; font-size: 16px; left: -4px; color: white;text-align: center;" class="wishlist-count">@Model.WishlistCount</span>
                             </span>
                         </a>
                     </div>
