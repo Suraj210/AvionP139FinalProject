@@ -73,11 +73,16 @@ header nav .navRight .searchArea input {
   border: 1px solid #2a254b;
   border-radius: 5px;
 }
-header nav .navRight .searchArea i {
-  position: absolute;
-  right: 6px;
-  top: 5px;
-}
+    header nav .navRight .searchAreai{
+        position:initial;
+    }
+    header nav .navRight .searchArea button {
+        position: absolute;
+        right: 6px;
+        top: 5px;
+        border: none;
+        background-color: transparent;
+    }
 header nav .navRight i {
   font-size: 18px;
   cursor: pointer;

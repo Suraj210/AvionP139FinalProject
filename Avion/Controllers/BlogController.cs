@@ -65,13 +65,14 @@ namespace Avion.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(int? id)
         {
-            if (id is null) return BadRequest();
 
-            BlogVM blog = await _blogService.GetByIdAsync((int)id);
-            if (blog is null) return NotFound();
+                if (id is null) return BadRequest();
 
+                BlogVM blog = await _blogService.GetByIdAsync((int)id);
 
-            return View(blog);
+                if (blog is null) return NotFound();
+
+                return View(blog);
         }
 
 

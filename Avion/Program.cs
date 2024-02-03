@@ -76,10 +76,11 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler();
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
+
+app.UseStatusCodePagesWithRedirects("/Error/{0}");
 
 var supportedCultures = new[] { new CultureInfo("en-US") }; // Adjust as needed
 app.UseRequestLocalization(new RequestLocalizationOptions
